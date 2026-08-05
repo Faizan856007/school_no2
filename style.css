@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy-base: #040b16;
+  --color-navy-surface: #0a1428;
+  --color-navy-muted: #122343;
+  --color-gold-primary: #d4af37;
+  --color-gold-glow: #f9d976;
+  --color-text-primary: #f8f9fa;
+  --color-text-muted: #a1b0cc;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-navy-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-gold-primary);
+  color: var(--color-navy-base);
+}
+
+/* Custom gold scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-muted);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-primary);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+.font-mono-accent {
+  font-family: var(--font-mono);
+}
+
+/* Grain / noise overlay */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(212, 175, 55, 0.35);
+}
+
+.reveal-mask {
+  overflow: hidden;
+  display: block;
+}
+
+@layer base {
+  :root {
+    --background: 213 61% 5%;
+    --foreground: 210 17% 98%;
+    --card: 217 58% 10%;
+    --card-foreground: 210 17% 98%;
+    --popover: 217 58% 10%;
+    --popover-foreground: 210 17% 98%;
+    --primary: 46 65% 52%;
+    --primary-foreground: 213 61% 5%;
+    --secondary: 216 58% 17%;
+    --secondary-foreground: 210 17% 98%;
+    --muted: 216 58% 17%;
+    --muted-foreground: 217 27% 71%;
+    --accent: 46 65% 52%;
+    --accent-foreground: 213 61% 5%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 210 17% 98%;
+    --border: 46 35% 30%;
+    --input: 216 58% 20%;
+    --ring: 46 65% 52%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
