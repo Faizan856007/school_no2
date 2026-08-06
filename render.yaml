@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: school-no2
+    runtime: docker
+    plan: free
