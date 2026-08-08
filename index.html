@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?php echo SITE_NAME; ?></title>
+    <title>Green Valley International School | Home</title>
 
     <!-- Google Fonts -->
    <!-- Google Fonts -->
@@ -29,7 +28,7 @@
 
 <div class="container">
 
-<a href="#" class="logo">
+<a href="index.html" class="logo">
 
 <div class="logo-icon">
 <i class="fa-solid fa-school"></i>
@@ -46,17 +45,17 @@
 
 <ul>
 
-<li><a class="active" href="#">Home</a></li>
+<li><a class="active" href="#home">Home</a></li>
 
-<li><a href="#">About</a></li>
+<li><a href="#about">About</a></li>
 
-<li><a href="#">Academics</a></li>
+<li><a href="#academics">Academics</a></li>
 
-<li><a href="#">Campus</a></li>
+<li><a href="#campus">Campus</a></li>
 
-<li><a href="#">Gallery</a></li>
+<li><a href="#gallery">Gallery</a></li>
 
-<li><a href="#">Contact</a></li>
+<li><a href="#contact">Contact</a></li>
 
 </ul>
 
@@ -64,7 +63,8 @@
 
 <div class="header-btns">
 
-<a href="#" class="login-btn">
+<!-- No student/parent portal yet — pointing to Contact for now. Replace with a real login page URL when ready. -->
+<a href="#contact" class="login-btn">
 
 Login
 
@@ -87,7 +87,7 @@ Apply Now
 
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="container hero-grid">
 
@@ -119,13 +119,13 @@ sports excellence and a vibrant learning environment.
 
 <div class="hero-buttons">
 
-<a href="#" class="primary">
+<a href="#campus" class="primary">
 
 Explore Campus
 
 </a>
 
-<a href="#" class="secondary">
+<a href="#campus" class="secondary">
 
 <i class="fa-solid fa-circle-play"></i>
 
@@ -295,7 +295,7 @@ Watch Video
 
             </div>
 
-            <a href="#" class="primary-btn">
+            <a href="#academics" class="primary-btn">
 
                 Discover More
 
@@ -341,7 +341,7 @@ ACADEMICS
                     Strong foundation with activity-based learning and modern teaching.
                 </p>
 
-                <a href="#">Read More →</a>
+                <a href="#contact">Read More →</a>
 
             </div>
 
@@ -357,7 +357,7 @@ ACADEMICS
                     STEM education, coding, robotics and project-based learning.
                 </p>
 
-                <a href="#">Read More →</a>
+                <a href="#contact">Read More →</a>
 
             </div>
 
@@ -373,7 +373,7 @@ ACADEMICS
                     Career-focused education with excellent board examination results.
                 </p>
 
-                <a href="#">Read More →</a>
+                <a href="#contact">Read More →</a>
 
             </div>
 
@@ -410,7 +410,7 @@ CAMPUS EXPERIENCE
                 <div><i class="fa-solid fa-check"></i> Library & Innovation Hub</div>
             </div>
 
-            <a href="#" class="primary-btn">
+            <a href="#gallery" class="primary-btn">
                 Virtual Campus Tour
             </a>
 
@@ -563,7 +563,7 @@ Admissions Open for Academic Session 2026–27
 Online registration has started. Limited seats are available for Nursery to Class XII.
 </p>
 
-<a href="#">
+<a href="#contact">
 Read More
 <i class="fa-solid fa-arrow-right"></i>
 </a>
@@ -599,7 +599,7 @@ Independence Day Celebration
 Join us for flag hoisting, cultural performances and patriotic activities at the school campus.
 </p>
 
-<a href="#">
+<a href="news-events.html">
 Read More
 <i class="fa-solid fa-arrow-right"></i>
 </a>
@@ -635,7 +635,7 @@ Students Won State Level Science Competition
 Congratulations to our talented students for securing first position in the state science fair.
 </p>
 
-<a href="#">
+<a href="news-events.html">
 Read More
 <i class="fa-solid fa-arrow-right"></i>
 </a>
@@ -1064,6 +1064,7 @@ FOOTER
                     Building Future Leaders Through Innovation. A modern,
                     inspiring learning environment for every child.
                 </p>
+              <!-- Replace # below with your real social media page URLs -->
               <div class="footer-social">
   <a href="#" class="social-fb"><i class="fab fa-facebook-f"></i></a>
   <a href="#" class="social-ig"><i class="fab fa-instagram"></i></a>
@@ -1112,6 +1113,6 @@ FOOTER
 <!-- Back to top -->
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-<script src="assets/js/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
