@@ -31,48 +31,78 @@
   </nav>
 </header>
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> / Academic Calendar</div>
-    <div class="eyebrow">Session 2026–27</div>
-    <h1>Academic Calendar &amp; Holidays</h1>
-    <p class="lead">Key term dates, examinations and holidays for the current academic session, at a glance.</p>
-  </div>
+<section class="page-intro">
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Academic Calendar</div>
+        <span class="section-title">Session 2026&ndash;27</span>
+        <h1>Academic Calendar &amp; Holidays</h1>
+        <p>Key term dates, examinations and holidays for the current academic session, at a glance.</p>
+    </div>
 </section>
 
-<section style="background:#fff;">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow" style="display:inline-flex;">Term Structure</div>
-      <h2>Two Terms, One Academic Year</h2>
+<section style="padding-top:0;">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-title" style="display:inline-block;">Term Structure</span>
+            <h2>Two Terms, One Academic Year</h2>
+        </div>
+        <div class="academic-grid" style="grid-template-columns:1fr 1fr;">
+            <div class="academic-card">
+                <div class="academic-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h3>Term I &mdash; April to September 2026</h3>
+                <div class="timeline" style="margin-top:20px;">
+                    <div class="timeline-item"><span class="t-date">1 Apr 2026</span><h4>School Reopens</h4></div>
+                    <div class="timeline-item"><span class="t-date">15&ndash;19 Jun 2026</span><h4>Unit Test I</h4></div>
+                    <div class="timeline-item"><span class="t-date">14&ndash;24 Sep 2026</span><h4>Half-Yearly Exams</h4></div>
+                    <div class="timeline-item"><span class="t-date">30 Sep 2026</span><h4>Term I Ends</h4></div>
+                </div>
+            </div>
+            <div class="academic-card">
+                <div class="academic-icon"><i class="fa-solid fa-snowflake"></i></div>
+                <h3>Term II &mdash; October 2026 to March 2027</h3>
+                <div class="timeline" style="margin-top:20px;">
+                    <div class="timeline-item"><span class="t-date">12 Oct 2026</span><h4>Term II Begins</h4></div>
+                    <div class="timeline-item"><span class="t-date">1&ndash;5 Dec 2026</span><h4>Unit Test II</h4></div>
+                    <div class="timeline-item"><span class="t-date">1&ndash;15 Mar 2027</span><h4>Final Examinations</h4></div>
+                    <div class="timeline-item"><span class="t-date">28 Mar 2027</span><h4>Result Declaration</h4></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="grid grid-2">
-      <div class="card">
-        <span class="tag tag-leaf">Term I</span>
-        <h3 style="margin-top:12px;">April – September 2026</h3>
-        <table style="box-shadow:none;">
-          <tbody>
-            <tr><td>School Reopens</td><td>1 Apr 2026</td></tr>
-            <tr><td>Unit Test I</td><td>15–19 Jun 2026</td></tr>
-            <tr><td>Half-Yearly Exams</td><td>14–24 Sep 2026</td></tr>
-            <tr><td>Term I Ends</td><td>30 Sep 2026</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card">
-        <span class="tag tag-gold">Term II</span>
-        <h3 style="margin-top:12px;">October 2026 – March 2027</h3>
-        <table style="box-shadow:none;">
-          <tbody>
-            <tr><td>Term II Begins</td><td>12 Oct 2026</td></tr>
-            <tr><td>Unit Test II</td><td>1–5 Dec 2026</td></tr>
-            <tr><td>Final Examinations</td><td>1–15 Mar 2027</td></tr>
-            <tr><td>Result Declaration</td><td>28 Mar 2027</td></tr>
-          </tbody>
-        </table>
-      </div>
+</section>
+
+<section style="background:var(--cream-2);">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-title" style="display:inline-block;">Holiday List</span>
+            <h2>School Holidays 2026&ndash;27</h2>
+        </div>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead><tr><th>Occasion</th><th>Date</th><th>Day(s)</th></tr></thead>
+                <tbody>
+                    <tr><td>Summer Vacation</td><td>20 May &ndash; 30 Jun 2026</td><td>6 weeks</td></tr>
+                    <tr><td>Independence Day</td><td>15 Aug 2026</td><td>1 day</td></tr>
+                    <tr><td>Dussehra Break</td><td>20&ndash;22 Oct 2026</td><td>3 days</td></tr>
+                    <tr><td>Diwali Break</td><td>7&ndash;12 Nov 2026</td><td>6 days</td></tr>
+                    <tr><td>Christmas &amp; New Year</td><td>24 Dec 2026 &ndash; 2 Jan 2027</td><td>10 days</td></tr>
+                    <tr><td>Republic Day</td><td>26 Jan 2027</td><td>1 day</td></tr>
+                    <tr><td>Holi Break</td><td>4&ndash;5 Mar 2027</td><td>2 days</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="margin-top:16px;font-size:12.5px;color:var(--ink-soft);">* Dates are indicative — align this list with your school's official academic calendar circular.</p>
     </div>
-  </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="cta-strip">
+            <h3>Download the Full Calendar</h3>
+            <p>Get the printable PDF with exam schedules, PTM dates and events.</p>
+            <a href="downloads.html" class="primary-btn">Go to Downloads</a>
+        </div>
+    </div>
 </section>
 
 <section>
