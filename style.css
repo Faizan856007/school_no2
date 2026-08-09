@@ -817,13 +817,52 @@ section.stats {
   display: grid; place-items: center;
   transition: background 0.3s ease, transform 0.35s var(--ease-spring);
 }
-.footer-social a:hover { background: var(--gold-500); color: var(--forest-900); transform: translateY(-4px) rotate(-6deg); }
-.footer-links h3, .footer-contact h3 { color: var(--white); font-size: 15.5px; margin-bottom: 20px; }
-.footer-links ul { display: grid; gap: 12px; }
-.footer-links a { font-size: 13.5px; transition: color 0.3s ease, padding-left 0.3s ease; }
-.footer-links a:hover { color: var(--gold-400); padding-left: 4px; }
-.footer-contact p { font-size: 13.5px; margin-bottom: 14px; display: flex; gap: 10px; align-items: flex-start; }
-.footer-contact i { color: var(--gold-400); margin-top: 2px; }
+.footer-social a:hover {
+  background: var(--gold-500);
+  color: var(--forest-900);
+  transform: translateY(-4px) rotate(-6deg);
+}
+
+/* Brand-specific hover colors */
+.footer-social .social-fb:hover { background: #1877F2; color: var(--white); }
+.footer-social .social-ig:hover { background: #E4405F; color: var(--white); }
+.footer-social .social-yt:hover { background: #FF0000; color: var(--white); }
+.footer-social .social-li:hover { background: #0A66C2; color: var(--white); }
+
+.footer-links h3, .footer-contact h3 {
+  color: var(--white);
+  font-size: 15.5px;
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  display: grid;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 13.5px;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--gold-400);
+  padding-left: 4px;
+}
+
+.footer-contact p {
+  font-size: 13.5px;
+  margin-bottom: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.footer-contact i {
+  color: var(--gold-400);
+  margin-top: 2px;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding: 22px 0;
