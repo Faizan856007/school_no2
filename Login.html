@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Green Valley International School</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main CSS (same file used by index.html) -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ================= Scoped additions for the Login page =================
+           Reuses the same design tokens defined in style.css
+           (--forest-*, --gold-*, --cream, --ink, --radius-*, --shadow-*, --ease*) */
+
+        .login-section { padding: 70px 0 100px; }
+        .login-grid {
+            display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center;
+            max-width: 1080px; margin: 0 auto;
+        }
+
+        /* Left info panel */
+        .login-info .section-title { display: inline-block; }
+        .login-info h1 { font-size: clamp(28px, 3.4vw, 38px); margin: 10px 0 16px; }
+        .login-info > p { color: var(--ink-soft); margin-bottom: 26px; max-width: 420px; }
+        .login-features { display: grid; gap: 14px; margin-bottom: 30px; }
+        .login-features .feature-item { justify-content: flex-start; }
+
+        .login-help {
+            background: var(--white); border-radius: var(--radius-md);
+            padding: 20px 22px; box-shadow: var(--shadow-sm);
+            display: flex; align-items: center; gap: 14px;
+        }
+        .login-help i {
+            width: 42px; height: 42px; border-radius: 12px;
+            background: rgba(27,67,50,0.08); color: var(--forest-800);
+            display: grid; place-items: center; font-size: 17px; flex-shrink: 0;
+        }
+        .login-help p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+        .login-help strong { color: var(--forest-800); display: block; font-size: 14px; margin-bottom: 2px; }
+
+        /* Right login card */
+        .login-card {
+            background: var(--white); border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md); padding: 40px;
+        }
+
+        .role-tabs {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+            background: var(--cream); padding: 6px; border-radius: 999px;
+            margin-bottom: 30px;
+        }
+        .role-tab {
+            padding: 11px 0; text-align: center; border-radius: 999px;
+            font-weight: 700; font-size: 13.5px; color: var(--ink-soft);
+            transition: all 0.3s var(--ease); cursor: pointer;
+        }
+        .role-tab.active { background: var(--forest-800); color: var(--white); box-shadow: var(--shadow-sm); }
+
+        .login-form { display: none; }
+        .login-form.active { display: block; animation: fadeStep 0.35s var(--ease); }
+        @keyframes fadeStep { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        .login-card label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+        .login-card input {
+            width: 100%; padding: 14px 18px; border-radius: var(--radius-sm);
+            border: 1.5px solid rgba(27,67,50,0.14); font-family: inherit; font-size: 14.5px;
+            background: var(--cream); transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 16px;
+        }
+        .login-card input:focus {
+            outline: none; border-color: var(--gold-500); box-shadow: 0 0 0 4px rgba(212,165,60,0.16);
+        }
+        .login-card input.field-error { border-color: #c0392b; box-shadow: 0 0 0 4px rgba(192,57,43,0.1); }
+        .field-hint { font-size: 11.5px; color: #c0392b; margin: -12px 0 14px; display: none; }
+        .field-hint.show { display: block; }
+
+        .password-wrap { position: relative; }
+        .password-wrap input { padding-right: 46px; }
+        .toggle-pass {
+            position: absolute; right: 16px; top: 15px; color: var(--ink-soft);
+            font-size: 14px; cursor: pointer; background: none; border: none;
+        }
+        .toggle-pass:hover { color: var(--forest-800); }
+
+        .login-row {
+            display: flex; justify-content: space-between; align-items: center;
+            margin: -4px 0 22px; font-size: 12.5px;
+        }
+        .remember-me { display: flex; align-items: center; gap: 7px; color: var(--ink-soft); font-weight: 500; }
+        .remember-me input { width: auto; margin: 0; }
+        .forgot-link { color: var(--forest-800); font-weight: 700; }
+        .forgot-link:hover { color: var(--gold-600); }
+
+        .login-submit {
+            width: 100%; position: relative; overflow: hidden;
+            padding: 15px 30px; border-radius: 999px; background: var(--forest-800); color: var(--white);
+            font-weight: 700; font-size: 15px; box-shadow: 0 10px 26px rgba(27,67,50,0.24);
+            transition: transform 0.3s var(--ease), background 0.3s ease;
+        }
+        .login-submit:hover { transform: translateY(-3px); background: var(--forest-700); }
+        .login-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+        .login-divider {
+            display: flex; align-items: center; gap: 14px; margin: 26px 0;
+            color: var(--ink-soft); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .login-divider::before, .login-divider::after { content: ""; flex: 1; height: 1px; background: rgba(27,67,50,0.12); }
+
+        .apply-cta {
+            text-align: center; font-size: 13.5px; color: var(--ink-soft);
+        }
+        .apply-cta a { color: var(--forest-800); font-weight: 700; }
+        .apply-cta a:hover { color: var(--gold-600); }
+
+        .form-msg { margin-top: 16px; }
+
+        @media (max-width: 860px) {
+            .login-grid { grid-template-columns: 1fr; gap: 40px; }
+            .login-info { text-align: center; }
+            .login-info > p { margin: 0 auto 26px; }
+            .login-features { max-width: 420px; margin: 0 auto 30px; }
+        }
+        @media (max-width: 480px) {
+            .login-card { padding: 26px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<header class="header">
+<div class="container">
+
+<a href="index.html" class="logo">
+<div class="logo-icon"><i class="fa-solid fa-school"></i></div>
+<div>
+<h2>Green Valley</h2>
+<p>International School</p>
+</div>
+</a>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#academics">Academics</a></li>
+<li><a href="index.html#campus">Campus</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="header-btns">
+<a href="login.html" class="login-btn">Login</a>
+<a href="apply.html" class="apply-btn">Apply Now</a>
+</div>
+
+<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+
+</div>
+</header>
+
+<section class="login-section">
+    <div class="container">
+        <div class="login-grid">
+
+            <!-- Left info panel -->
+            <div class="login-info">
+                <span class="section-title">Welcome Back</span>
+                <h1>Sign In to Your Portal</h1>
+                <p>Access report cards, fee receipts, attendance, homework and school announcements — all in one place.</p>
+
+                <div class="login-features">
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Track attendance &amp; report cards</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Pay fees &amp; download receipts</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> View homework &amp; circulars</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Message teachers directly</div>
+                </div>
+
+                <div class="login-help">
+                    <i class="fa-solid fa-headset"></i>
+                    <p><strong>Need help logging in?</strong>Call the school office at +91 98765 43210 or email info@greenvalley.edu.in</p>
+                </div>
+            </div>
+
+            <!-- Right login card -->
+            <div class="login-card">
+
+                <div class="role-tabs">
+                    <div class="role-tab active" data-role="parent">Parent / Student</div>
+                    <div class="role-tab" data-role="staff">Staff</div>
+                </div>
+
+                <!--
+                    IMPORTANT: This is a front-end-only login form. GitHub Pages cannot run
+                    server-side authentication, so this form does NOT actually verify any
+                    account or log anyone in — it only demonstrates the UI and validation.
+                    To make real login work, you need a backend/auth service such as Firebase
+                    Authentication, Supabase Auth, or your school ERP's existing login API,
+                    and to wire the submit handler below to call it.
+                -->
+
+                <!-- Parent/Student login -->
+                <form class="login-form active" id="parentForm" novalidate>
+                    <label for="parentId">Registered Email or Student ID</label>
+                    <input type="text" id="parentId" name="parentId" placeholder="you@example.com or GVS-2026-0142">
+                    <div class="field-hint">Please enter your email or student ID.</div>
+
+                    <label for="parentPass">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="parentPass" name="parentPass" placeholder="Enter your password">
+                        <button type="button" class="toggle-pass" data-target="parentPass"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="field-hint">Please enter your password.</div>
+
+                    <div class="login-row">
+                        <label class="remember-me"><input type="checkbox" id="parentRemember"> Remember me</label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="login-submit" id="parentSubmit">Sign In</button>
+                    <div class="form-msg" id="parentMsg"></div>
+                </form>
+
+                <!-- Staff login -->
+                <form class="login-form" id="staffForm" novalidate>
+                    <label for="staffId">Staff Email / Employee ID</label>
+                    <input type="text" id="staffId" name="staffId" placeholder="you@greenvalley.edu.in or EMP-0087">
+                    <div class="field-hint">Please enter your email or employee ID.</div>
+
+                    <label for="staffPass">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="staffPass" name="staffPass" placeholder="Enter your password">
+                        <button type="button" class="toggle-pass" data-target="staffPass"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <div class="field-hint">Please enter your password.</div>
+
+                    <div class="login-row">
+                        <label class="remember-me"><input type="checkbox" id="staffRemember"> Remember me</label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="login-submit" id="staffSubmit">Sign In</button>
+                    <div class="form-msg" id="staffMsg"></div>
+                </form>
+
+                <div class="login-divider">New to Green Valley?</div>
+                <p class="apply-cta">Don't have an account yet? <a href="apply.html">Apply for admission &rarr;</a></p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Green Valley <span>International School</span></h2>
+                <p>Building Future Leaders Through Innovation. A modern, inspiring learning environment for every child.</p>
+                <!-- Replace # below with your real social media page URLs -->
+                <div class="footer-social">
+                    <a href="#" class="social-fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-ig"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-yt"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-li"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#academics">Academics</a></li>
+                    <li><a href="index.html#campus">Campus</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Academics</h3>
+                <ul>
+                    <li><a href="index.html#academics">Primary School</a></li>
+                    <li><a href="index.html#academics">Middle School</a></li>
+                    <li><a href="index.html#academics">Senior School</a></li>
+                    <li><a href="index.html#contact">Admissions</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
+                <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Green Valley International School. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Role tab switching
+    const tabs = document.querySelectorAll('.role-tab');
+    const forms = document.querySelectorAll('.login-form');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            forms.forEach(f => f.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.role + 'Form').classList.add('active');
+        });
+    });
+
+    // Password show/hide toggle
+    document.querySelectorAll('.toggle-pass').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const input = document.getElementById(btn.dataset.target);
+            const icon = btn.querySelector('i');
+            const isPass = input.type === 'password';
+            input.type = isPass ? 'text' : 'password';
+            icon.className = isPass ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+        });
+    });
+
+    // Simple client-side validation + demo submit for a given form
+    function wireForm(formId, idField, passField, msgId, submitId) {
+        const form = document.getElementById(formId);
+        const idInput = document.getElementById(idField);
+        const passInput = document.getElementById(passField);
+        const msg = document.getElementById(msgId);
+        const submitBtn = document.getElementById(submitId);
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            [idInput, passInput].forEach(input => {
+                const ok = input.value.trim().length > 0;
+                input.classList.toggle('field-error', !ok);
+                const hint = input.parentElement.classList.contains('password-wrap')
+                    ? input.parentElement.nextElementSibling
+                    : input.nextElementSibling;
+                if (hint && hint.classList.contains('field-hint')) hint.classList.toggle('show', !ok);
+                if (!ok) valid = false;
+            });
+
+            if (!valid) {
+                msg.className = 'form-msg show error';
+                msg.textContent = 'Please fill in all required fields.';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Signing in...';
+
+            // Demo only — no real backend is connected yet (see comment above the forms).
+            setTimeout(() => {
+                msg.className = 'form-msg show error';
+                msg.textContent = 'Login isn\u2019t connected to a real account system yet. Contact the school office for portal access.';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign In';
+            }, 900);
+        });
+    }
+
+    wireForm('parentForm', 'parentId', 'parentPass', 'parentMsg', 'parentSubmit');
+    wireForm('staffForm', 'staffId', 'staffPass', 'staffMsg', 'staffSubmit');
+});
+</script>
+</body>
+</html>
