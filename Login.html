@@ -39,7 +39,7 @@
         .login-help {
             background: var(--white); border-radius: var(--radius-md);
             padding: 20px 22px; box-shadow: var(--shadow-sm);
-            display: flex; align-items: center; gap: 14px;
+            display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
         }
         .login-help i {
             width: 42px; height: 42px; border-radius: 12px;
@@ -48,6 +48,14 @@
         }
         .login-help p { font-size: 13px; color: var(--ink-soft); margin: 0; }
         .login-help strong { color: var(--forest-800); display: block; font-size: 14px; margin-bottom: 2px; }
+
+        .trust-strip { display: flex; gap: 10px; flex-wrap: wrap; }
+        .trust-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 8px 14px; background: var(--white); border-radius: 999px;
+            box-shadow: var(--shadow-sm); font-size: 12px; font-weight: 600; color: var(--ink-soft);
+        }
+        .trust-badge i { color: var(--gold-600); font-size: 12px; }
 
         /* Right login card */
         .login-card {
@@ -58,7 +66,7 @@
         .role-tabs {
             display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
             background: var(--cream); padding: 6px; border-radius: 999px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
         .role-tab {
             padding: 11px 0; text-align: center; border-radius: 999px;
@@ -67,26 +75,60 @@
         }
         .role-tab.active { background: var(--forest-800); color: var(--white); box-shadow: var(--shadow-sm); }
 
+        /* Social login */
+        .social-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
+        .social-btn {
+            display: flex; align-items: center; justify-content: center; gap: 9px;
+            padding: 12px 10px; border-radius: var(--radius-sm);
+            border: 1.5px solid rgba(27,67,50,0.14); background: var(--white);
+            font-weight: 600; font-size: 13px; color: var(--ink); cursor: pointer;
+            transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+        }
+        .social-btn:hover { border-color: var(--gold-500); background: var(--cream); transform: translateY(-2px); }
+        .social-btn i.fa-google { color: #DB4437; }
+        .social-btn i.fa-microsoft { color: #00A4EF; }
+
+        .login-divider {
+            display: flex; align-items: center; gap: 14px; margin: 22px 0;
+            color: var(--ink-soft); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .login-divider::before, .login-divider::after { content: ""; flex: 1; height: 1px; background: rgba(27,67,50,0.12); }
+
+        /* Password / OTP mode toggle */
+        .mode-toggle { text-align: right; margin: -8px 0 18px; }
+        .mode-toggle a { font-size: 12.5px; font-weight: 700; color: var(--forest-800); }
+        .mode-toggle a:hover { color: var(--gold-600); }
+
         .login-form { display: none; }
         .login-form.active { display: block; animation: fadeStep 0.35s var(--ease); }
         @keyframes fadeStep { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        .auth-mode { display: none; }
+        .auth-mode.active { display: block; animation: fadeStep 0.3s var(--ease); }
 
         .login-card label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
         .login-card input {
             width: 100%; padding: 14px 18px; border-radius: var(--radius-sm);
             border: 1.5px solid rgba(27,67,50,0.14); font-family: inherit; font-size: 14.5px;
             background: var(--cream); transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 16px;
+            margin-bottom: 6px;
         }
         .login-card input:focus {
             outline: none; border-color: var(--gold-500); box-shadow: 0 0 0 4px rgba(212,165,60,0.16);
         }
         .login-card input.field-error { border-color: #c0392b; box-shadow: 0 0 0 4px rgba(192,57,43,0.1); }
-        .field-hint { font-size: 11.5px; color: #c0392b; margin: -12px 0 14px; display: none; }
+        .field-hint { font-size: 11.5px; color: #c0392b; margin: 0 0 14px; display: none; }
         .field-hint.show { display: block; }
+        .field-spacer { margin-bottom: 16px; }
+
+        .caps-hint {
+            font-size: 11.5px; color: var(--gold-700); margin: -2px 0 12px; display: none;
+            font-weight: 600;
+        }
+        .caps-hint.show { display: block; }
 
         .password-wrap { position: relative; }
-        .password-wrap input { padding-right: 46px; }
+        .password-wrap input { padding-right: 46px; margin-bottom: 0; }
         .toggle-pass {
             position: absolute; right: 16px; top: 15px; color: var(--ink-soft);
             font-size: 14px; cursor: pointer; background: none; border: none;
@@ -95,7 +137,7 @@
 
         .login-row {
             display: flex; justify-content: space-between; align-items: center;
-            margin: -4px 0 22px; font-size: 12.5px;
+            margin: 18px 0 22px; font-size: 12.5px;
         }
         .remember-me { display: flex; align-items: center; gap: 7px; color: var(--ink-soft); font-weight: 500; }
         .remember-me input { width: auto; margin: 0; }
@@ -109,17 +151,31 @@
             transition: transform 0.3s var(--ease), background 0.3s ease;
         }
         .login-submit:hover { transform: translateY(-3px); background: var(--forest-700); }
-        .login-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+        .login-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-        .login-divider {
-            display: flex; align-items: center; gap: 14px; margin: 26px 0;
-            color: var(--ink-soft); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+        /* OTP boxes */
+        .otp-row { display: flex; gap: 10px; justify-content: space-between; margin: 6px 0 16px; }
+        .otp-box {
+            width: 100%; aspect-ratio: 1; text-align: center; font-size: 20px; font-weight: 800;
+            padding: 0 !important; margin: 0 !important;
         }
-        .login-divider::before, .login-divider::after { content: ""; flex: 1; height: 1px; background: rgba(27,67,50,0.12); }
+        .otp-meta {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 12px; color: var(--ink-soft); margin-bottom: 20px;
+        }
+        .resend-link { font-weight: 700; color: var(--forest-800); cursor: pointer; }
+        .resend-link.disabled { color: var(--ink-soft); cursor: not-allowed; }
+        .otp-demo-hint {
+            font-size: 12px; background: var(--cream-2); border-radius: var(--radius-sm);
+            padding: 10px 14px; margin-bottom: 18px; color: var(--forest-800); font-weight: 600;
+            display: none;
+        }
+        .otp-demo-hint.show { display: block; }
+        .otp-step-a { display: block; }
+        .otp-step-b { display: none; }
+        .otp-step-b.show { display: block; animation: fadeStep 0.3s var(--ease); }
 
-        .apply-cta {
-            text-align: center; font-size: 13.5px; color: var(--ink-soft);
-        }
+        .apply-cta { text-align: center; font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; }
         .apply-cta a { color: var(--forest-800); font-weight: 700; }
         .apply-cta a:hover { color: var(--gold-600); }
 
@@ -129,10 +185,13 @@
             .login-grid { grid-template-columns: 1fr; gap: 40px; }
             .login-info { text-align: center; }
             .login-info > p { margin: 0 auto 26px; }
-            .login-features { max-width: 420px; margin: 0 auto 30px; }
+            .login-features { max-width: 420px; margin: 0 auto 20px; }
+            .trust-strip { justify-content: center; }
         }
         @media (max-width: 480px) {
             .login-card { padding: 26px; }
+            .social-row { grid-template-columns: 1fr; }
+            .otp-box { font-size: 16px; }
         }
     </style>
 </head>
@@ -194,6 +253,12 @@
                     <i class="fa-solid fa-headset"></i>
                     <p><strong>Need help logging in?</strong>Call the school office at +91 98765 43210 or email info@greenvalley.edu.in</p>
                 </div>
+
+                <div class="trust-strip">
+                    <span class="trust-badge"><i class="fa-solid fa-lock"></i> SSL Secured</span>
+                    <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> Privacy Protected</span>
+                    <span class="trust-badge"><i class="fa-solid fa-circle-check"></i> Verified School Portal</span>
+                </div>
             </div>
 
             <!-- Right login card -->
@@ -205,60 +270,147 @@
                 </div>
 
                 <!--
-                    IMPORTANT: This is a front-end-only login form. GitHub Pages cannot run
-                    server-side authentication, so this form does NOT actually verify any
-                    account or log anyone in — it only demonstrates the UI and validation.
-                    To make real login work, you need a backend/auth service such as Firebase
-                    Authentication, Supabase Auth, or your school ERP's existing login API,
-                    and to wire the submit handler below to call it.
+                    IMPORTANT: This is a front-end-only login experience. GitHub Pages cannot run
+                    server-side authentication, OTP delivery, or OAuth — so nothing below actually
+                    verifies an account. Social buttons, OTP send/verify, and password sign-in all
+                    simulate the flow so you can see and test the UI/UX.
+                    To make this real, connect it to an auth backend such as Firebase Authentication,
+                    Supabase Auth, or your school ERP's login API, and swap out the JS at the bottom.
                 -->
 
+                <div class="social-row">
+                    <button type="button" class="social-btn" data-provider="Google"><i class="fa-brands fa-google"></i> Google</button>
+                    <button type="button" class="social-btn" data-provider="Microsoft"><i class="fa-brands fa-microsoft"></i> Microsoft</button>
+                </div>
+                <div class="login-divider">or sign in with</div>
+
                 <!-- Parent/Student login -->
-                <form class="login-form active" id="parentForm" novalidate>
-                    <label for="parentId">Registered Email or Student ID</label>
-                    <input type="text" id="parentId" name="parentId" placeholder="you@example.com or GVS-2026-0142">
-                    <div class="field-hint">Please enter your email or student ID.</div>
+                <div class="login-form active" id="parentRole">
 
-                    <label for="parentPass">Password</label>
-                    <div class="password-wrap">
-                        <input type="password" id="parentPass" name="parentPass" placeholder="Enter your password">
-                        <button type="button" class="toggle-pass" data-target="parentPass"><i class="fa-solid fa-eye"></i></button>
-                    </div>
-                    <div class="field-hint">Please enter your password.</div>
-
-                    <div class="login-row">
-                        <label class="remember-me"><input type="checkbox" id="parentRemember"> Remember me</label>
-                        <a href="#" class="forgot-link">Forgot password?</a>
+                    <div class="mode-toggle">
+                        <a href="#" data-role="parent" data-mode="otp" class="mode-switch-link">Sign in with OTP instead</a>
                     </div>
 
-                    <button type="submit" class="login-submit" id="parentSubmit">Sign In</button>
-                    <div class="form-msg" id="parentMsg"></div>
-                </form>
+                    <!-- Password mode -->
+                    <div class="auth-mode active" id="parentPasswordMode">
+                        <form novalidate id="parentForm">
+                            <label for="parentId">Registered Email or Student ID</label>
+                            <input type="text" id="parentId" name="parentId" placeholder="you@example.com or GVS-2026-0142">
+                            <div class="field-hint">Please enter a valid email or student ID (e.g. GVS-2026-0142).</div>
+
+                            <label for="parentPass">Password</label>
+                            <div class="password-wrap">
+                                <input type="password" id="parentPass" name="parentPass" placeholder="Enter your password">
+                                <button type="button" class="toggle-pass" data-target="parentPass"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                            <div class="caps-hint" data-for="parentPass"><i class="fa-solid fa-triangle-exclamation"></i> Caps Lock is on</div>
+                            <div class="field-hint" style="margin-top:6px;">Please enter your password.</div>
+
+                            <div class="login-row">
+                                <label class="remember-me"><input type="checkbox" id="parentRemember"> Remember me</label>
+                                <a href="#" class="forgot-link">Forgot password?</a>
+                            </div>
+
+                            <button type="submit" class="login-submit" id="parentSubmit">Sign In</button>
+                            <div class="form-msg" id="parentMsg"></div>
+                        </form>
+                    </div>
+
+                    <!-- OTP mode -->
+                    <div class="auth-mode" id="parentOtpMode">
+                        <div class="otp-step-a" id="parentOtpStepA">
+                            <label for="parentOtpId">Registered Email or Phone Number</label>
+                            <input type="text" id="parentOtpId" name="parentOtpId" placeholder="you@example.com or +91 98765 43210">
+                            <div class="field-hint">Please enter a valid email or phone number.</div>
+                            <div class="field-spacer"></div>
+                            <button type="button" class="login-submit" id="parentSendOtp">Send OTP</button>
+                        </div>
+                        <div class="otp-step-b" id="parentOtpStepB">
+                            <div class="otp-demo-hint" id="parentOtpHint"></div>
+                            <label>Enter 6-Digit OTP</label>
+                            <div class="otp-row" id="parentOtpBoxes">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                            </div>
+                            <div class="field-hint" id="parentOtpHint2">Please enter the complete 6-digit code.</div>
+                            <div class="otp-meta">
+                                <span id="parentResendTimer">Resend OTP in 00:30</span>
+                                <span class="resend-link disabled" id="parentResendLink">Resend OTP</span>
+                            </div>
+                            <button type="button" class="login-submit" id="parentVerifyOtp">Verify &amp; Sign In</button>
+                            <div class="form-msg" id="parentOtpMsg"></div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Staff login -->
-                <form class="login-form" id="staffForm" novalidate>
-                    <label for="staffId">Staff Email / Employee ID</label>
-                    <input type="text" id="staffId" name="staffId" placeholder="you@greenvalley.edu.in or EMP-0087">
-                    <div class="field-hint">Please enter your email or employee ID.</div>
+                <div class="login-form" id="staffRole">
 
-                    <label for="staffPass">Password</label>
-                    <div class="password-wrap">
-                        <input type="password" id="staffPass" name="staffPass" placeholder="Enter your password">
-                        <button type="button" class="toggle-pass" data-target="staffPass"><i class="fa-solid fa-eye"></i></button>
-                    </div>
-                    <div class="field-hint">Please enter your password.</div>
-
-                    <div class="login-row">
-                        <label class="remember-me"><input type="checkbox" id="staffRemember"> Remember me</label>
-                        <a href="#" class="forgot-link">Forgot password?</a>
+                    <div class="mode-toggle">
+                        <a href="#" data-role="staff" data-mode="otp" class="mode-switch-link">Sign in with OTP instead</a>
                     </div>
 
-                    <button type="submit" class="login-submit" id="staffSubmit">Sign In</button>
-                    <div class="form-msg" id="staffMsg"></div>
-                </form>
+                    <!-- Password mode -->
+                    <div class="auth-mode active" id="staffPasswordMode">
+                        <form novalidate id="staffForm">
+                            <label for="staffId">Staff Email / Employee ID</label>
+                            <input type="text" id="staffId" name="staffId" placeholder="you@greenvalley.edu.in or EMP-0087">
+                            <div class="field-hint">Please enter a valid email or employee ID (e.g. EMP-0087).</div>
 
-                <div class="login-divider">New to Green Valley?</div>
-                <p class="apply-cta">Don't have an account yet? <a href="apply.html">Apply for admission &rarr;</a></p>
+                            <label for="staffPass">Password</label>
+                            <div class="password-wrap">
+                                <input type="password" id="staffPass" name="staffPass" placeholder="Enter your password">
+                                <button type="button" class="toggle-pass" data-target="staffPass"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                            <div class="caps-hint" data-for="staffPass"><i class="fa-solid fa-triangle-exclamation"></i> Caps Lock is on</div>
+                            <div class="field-hint" style="margin-top:6px;">Please enter your password.</div>
+
+                            <div class="login-row">
+                                <label class="remember-me"><input type="checkbox" id="staffRemember"> Remember me</label>
+                                <a href="#" class="forgot-link">Forgot password?</a>
+                            </div>
+
+                            <button type="submit" class="login-submit" id="staffSubmit">Sign In</button>
+                            <div class="form-msg" id="staffMsg"></div>
+                        </form>
+                    </div>
+
+                    <!-- OTP mode -->
+                    <div class="auth-mode" id="staffOtpMode">
+                        <div class="otp-step-a" id="staffOtpStepA">
+                            <label for="staffOtpId">Staff Email or Phone Number</label>
+                            <input type="text" id="staffOtpId" name="staffOtpId" placeholder="you@greenvalley.edu.in or +91 98765 43210">
+                            <div class="field-hint">Please enter a valid email or phone number.</div>
+                            <div class="field-spacer"></div>
+                            <button type="button" class="login-submit" id="staffSendOtp">Send OTP</button>
+                        </div>
+                        <div class="otp-step-b" id="staffOtpStepB">
+                            <div class="otp-demo-hint" id="staffOtpHint"></div>
+                            <label>Enter 6-Digit OTP</label>
+                            <div class="otp-row" id="staffOtpBoxes">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                                <input class="otp-box" maxlength="1" inputmode="numeric">
+                            </div>
+                            <div class="field-hint" id="staffOtpHint2">Please enter the complete 6-digit code.</div>
+                            <div class="otp-meta">
+                                <span id="staffResendTimer">Resend OTP in 00:30</span>
+                                <span class="resend-link disabled" id="staffResendLink">Resend OTP</span>
+                            </div>
+                            <button type="button" class="login-submit" id="staffVerifyOtp">Verify &amp; Sign In</button>
+                            <div class="form-msg" id="staffOtpMsg"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="apply-cta" style="margin-top:24px;">Don't have an account yet? <a href="apply.html">Apply for admission &rarr;</a></p>
 
             </div>
         </div>
@@ -321,19 +473,33 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Role tab switching
-    const tabs = document.querySelectorAll('.role-tab');
-    const forms = document.querySelectorAll('.login-form');
-    tabs.forEach(tab => {
+    /* ---------------- Role tabs (Parent / Staff) ---------------- */
+    const roleTabs = document.querySelectorAll('.role-tab');
+    const roleForms = document.querySelectorAll('.login-form');
+    roleTabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            forms.forEach(f => f.classList.remove('active'));
+            roleTabs.forEach(t => t.classList.remove('active'));
+            roleForms.forEach(f => f.classList.remove('active'));
             tab.classList.add('active');
-            document.getElementById(tab.dataset.role + 'Form').classList.add('active');
+            document.getElementById(tab.dataset.role + 'Role').classList.add('active');
         });
     });
 
-    // Password show/hide toggle
+    /* ---------------- Password / OTP mode toggle ---------------- */
+    document.querySelectorAll('.mode-switch-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const role = link.dataset.role;
+            const passMode = document.getElementById(role + 'PasswordMode');
+            const otpMode = document.getElementById(role + 'OtpMode');
+            const showingOtp = otpMode.classList.contains('active');
+            passMode.classList.toggle('active', showingOtp);
+            otpMode.classList.toggle('active', !showingOtp);
+            link.textContent = showingOtp ? 'Sign in with OTP instead' : 'Sign in with password instead';
+        });
+    });
+
+    /* ---------------- Password show/hide ---------------- */
     document.querySelectorAll('.toggle-pass').forEach(btn => {
         btn.addEventListener('click', () => {
             const input = document.getElementById(btn.dataset.target);
@@ -344,49 +510,182 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple client-side validation + demo submit for a given form
-    function wireForm(formId, idField, passField, msgId, submitId) {
+    /* ---------------- Caps Lock detection ---------------- */
+    document.querySelectorAll('.password-wrap input').forEach(input => {
+        const hint = document.querySelector(`.caps-hint[data-for="${input.id}"]`);
+        if (!hint) return;
+        input.addEventListener('keyup', (e) => {
+            const caps = e.getModifierState && e.getModifierState('CapsLock');
+            hint.classList.toggle('show', !!caps);
+        });
+        input.addEventListener('blur', () => hint.classList.remove('show'));
+    });
+
+    /* ---------------- Social login (decorative demo) ---------------- */
+    document.querySelectorAll('.social-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            alert(`"Continue with ${btn.dataset.provider}" needs a real OAuth connection (e.g. Firebase Auth or Auth0) to work — it isn't wired up yet.`);
+        });
+    });
+
+    /* ---------------- Password sign-in with attempt lockout ---------------- */
+    function wirePasswordForm(formId, idField, passField, msgId, submitId) {
         const form = document.getElementById(formId);
         const idInput = document.getElementById(idField);
         const passInput = document.getElementById(passField);
         const msg = document.getElementById(msgId);
         const submitBtn = document.getElementById(submitId);
+        let attempts = 0;
+        let locked = false;
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            let valid = true;
+            if (locked) return;
 
+            let valid = true;
             [idInput, passInput].forEach(input => {
                 const ok = input.value.trim().length > 0;
                 input.classList.toggle('field-error', !ok);
-                const hint = input.parentElement.classList.contains('password-wrap')
-                    ? input.parentElement.nextElementSibling
+                const hint = input.closest('.password-wrap')
+                    ? input.closest('.password-wrap').parentElement.querySelector('.field-hint:last-of-type')
                     : input.nextElementSibling;
                 if (hint && hint.classList.contains('field-hint')) hint.classList.toggle('show', !ok);
                 if (!ok) valid = false;
             });
-
-            if (!valid) {
-                msg.className = 'form-msg show error';
-                msg.textContent = 'Please fill in all required fields.';
-                return;
-            }
+            if (!valid) return;
 
             submitBtn.disabled = true;
             submitBtn.textContent = 'Signing in...';
 
-            // Demo only — no real backend is connected yet (see comment above the forms).
             setTimeout(() => {
-                msg.className = 'form-msg show error';
-                msg.textContent = 'Login isn\u2019t connected to a real account system yet. Contact the school office for portal access.';
+                attempts++;
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Sign In';
+
+                if (attempts >= 3) {
+                    locked = true;
+                    let seconds = 30;
+                    submitBtn.disabled = true;
+                    msg.className = 'form-msg show error';
+                    const tick = () => {
+                        msg.textContent = `Too many attempts. Try again in ${seconds}s, or contact the school office.`;
+                        if (seconds <= 0) {
+                            clearInterval(timer);
+                            locked = false;
+                            attempts = 0;
+                            submitBtn.disabled = false;
+                            msg.classList.remove('show');
+                        }
+                        seconds--;
+                    };
+                    tick();
+                    const timer = setInterval(tick, 1000);
+                } else {
+                    msg.className = 'form-msg show error';
+                    msg.textContent = `Login isn't connected to a real account system yet (demo attempt ${attempts}/3).`;
+                }
             }, 900);
         });
     }
+    wirePasswordForm('parentForm', 'parentId', 'parentPass', 'parentMsg', 'parentSubmit');
+    wirePasswordForm('staffForm', 'staffId', 'staffPass', 'staffMsg', 'staffSubmit');
 
-    wireForm('parentForm', 'parentId', 'parentPass', 'parentMsg', 'parentSubmit');
-    wireForm('staffForm', 'staffId', 'staffPass', 'staffMsg', 'staffSubmit');
+    /* ---------------- OTP flow ---------------- */
+    function wireOtpFlow(prefix) {
+        const stepA = document.getElementById(prefix + 'OtpStepA');
+        const stepB = document.getElementById(prefix + 'OtpStepB');
+        const idInput = document.getElementById(prefix + 'OtpId');
+        const sendBtn = document.getElementById(prefix + 'SendOtp');
+        const verifyBtn = document.getElementById(prefix + 'VerifyOtp');
+        const otpHint = document.getElementById(prefix + 'OtpHint');
+        const otpHint2 = document.getElementById(prefix + 'OtpHint2');
+        const resendTimer = document.getElementById(prefix + 'ResendTimer');
+        const resendLink = document.getElementById(prefix + 'ResendLink');
+        const otpMsg = document.getElementById(prefix + 'OtpMsg');
+        const boxes = Array.from(document.querySelectorAll(`#${prefix}OtpBoxes .otp-box`));
+        let generatedOtp = '';
+        let resendInterval;
+
+        function startResendCountdown() {
+            let seconds = 30;
+            resendLink.classList.add('disabled');
+            resendTimer.style.display = 'inline';
+            clearInterval(resendInterval);
+            resendInterval = setInterval(() => {
+                resendTimer.textContent = `Resend OTP in 00:${String(seconds).padStart(2, '0')}`;
+                seconds--;
+                if (seconds < 0) {
+                    clearInterval(resendInterval);
+                    resendTimer.style.display = 'none';
+                    resendLink.classList.remove('disabled');
+                }
+            }, 1000);
+        }
+
+        function sendOtp() {
+            const ok = idInput.value.trim().length > 0;
+            idInput.classList.toggle('field-error', !ok);
+            const hint = idInput.nextElementSibling;
+            if (hint && hint.classList.contains('field-hint')) hint.classList.toggle('show', !ok);
+            if (!ok) return;
+
+            generatedOtp = String(Math.floor(100000 + Math.random() * 900000));
+            stepA.style.display = 'none';
+            stepB.classList.add('show');
+            otpHint.textContent = `Demo mode — no SMS/email backend connected, so here's your OTP: ${generatedOtp}`;
+            otpHint.classList.add('show');
+            boxes.forEach(b => { b.value = ''; b.classList.remove('field-error'); });
+            boxes[0].focus();
+            startResendCountdown();
+        }
+
+        sendBtn.addEventListener('click', sendOtp);
+        resendLink.addEventListener('click', () => {
+            if (resendLink.classList.contains('disabled')) return;
+            sendOtp();
+        });
+
+        boxes.forEach((box, i) => {
+            box.addEventListener('input', () => {
+                box.value = box.value.replace(/[^0-9]/g, '');
+                if (box.value && i < boxes.length - 1) boxes[i + 1].focus();
+            });
+            box.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !box.value && i > 0) boxes[i - 1].focus();
+            });
+            box.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const digits = (e.clipboardData.getData('text') || '').replace(/[^0-9]/g, '').split('');
+                boxes.forEach((b, idx) => { b.value = digits[idx] || ''; });
+                boxes[Math.min(digits.length, boxes.length) - 1]?.focus();
+            });
+        });
+
+        verifyBtn.addEventListener('click', () => {
+            const entered = boxes.map(b => b.value).join('');
+            const complete = entered.length === 6;
+            boxes.forEach(b => b.classList.toggle('field-error', !complete));
+            otpHint2.classList.toggle('show', !complete);
+            if (!complete) return;
+
+            verifyBtn.disabled = true;
+            verifyBtn.textContent = 'Verifying...';
+
+            setTimeout(() => {
+                verifyBtn.disabled = false;
+                verifyBtn.textContent = 'Verify & Sign In';
+                if (entered === generatedOtp) {
+                    otpMsg.className = 'form-msg show success';
+                    otpMsg.textContent = 'OTP verified! (Demo only — connect a real backend to actually sign users in.)';
+                } else {
+                    otpMsg.className = 'form-msg show error';
+                    otpMsg.textContent = 'Incorrect OTP. Please check the code and try again.';
+                }
+            }, 700);
+        });
+    }
+    wireOtpFlow('parent');
+    wireOtpFlow('staff');
 });
 </script>
 </body>
