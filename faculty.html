@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faculty & Staff | Green Valley International School</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty & Staff | Green Valley International School</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+
 </head>
+
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html" class="brand"><span class="brand-mark">GV</span> Green Valley <span style="color:var(--gold)">International School</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="faculty.html" class="active">Faculty</a></li>
-      <li><a href="fee-structure.html">Fees</a></li>
-      <li><a href="academic-calendar.html">Calendar</a></li>
-      <li><a href="results.html">Results</a></li>
-      <li><a href="downloads.html">Downloads</a></li>
-      <li><a href="news-events.html">News</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="index.html#contact" class="btn btn-outline">Login</a>
-      <a href="apply.html" class="btn btn-primary">Apply Now</a>
+<div class="bg"></div>
+
+<header class="header">
+<div class="container">
+
+<a href="index.html" class="logo">
+<div class="logo-icon"><i class="fa-solid fa-school"></i></div>
+<div>
+<h2>Green Valley</h2>
+<p>International School</p>
+</div>
+</a>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#about">About</a></li>
+<li><a href="index.html#academics">Academics</a></li>
+<li><a href="index.html#campus">Campus</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="header-btns">
+<a href="login.html" class="login-btn">Login</a>
+<a href="apply.html" class="apply-btn">Apply Now</a>
+</div>
+
+<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+
+</div>
+</header>
+
 <section class="page-intro">
     <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Faculty &amp; Staff</div>
@@ -147,3 +174,61 @@
         <p style="text-align:center;font-size:12.5px;color:var(--ink-soft);margin-top:26px;">Replace the sample names, photos and subjects above with your actual teaching staff.</p>
     </div>
 </section>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Green Valley <span>International School</span></h2>
+                <p>Building Future Leaders Through Innovation. A modern, inspiring learning environment for every child.</p>
+                <!-- Replace # below with your real social media page URLs -->
+                <div class="footer-social">
+                    <a href="#" class="social-fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-ig"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-yt"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-li"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+                    <li><a href="fee-structure.html">Fee Structure</a></li>
+                    <li><a href="academic-calendar.html">Academic Calendar</a></li>
+                    <li><a href="results.html">Results &amp; Achievements</a></li>
+                    <li><a href="downloads.html">Downloads</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="news-events.html">News &amp; Events</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
+                <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Green Valley International School. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="main.js"></script>
+
+</body>
+</html>
