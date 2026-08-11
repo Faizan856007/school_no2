@@ -6,85 +6,38 @@
    playful micro-interactions, accessible focus states, softened contrast.
    ========================================================================== */
 
-:root {
-  /* =========================================
-     PREMIUM TRENDING COLOR SYSTEM
-     ========================================= */
-
-  --forest-950: #101525;
-  --forest-900: #151B2E;
-  --forest-800: #1D2740;
-  --forest-700: #273653;
-  --forest-600: #35496B;
-  --forest-500: #5C6F96;
-  --forest-400: #8494B4;
-
-  /* Copper Accent */
-  --gold-700: #9B5F3C;
-  --gold-600: #B8734F;
-  --gold-500: #D08A62;
-  --gold-400: #E1A47F;
-  --gold-300: #F0C3A5;
-
-  /* Warm Premium Background */
-  --cream: #F7F3EB;
-  --cream-2: #EEE7DA;
-
-  /* Text */
-  --ink: #171C2B;
-  --ink-soft: #626979;
-  --white: #FFFFFF;
-
-  /* =========================================
-     MODERN PREMIUM FONTS
-     ========================================= */
-
-  --font-display: 'DM Serif Display', serif;
-  --font-body: 'Manrope', sans-serif;
-
-  /* =========================================
-     BORDER RADIUS
-     ========================================= */
-
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
-  --radius-xl: 36px;
-
-  /* =========================================
-     PREMIUM SHADOWS
-     ========================================= */
-
-  --shadow-sm:
-    0 4px 18px rgba(16, 21, 37, 0.07);
-
-  --shadow-md:
-    0 14px 38px rgba(16, 21, 37, 0.12);
-
-  --shadow-lg:
-    0 28px 70px rgba(16, 21, 37, 0.18);
-
-  --shadow-gold-sm:
-    0 8px 24px rgba(208, 138, 98, 0.22);
-
-  --shadow-gold-md:
-    0 18px 42px rgba(208, 138, 98, 0.30);
-
-  /* =========================================
-     ANIMATION
-     ========================================= */
-
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-
-  --ease-spring:
-    cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* =========================================
-     CONTAINER
-     ========================================= */
-
-  --container-w: 1220px;
-}
+:root { 
+   --forest-950: #0e2018; 
+   --forest-900: #14291f;
+   --forest-800: #1b4332; 
+   --forest-700: #235b3f; 
+   --forest-600: #2d6a4f; 
+   --forest-500: #4a9670; 
+   --forest-400: #6bab8a; 
+   --gold-700: #9c6c22; 
+   --gold-600: #b9852f; 
+   --gold-500: #d4a53c; 
+   --gold-400: #e6c26a; 
+   --gold-300: #f0d994; 
+   --cream: #faf6ee; 
+   --cream-2: #f2ead9; 
+   --ink: #16241c; 
+   --ink-soft: #56655c; 
+   --white: #ffffff; 
+   --font-display: 'Plus Jakarta Sans', sans-serif; 
+   --font-body: 'Poppins', sans-serif; 
+   --radius-sm: 10px; 
+   --radius-md: 18px; 
+   --radius-lg: 28px; 
+   --radius-xl: 36px; 
+   --shadow-sm: 0 4px 16px rgba(14, 32, 24, 0.08); 
+   --shadow-md: 0 14px 34px rgba(14, 32, 24, 0.13); 
+   --shadow-lg: 0 26px 64px rgba(14, 32, 24, 0.19); 
+   --shadow-gold-sm: 0 8px 22px rgba(212, 165, 60, 0.30); 
+   --shadow-gold-md: 0 16px 36px rgba(212, 165, 60, 0.38); 
+   --ease: cubic-bezier(0.22, 1, 0.36, 1); 
+   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); 
+   --container-w: 1220px; }
 
 /* ---------- Reset ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
