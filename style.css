@@ -6,38 +6,45 @@
    playful micro-interactions, accessible focus states, softened contrast.
    ========================================================================== */
 
-:root { 
-   --forest-950: #0e2018; 
-   --forest-900: #14291f;
-   --forest-800: #1b4332; 
-   --forest-700: #235b3f; 
-   --forest-600: #2d6a4f; 
-   --forest-500: #4a9670; 
-   --forest-400: #6bab8a; 
-   --gold-700: #9c6c22; 
-   --gold-600: #b9852f; 
-   --gold-500: #d4a53c; 
-   --gold-400: #e6c26a; 
-   --gold-300: #f0d994; 
-   --cream: #faf6ee; 
-   --cream-2: #f2ead9; 
-   --ink: #16241c; 
-   --ink-soft: #56655c; 
-   --white: #ffffff; 
-   --font-display: 'Plus Jakarta Sans', sans-serif; 
-   --font-body: 'Poppins', sans-serif; 
-   --radius-sm: 10px; 
-   --radius-md: 18px; 
-   --radius-lg: 28px; 
-   --radius-xl: 36px; 
-   --shadow-sm: 0 4px 16px rgba(14, 32, 24, 0.08); 
-   --shadow-md: 0 14px 34px rgba(14, 32, 24, 0.13); 
-   --shadow-lg: 0 26px 64px rgba(14, 32, 24, 0.19); 
-   --shadow-gold-sm: 0 8px 22px rgba(212, 165, 60, 0.30); 
-   --shadow-gold-md: 0 16px 36px rgba(212, 165, 60, 0.38); 
-   --ease: cubic-bezier(0.22, 1, 0.36, 1); 
-   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); 
-   --container-w: 1220px; }
+:root {
+  --forest-950: #0e2018;
+  --forest-900: #14291f;
+  --forest-800: #1b4332;
+  --forest-700: #235b3f;
+  --forest-600: #2d6a4f;
+  --forest-500: #4a9670;
+  --forest-400: #6bab8a;
+
+  --gold-700: #9c6c22;
+  --gold-600: #b9852f;
+  --gold-500: #d4a53c;
+  --gold-400: #e6c26a;
+  --gold-300: #f0d994;
+
+  --cream: #faf6ee;
+  --cream-2: #f2ead9;
+  --ink: #16241c;
+  --ink-soft: #56655c;
+  --white: #ffffff;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+
+  --shadow-sm: 0 4px 16px rgba(14, 32, 24, 0.08);
+  --shadow-md: 0 14px 34px rgba(14, 32, 24, 0.13);
+  --shadow-lg: 0 26px 64px rgba(14, 32, 24, 0.19);
+  --shadow-gold-sm: 0 8px 22px rgba(212, 165, 60, 0.30);
+  --shadow-gold-md: 0 16px 36px rgba(212, 165, 60, 0.38);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --container-w: 1220px;
+}
 
 /* ---------- Reset ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -127,6 +134,58 @@ textarea:focus-visible,
 }
 
 /* ==========================================================================
+   TOPBAR
+   ========================================================================== */
+.topbar {
+  background: var(--forest-900);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  position: relative;
+  z-index: 1001;
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+.topbar-contact { display: flex; align-items: center; gap: 22px; }
+.topbar-contact a { display: inline-flex; align-items: center; gap: 7px; transition: color 0.25s ease; }
+.topbar-contact a:hover { color: var(--gold-400); }
+.topbar-contact i { color: var(--gold-400); font-size: 12px; }
+
+.topbar-right { display: flex; align-items: center; gap: 18px; }
+.topbar-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(212, 165, 60, 0.16);
+  color: var(--gold-300);
+  font-weight: 600;
+  font-size: 12px;
+}
+.topbar-socials { display: flex; align-items: center; gap: 10px; }
+.topbar-socials a {
+  width: 26px; height: 26px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+.topbar-socials a:hover { background: var(--gold-500); color: var(--forest-900); transform: translateY(-2px); }
+
+@media (max-width: 720px) {
+  .topbar-contact a:nth-child(2) { display: none; }
+  .topbar-badge { display: none; }
+}
+@media (max-width: 520px) {
+  .topbar-contact a span { display: none; }
+}
+
+/* ==========================================================================
    HEADER
    ========================================================================== */
 .header {
@@ -180,6 +239,61 @@ nav a {
 }
 nav a:hover { color: var(--forest-800); background: rgba(27, 67, 50, 0.07); }
 nav a.active { color: var(--white); background: var(--forest-800); box-shadow: 0 6px 16px rgba(27, 67, 50, 0.25); }
+
+/* ---------- Dropdown submenu (Academics / More) ---------- */
+.has-dropdown { position: relative; }
+.dropdown-caret { font-size: 10px; margin-left: 5px; transition: transform 0.3s var(--ease); }
+.has-dropdown:hover .dropdown-caret,
+.has-dropdown.open .dropdown-caret { transform: rotate(180deg); }
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 220px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), visibility 0.28s;
+  z-index: 1010;
+}
+.has-dropdown:hover .dropdown,
+.has-dropdown.open .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown li { width: 100%; }
+.dropdown a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.dropdown a:hover { background: var(--cream-2); color: var(--forest-800); }
+
+/* mobile nav overlay backdrop */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 32, 24, 0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease), visibility 0.35s;
+  z-index: 999;
+}
+.nav-overlay.show { opacity: 1; visibility: visible; }
 
 .header-btns { display: flex; align-items: center; gap: 14px; }
 .login-btn { font-weight: 600; font-size: 14.5px; color: var(--forest-800); transition: color 0.25s ease; }
@@ -896,27 +1010,56 @@ section.stats {
 
 @media (max-width: 960px) {
   nav, .header-btns { display: none; }
-  .menu-btn { display: flex; }
+  .menu-btn { display: flex; position: relative; z-index: 1002; }
 
-  nav.mobile-open {
-    display: flex;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
+  /* Slide-in panel from the right, holding both the nav links and the
+     login/apply buttons together — replaces the old fragile absolute
+     "top: calc(100% + 210px)" offset hack. */
+  nav {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh;
+    width: min(84vw, 340px);
     background: var(--white);
     flex-direction: column;
-    padding: 20px 24px;
-    box-shadow: var(--shadow-md);
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    align-items: stretch;
+    padding: 90px 22px 30px;
+    box-shadow: var(--shadow-lg);
+    transform: translateX(100%);
+    transition: transform 0.4s var(--ease);
+    overflow-y: auto;
+    z-index: 1001;
   }
-  nav.mobile-open ul { flex-direction: column; width: 100%; gap: 4px; }
-  nav.mobile-open a { display: block; padding: 12px 16px; }
+  nav.mobile-open { display: flex; transform: translateX(0); }
+  nav ul { flex-direction: column; width: 100%; gap: 4px; }
+  nav a { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; }
+
+  .has-dropdown .dropdown {
+    position: static;
+    opacity: 1; visibility: visible; transform: none;
+    box-shadow: none;
+    background: var(--cream-2);
+    max-height: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    transition: max-height 0.35s var(--ease), padding 0.35s var(--ease);
+  }
+  .has-dropdown.open .dropdown { max-height: 400px; padding: 8px 10px; margin: 2px 0 6px; }
+  .has-dropdown .dropdown-caret { transition: transform 0.3s var(--ease); }
+  .has-dropdown.open .dropdown-caret { transform: rotate(180deg); }
+
   .header-btns.mobile-open {
     display: flex;
-    position: absolute;
-    top: calc(100% + 210px);
-    left: 24px; right: 24px;
+    position: fixed;
+    right: 22px;
+    bottom: 26px;
+    width: calc(min(84vw, 340px) - 44px);
     flex-direction: column;
+    align-items: stretch;
     gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(27, 67, 50, 0.12);
+    z-index: 1001;
   }
   .header-btns.mobile-open .apply-btn, .header-btns.mobile-open .login-btn { text-align: center; }
 
@@ -970,7 +1113,7 @@ section.stats {
   --cream:#f7f4ec;
   --ink:#17211b;
   --muted:#5d6b62;
-  --line:#FAF5F5;
+  --line:#e2ddd0;
   --radius:14px;
   --shadow:0 10px 30px -12px rgba(18,53,36,.18);
 }
@@ -1146,46 +1289,3 @@ tr:hover td{background:var(--leaf-light);}
 .stat-row{display:flex;gap:40px;flex-wrap:wrap;}
 .stat{font-family:'Fraunces',serif;font-weight:700;font-size:2.2rem;color:var(--forest);}
 .stat span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.82rem;color:var(--muted);}
-
-```css
-/* Center h3 and p */
-
-.news-content h3,
-.news-content p,
-
-.choose-card h3,
-.choose-card p,
-
-.admission-card h3,
-.admission-card p,
-
-.testimonial-card > p,
-
-.stat-card p {
-    text-align: center;
-}
-```
-```css
-/* ==========================================================================
-   SECTION HEADINGS CENTER
-   ========================================================================== */
-
-.news .section-heading,
-.choose .section-heading,
-.admission .section-heading {
-    text-align: center;
-}
-
-.news .section-heading h2,
-.choose .section-heading h2,
-.admission .section-heading h2 {
-    text-align: center;
-}
-
-.news .section-heading p,
-.choose .section-heading p,
-.admission .section-heading p {
-    text-align: center;
-}
-```
-
