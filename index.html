@@ -24,6 +24,23 @@
 
 <div class="bg"></div>
 
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-contact">
+      <a href="tel:+911234567890"><i class="fa-solid fa-phone"></i> +91 12345 67890</a>
+      <a href="mailto:info@greenvalley.edu"><i class="fa-solid fa-envelope"></i> info@greenvalley.edu</a>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-badge"><i class="fa-solid fa-graduation-cap"></i> Admissions Open 2026-27</span>
+      <div class="topbar-socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <header class="header">
 
 <div class="container">
@@ -49,17 +66,33 @@
 
 <li><a href="#about">About</a></li>
 
-<li><a href="#academics">Academics</a></li>
+<li class="has-dropdown">
+  <a href="#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="#academics">Academic Programs</a></li>
+    <li><a href="faculty.html">Our Faculty</a></li>
+    <li><a href="academic-calendar.html">Academic Calendar</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+  </ul>
+</li>
 
 <li><a href="#campus">Campus</a></li>
 
 <li><a href="#gallery">Gallery</a></li>
 
+<li class="has-dropdown">
+  <a href="#more">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+  </ul>
+</li>
+
 <li><a href="#contact">Contact</a></li>
 
-    <li><a href="news-events.html">News-events</a></li>
-    <li><a href="fee-structure.html">Fee-struct</a></li>
-    <li><a href="privacy-policy.html">Privacy-policy</a></li>
 </ul>
 
 </nav>
@@ -89,6 +122,8 @@ Apply Now
 </div>
 
 </header>
+
+<div class="nav-overlay"></div>
 
 <section class="hero" id="home">
 
@@ -173,7 +208,7 @@ Watch Video
     <div class="gold-circle"></div>
 
 
-<img src="images/hero.jpg">
+<img src="images/hero.png">
 
 <div class="card card1">
 
@@ -232,7 +267,7 @@ Watch Video
 
         <div class="about-image">
 
-            <img src="images/campus.jpg" alt="Campus">
+            <img src="images/campus.png" alt="Campus">
 
             <div class="experience-box">
 
@@ -459,7 +494,7 @@ GALLERY SECTION
         <div class="gallery-grid">
 
             <div class="gallery-item">
-                <img src="images/gallery.jpg" alt="Smart Classroom">
+                <img src="images/gallery.webp" alt="Smart Classroom">
                 <div class="gallery-caption">
                    <h3>Gallery of Excellence</h3>
 <p>Celebrating creativity, innovation, and outstanding student achievements through inspiring artwork and academic excellence.</p>
@@ -467,7 +502,7 @@ GALLERY SECTION
             </div>
 
             <div class="gallery-item">
-                <img src="images/Art.jpg" alt="Sports Day">
+                <img src="images/gallery.jpg" alt="Sports Day">
                 <div class="gallery-caption">
                    <h3>Student Art Exhibition</h3>
 <p>A vibrant display of student creativity featuring paintings, sketches, and handmade artwork that reflect imagination and talent.</p>
@@ -475,7 +510,7 @@ GALLERY SECTION
             </div>
 
             <div class="gallery-item">
-                <img src="images/Healthy.jpg" alt="Science Lab">
+                <img src="images/gallery.jfif" alt="Science Lab">
                 <div class="gallery-caption">
                     <h3>Healthy School Cafeteria</h3>
 <p>Providing fresh, nutritious, and hygienic meals every day to support students' health and overall well-being.</p>
@@ -483,7 +518,7 @@ GALLERY SECTION
             </div>
 
             <div class="gallery-item">
-                <img src="images/Smart Classrooms.jpg" alt="Annual Function">
+                <img src="images/Annualfunction.png" alt="Annual Function">
                 <div class="gallery-caption">
                    <h3>Interactive Smart Classrooms</h3>
 <p>Modern classrooms designed to encourage active learning, creativity, and collaboration through digital teaching methods.</p>
@@ -491,7 +526,7 @@ GALLERY SECTION
             </div>
 
             <div class="gallery-item">
-                <img src="images/download (8).jpg" alt="Library">
+                <img src="images/gallery.jfif" alt="Library">
                 <div class="gallery-caption">
                    <h3>Sports & Athletics</h3>
 <p>Building confidence, teamwork, and leadership through athletics, outdoor games, and professional sports facilities.</p>
@@ -499,7 +534,7 @@ GALLERY SECTION
             </div>
 
             <div class="gallery-item">
-                <img src="images/green.jpg" alt="Campus Grounds">
+                <img src="images/gallery.jpg" alt="Campus Grounds">
                 <div class="gallery-caption">
                     <h3>Green Campus Initiative</h3>
 <p>Encouraging environmental responsibility through tree plantation, gardening activities, and sustainable learning practices.</p>
@@ -909,7 +944,7 @@ TESTIMONIAL SECTION
 
                 <div class="parent">
 
-                    <img src="images/parent1.jfif" alt="Parent">
+                    <img src="images/parent1.jpg" alt="Parent">
 
                     <div>
                         <h4>Rahul Sharma</h4>
@@ -957,7 +992,7 @@ TESTIMONIAL SECTION
 
                 <div class="parent">
 
-                    <img src="images/parent3.jfif" alt="Parent">
+                    <img src="images/parent3.jpg" alt="Parent">
 
                     <div>
                         <h4>Amit Singh</h4>
