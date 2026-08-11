@@ -1165,4 +1165,27 @@ tr:hover td{background:var(--leaf-light);}
     text-align: center;
 }
 ```
+```css
+/* ==========================================================================
+   SECTION HEADINGS CENTER
+   ========================================================================== */
+
+.news .section-heading,
+.choose .section-heading,
+.admission .section-heading {
+    text-align: center;
+}
+
+.news .section-heading h2,
+.choose .section-heading h2,
+.admission .section-heading h2 {
+    text-align: center;
+}
+
+.news .section-heading p,
+.choose .section-heading p,
+.admission .section-heading p {
+    text-align: center;
+}
+```
 
