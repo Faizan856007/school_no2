@@ -1146,3 +1146,23 @@ tr:hover td{background:var(--leaf-light);}
 .stat-row{display:flex;gap:40px;flex-wrap:wrap;}
 .stat{font-family:'Fraunces',serif;font-weight:700;font-size:2.2rem;color:var(--forest);}
 .stat span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.82rem;color:var(--muted);}
+
+```css
+/* Center h3 and p */
+
+.news-content h3,
+.news-content p,
+
+.choose-card h3,
+.choose-card p,
+
+.admission-card h3,
+.admission-card p,
+
+.testimonial-card > p,
+
+.stat-card p {
+    text-align: center;
+}
+```
+
