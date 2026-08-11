@@ -23,32 +23,72 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.menu-btn');
   const nav = document.querySelector('nav');
   const headerBtns = document.querySelector('.header-btns');
+  const navOverlay = document.querySelector('.nav-overlay');
+
+  const closeMobileNav = () => {
+    nav.classList.remove('mobile-open');
+    headerBtns.classList.remove('mobile-open');
+    navOverlay?.classList.remove('show');
+    document.body.style.overflow = '';
+    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    nav.querySelectorAll('.has-dropdown.open').forEach(li => li.classList.remove('open'));
+  };
 
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('mobile-open');
       headerBtns.classList.toggle('mobile-open', isOpen);
+      navOverlay?.classList.toggle('show', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
       menuBtn.innerHTML = isOpen
         ? '<i class="fa-solid fa-xmark"></i>'
         : '<i class="fa-solid fa-bars"></i>';
     });
 
-    // close menu when a nav link is clicked
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('mobile-open');
-        headerBtns.classList.remove('mobile-open');
-        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    // on mobile, tapping a dropdown parent (Academics / More) expands it
+    // instead of navigating away; on desktop this listener is a no-op
+    // since the dropdown already opens on hover via CSS.
+    nav.querySelectorAll('.has-dropdown > a').forEach(parentLink => {
+      parentLink.addEventListener('click', (e) => {
+        const href = parentLink.getAttribute('href');
+        const hasRealTarget = href.startsWith('#') && document.querySelector(href);
+
+        if (window.innerWidth > 960) {
+          // desktop: dropdown already opens on hover; only block navigation
+          // for parents (like "More") that have no matching in-page section
+          if (!hasRealTarget) e.preventDefault();
+          return;
+        }
+
+        e.preventDefault();
+        const li = parentLink.parentElement;
+        const wasOpen = li.classList.contains('open');
+        nav.querySelectorAll('.has-dropdown.open').forEach(item => item.classList.remove('open'));
+        li.classList.toggle('open', !wasOpen);
       });
     });
+
+    // close menu when a plain nav link (not a dropdown parent) is clicked
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('has-dropdown') && window.innerWidth <= 960) return;
+        closeMobileNav();
+      });
+    });
+
+    // close on overlay click
+    navOverlay?.addEventListener('click', closeMobileNav);
 
     // close menu on outside click
     document.addEventListener('click', (e) => {
       if (!nav.contains(e.target) && !menuBtn.contains(e.target) && nav.classList.contains('mobile-open')) {
-        nav.classList.remove('mobile-open');
-        headerBtns.classList.remove('mobile-open');
-        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        closeMobileNav();
       }
+    });
+
+    // close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('mobile-open')) closeMobileNav();
     });
   }
 
