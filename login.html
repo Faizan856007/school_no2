@@ -1,68 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Green Valley International School | Home</title>
-
-    <!-- Google Fonts -->
-   <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome (was missing — icons wouldn't render without this) -->
+    <title>Parent / Student Login | Green Valley International School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
 <header class="header">
-
 <div class="container">
-
 <a href="index.html" class="logo">
-
-<div class="logo-icon">
-<i class="fa-solid fa-school"></i>
-</div>
+<div class="logo-icon"><i class="fa-solid fa-school"></i></div>
 <div>
 <h2>Green Valley</h2>
 <p>International School</p>
-
 </div>
-
 </a>
-
 <nav>
-
 <ul>
-
-<li><a class="active" href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#about">About</a></li>
 <li class="has-dropdown">
-  <a href="#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="index.html#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
-    <li><a href="#academics">Academic Programs</a></li>
+    <li><a href="academics.html">Academic Programs</a></li>
     <li><a href="faculty.html">Our Faculty</a></li>
     <li><a href="academic-calendar.html">Academic Calendar</a></li>
+    <li><a href="timetable.html">Timetable</a></li>
     <li><a href="results.html">Results</a></li>
     <li><a href="downloads.html">Downloads</a></li>
   </ul>
 </li>
-
-<li><a href="#campus">Campus</a></li>
-
-<li><a href="#gallery">Gallery</a></li>
-
+<li><a href="index.html#campus">Campus</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
 <li class="has-dropdown">
-  <a href="#more">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="index.html#contact">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
     <li><a href="news-events.html">News &amp; Events</a></li>
     <li><a href="fee-structure.html">Fee Structure</a></li>
@@ -70,1067 +47,173 @@
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
   </ul>
 </li>
-
-<li><a href="#contact">Contact</a></li>
-
+<li><a href="index.html#contact">Contact</a></li>
 </ul>
-
 </nav>
-
 <div class="header-btns">
-
-<!-- No student/parent portal yet — pointing to Contact for now. Replace with a real login page URL when ready. -->
-<a href="login.html" class="login-btn">
-
-Login
-
-</a>
-
-<a href="apply.html" class="apply-btn">
-
-Apply Now
-
-</a>
-
+<a href="login.html" class="login-btn">Login</a>
+<a href="apply.html" class="apply-btn">Apply Now</a>
 </div>
-
-<button class="menu-btn">
-    <i class="fa-solid fa-bars"></i>
-</button>
-
-
+<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
 </div>
-
 </header>
-
 <div class="nav-overlay"></div>
 
-<section class="hero" id="home">
-
-<div class="container hero-grid">
-
-<div class="hero-left">
-
-<div class="badge">
-
-⭐ Admissions Open 2026-27
-
-</div>
-
-<h1>
-
-Building Future
-
-<span>Leaders</span>
-
-Through Innovation
-
-</h1>
-
-<p>
-
-Experience world-class education with smart classrooms,
-experienced teachers, innovation labs,
-sports excellence and a vibrant learning environment.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#campus" class="primary">
-
-Explore Campus
-
-</a>
-
-<a href="#campus" class="secondary">
-
-<i class="fa-solid fa-circle-play"></i>
-
-Watch Video
-
-</a>
-
-</div>
-
-<div class="stats">
-
-<div>
-
-<h2>25+</h2>
-
-<span>Years</span>
-
-</div>
-
-<div>
-
-<h2>5000+</h2>
-
-<span>Students</span>
-
-</div>
-
-<div>
-
-<h2>100%</h2>
-
-<span>Results</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-    <div class="gold-circle"></div>
-
-
-<img src="images/hero.png">
-
-<div class="card card1">
-
-<i class="fa-solid fa-graduation-cap"></i>
-
-<div>
-
-<h3>25+</h3>
-
-<p>Years Excellence</p>
-
-</div>
-
-</div>
-
-<div class="card card2">
-
-<i class="fa-solid fa-user-graduate"></i>
-
-<div>
-
-<h3>5000+</h3>
-
-<p>Students</p>
-
-</div>
-
-</div>
-
-<div class="card card3">
-
-<i class="fa-solid fa-award"></i>
-
-<div>
-
-<h3>100%</h3>
-
-<p>Results</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- =========================
-     ABOUT SECTION
-========================== -->
-
-<section class="about" id="about">
-
-    <div class="container about-grid">
-
-        <div class="about-image">
-
-            <img src="images/campus.png" alt="Campus">
-
-            <div class="experience-box">
-
-                <h2>25+</h2>
-
-                <span>Years of Excellence</span>
-
-            </div>
-
-        </div>
-
-        <div class="about-content">
-
-            <span class="section-title">
-                ABOUT OUR SCHOOL
-            </span>
-
-            <h2>
-                Shaping Bright Minds For A Better Tomorrow
-            </h2>
-
-            <p>
-
-                Green Valley International School provides a modern,
-                innovative and inspiring learning environment where
-                students grow academically, socially and personally.
-
-            </p>
-
-            <div class="about-features">
-
-                <div class="feature-item">
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Smart Digital Classrooms
-
-                </div>
-
-                <div class="feature-item">
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Experienced Faculty
-
-                </div>
-
-                <div class="feature-item">
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Sports & Activities
-
-                </div>
-
-                <div class="feature-item">
-
-                    <i class="fa-solid fa-check"></i>
-
-                    Robotics & Innovation Lab
-
-                </div>
-
-            </div>
-
-            <a href="#academics" class="primary-btn">
-
-                Discover More
-
-            </a>
-
-        </div>
-
+<section class="login-page">
+  <div class="container login-shell">
+
+    <div class="login-brand">
+      <div class="login-orb"></div>
+      <div class="login-orb two"></div>
+      <p class="login-kicker">Secure school portal</p>
+      <h1>One login for home, class and office</h1>
+      <p>Homework, attendance, fee receipts, report cards and circulars — in the same place your family already uses.</p>
+      <ul class="login-points">
+        <li><i class="fa-solid fa-clipboard-user"></i> Daily attendance &amp; timetable</li>
+        <li><i class="fa-solid fa-book-open"></i> Homework and worksheets</li>
+        <li><i class="fa-solid fa-receipt"></i> Fee receipt &amp; pending dues</li>
+        <li><i class="fa-solid fa-file-lines"></i> Report cards and PTM slots</li>
+        <li><i class="fa-solid fa-bullhorn"></i> Circulars and holiday list</li>
+      </ul>
+      <div class="login-stat">
+        <div><b>25+</b><span>Years</span></div>
+        <div><b>5000+</b><span>Students</span></div>
+        <div><b>100%</b><span>Results</span></div>
+      </div>
     </div>
 
-</section>
-<!-- =========================
-ACADEMICS
-========================== -->
+    <div class="login-panel">
+      <h2>Sign in</h2>
+      <p class="login-sub">Choose who you are, then enter the ID given by the school.</p>
+      <div class="login-tabs" role="tablist">
+        <button type="button" class="on" data-tab="parent"><i class="fa-solid fa-user-group"></i> Parent</button>
+        <button type="button" data-tab="student"><i class="fa-solid fa-user-graduate"></i> Student</button>
+        <button type="button" data-tab="staff"><i class="fa-solid fa-chalkboard-user"></i> Staff</button>
+      </div>
 
-<section class="academics" id="academics">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span>ACADEMICS</span>
-
-            <h2>World Class Learning Programs</h2>
-
-            <p>
-                Our curriculum blends academics, technology, sports and creativity
-                to prepare students for the future.
-            </p>
-
+      <form id="loginForm" class="login-form">
+        <input type="hidden" name="role" id="loginRole" value="parent">
+        <label><span id="idLabel">Registered mobile / email</span>
+          <span class="field">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" name="userid" required placeholder="10-digit mobile or email" autocomplete="username">
+          </span>
+        </label>
+        <label>Password
+          <span class="field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="password" id="loginPass" required placeholder="Portal password" autocomplete="current-password">
+            <button type="button" class="eye" id="togglePass" aria-label="Show password"><i class="fa-regular fa-eye"></i></button>
+          </span>
+        </label>
+        <div class="login-row">
+          <label class="check-line slim">
+            <input type="checkbox" name="remember">
+            <span>Keep me signed in</span>
+          </label>
+          <button type="button" class="text-link" id="forgotBtn">Forgot password?</button>
         </div>
+        <p class="form-msg" id="loginMsg"></p>
+        <button type="submit" class="send-btn" id="loginSubmit">Sign in as parent</button>
+      </form>
 
-        <div class="academic-grid">
-
-            <div class="academic-card">
-
-                <div class="academic-icon">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
-
-                <h3>Primary School</h3>
-
-                <p>
-                    Strong foundation with activity-based learning and modern teaching.
-                </p>
-
-                <a href="#contact">Read More →</a>
-
-            </div>
-
-            <div class="academic-card">
-
-                <div class="academic-icon">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-
-                <h3>Middle School</h3>
-
-                <p>
-                    STEM education, coding, robotics and project-based learning.
-                </p>
-
-                <a href="#contact">Read More →</a>
-
-            </div>
-
-            <div class="academic-card">
-
-                <div class="academic-icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-
-                <h3>Senior School</h3>
-
-                <p>
-                    Career-focused education with excellent board examination results.
-                </p>
-
-                <a href="#contact">Read More →</a>
-
-            </div>
-
-        </div>
-
+      <p class="login-new">New to Green Valley? <a href="apply.html">Apply for admission</a></p>
+      <div class="login-foot">
+        <p><i class="fa-solid fa-headset"></i> Helpdesk +91 98765 43210 · Mon–Sat, 9 AM – 2 PM</p>
+        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b1b04191f0a072b0c190e0e051d0a07070e12450e0f1e450205">[email&#160;protected]</a></p>
+      </div>
     </div>
+  </div>
 
-</section>
-<!-- =========================
-CAMPUS EXPERIENCE
-========================== -->
-
-<section class="campus" id="campus">
-
-    <div class="container campus-grid">
-
-        <!-- Left Content -->
-        <div class="campus-content">
-
-            <span class="section-title">CAMPUS EXPERIENCE</span>
-
-            <h2>Explore Our Modern Campus</h2>
-
-            <p>
-                Our campus is designed to inspire learning with smart classrooms,
-                advanced science labs, robotics, digital libraries, sports arenas,
-                art studios and innovation spaces.
-            </p>
-
-            <div class="campus-list">
-                <div><i class="fa-solid fa-check"></i> Smart Digital Classrooms</div>
-                <div><i class="fa-solid fa-check"></i> Robotics & AI Lab</div>
-                <div><i class="fa-solid fa-check"></i> Olympic Sports Facilities</div>
-                <div><i class="fa-solid fa-check"></i> Library & Innovation Hub</div>
-            </div>
-
-            <a href="#gallery" class="primary-btn">
-                Virtual Campus Tour
-            </a>
-
-        </div>
-
-        <!-- Right Video -->
-
-        <div class="campus-video">
-
-            <iframe
-                src="https://www.youtube.com/embed/K25Q2yDl-9Y?autoplay=1&mute=1&loop=1&playlist=K25Q2yDl-9Y&controls=1&rel=0"
-                title="Campus Tour Video"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-
-        </div>
-
+  <div class="container login-info">
+    <div class="side-card">
+      <div class="info-ico"><i class="fa-solid fa-user-group"></i></div>
+      <h3>Parent login</h3>
+      <p>Use the mobile given at admission. See all wards, pay fees, book PTM and download receipts.</p>
     </div>
-
-</section>
-<!-- =========================
-GALLERY SECTION
-========================== -->
-
-<section class="gallery" id="gallery">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span>OUR GALLERY</span>
-
-            <h2>School Life Moments</h2>
-
-            <p>
-                Explore memorable moments from our campus, classrooms,
-                sports events and cultural activities.
-            </p>
-
-        </div>
-
-        <div class="gallery-grid">
-
-            <div class="gallery-item">
-                <img src="images/gallery.webp" alt="Smart Classroom">
-                <div class="gallery-caption">
-                   <h3>Gallery of Excellence</h3>
-<p>Celebrating creativity, innovation, and outstanding student achievements through inspiring artwork and academic excellence.</p>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/gallery.jpg" alt="Sports Day">
-                <div class="gallery-caption">
-                   <h3>Student Art Exhibition</h3>
-<p>A vibrant display of student creativity featuring paintings, sketches, and handmade artwork that reflect imagination and talent.</p>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/gallery.jfif" alt="Science Lab">
-                <div class="gallery-caption">
-                    <h3>Healthy School Cafeteria</h3>
-<p>Providing fresh, nutritious, and hygienic meals every day to support students' health and overall well-being.</p>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/Annualfunction.png" alt="Annual Function">
-                <div class="gallery-caption">
-                   <h3>Interactive Smart Classrooms</h3>
-<p>Modern classrooms designed to encourage active learning, creativity, and collaboration through digital teaching methods.</p>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/gallery.jfif" alt="Library">
-                <div class="gallery-caption">
-                   <h3>Sports & Athletics</h3>
-<p>Building confidence, teamwork, and leadership through athletics, outdoor games, and professional sports facilities.</p>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/gallery.jpg" alt="Campus Grounds">
-                <div class="gallery-caption">
-                    <h3>Green Campus Initiative</h3>
-<p>Encouraging environmental responsibility through tree plantation, gardening activities, and sustainable learning practices.</p>
-                </div>
-            </div>
-
-        </div>
-
+    <div class="side-card">
+      <div class="info-ico"><i class="fa-solid fa-user-graduate"></i></div>
+      <h3>Student login</h3>
+      <p>Admission number. First password is date of birth (DDMMYYYY). Change it after first sign-in.</p>
     </div>
-
-</section>
-
-    <!--=========================================
-LATEST NEWS SECTION
-==========================================-->
-
-<section class="news">
-
-<div class="container">
-
-<div class="section-title">
-
-<span class="sub-title">
-LATEST UPDATES
-</span>
-
-<h2>
-Latest News & Announcements
-</h2>
-
-<p>
-Stay updated with our latest school activities, admissions, achievements and upcoming events.
-</p>
-
-</div>
-
-
-<div class="news-grid">
-
-
-<!-- CARD 1 -->
-
-<div class="news-card">
-
-<div class="news-date">
-
-<span>12</span>
-
-<p>AUG</p>
-
-</div>
-
-<div class="news-content">
-
-<span class="news-tag">
-Admission
-</span>
-
-<h3>
-Admissions Open for Academic Session 2026–27
-</h3>
-
-<p>
-Online registration has started. Limited seats are available for Nursery to Class XII.
-</p>
-
-<a href="#contact">
-Read More
-<i class="fa-solid fa-arrow-right"></i>
-</a>
-
-</div>
-
-</div>
-
-
-<!-- CARD 2 -->
-
-<div class="news-card">
-
-<div class="news-date">
-
-<span>15</span>
-
-<p>AUG</p>
-
-</div>
-
-<div class="news-content">
-
-<span class="news-tag event">
-Event
-</span>
-
-<h3>
-Independence Day Celebration
-</h3>
-
-<p>
-Join us for flag hoisting, cultural performances and patriotic activities at the school campus.
-</p>
-
-<a href="news-events.html">
-Read More
-<i class="fa-solid fa-arrow-right"></i>
-</a>
-
-</div>
-
-</div>
-
-
-<!-- CARD 3 -->
-
-<div class="news-card">
-
-<div class="news-date">
-
-<span>25</span>
-
-<p>AUG</p>
-
-</div>
-
-<div class="news-content">
-
-<span class="news-tag achievement">
-Achievement
-</span>
-
-<h3>
-Students Won State Level Science Competition
-</h3>
-
-<p>
-Congratulations to our talented students for securing first position in the state science fair.
-</p>
-
-<a href="news-events.html">
-Read More
-<i class="fa-solid fa-arrow-right"></i>
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!--=========================================
-WHY CHOOSE US
-=========================================-->
-
-<section class="why-choose">
-
-<div class="container">
-
-<div class="section-title">
-
-<span class="sub-title">
-WHY CHOOSE US
-</span>
-
-<h2>Why Parents Trust Our School</h2>
-
-<p>
-Providing world-class education with modern facilities, experienced teachers and a safe learning environment.
-</p>
-
-</div>
-
-
-<div class="choose-grid">
-
-
-<div class="choose-card">
-
-<div class="choose-icon">
-<i class="fa-solid fa-user-graduate"></i>
-</div>
-
-<h3>Expert Teachers</h3>
-
-<p>
-Highly qualified and experienced faculty dedicated to every student's success.
-</p>
-
-</div>
-
-
-
-<div class="choose-card">
-
-<div class="choose-icon">
-<i class="fa-solid fa-laptop-code"></i>
-</div>
-
-<h3>Smart Classrooms</h3>
-
-<p>
-Interactive digital classrooms with modern teaching technology.
-</p>
-
-</div>
-
-
-
-<div class="choose-card">
-
-<div class="choose-icon">
-<i class="fa-solid fa-flask"></i>
-</div>
-
-<h3>Science Labs</h3>
-
-<p>
-Fully equipped laboratories for practical and innovative learning.
-</p>
-
-</div>
-
-
-
-<div class="choose-card">
-
-<div class="choose-icon">
-<i class="fa-solid fa-book-open"></i>
-</div>
-
-<h3>Modern Library</h3>
-
-<p>
-Thousands of books, journals and digital resources for students.
-</p>
-
-</div>
-
-
-
-<div class="choose-card">
-
-<div class="choose-icon">
-<i class="fa-solid fa-bus"></i>
-</div>
-
-<h3>Safe Transport</h3>
-
-<p>
-GPS-enabled buses with trained drivers for safe daily travel.
-</p>
-
-</div>
-
-
-
-<div class="choose-card">
-
-<div class="choose-icon">
-<i class="fa-solid fa-trophy"></i>
-</div>
-
-<h3>Sports Excellence</h3>
-
-<p>
-Professional coaching and excellent sports facilities for all students.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-   
-    <!--=========================================
-ADMISSION PROCESS
-==========================================-->
-
-<section class="admission">
-
-<div class="container">
-
-<div class="section-title">
-
-<span class="sub-title">
-ADMISSION PROCESS
-</span>
-
-<h2>Simple Admission Process</h2>
-
-<p>
-Start your child's educational journey with our simple and transparent admission process.
-</p>
-
-</div>
-<div class="admission-grid">
-
-<div class="admission-card">
-
-<div class="step-number">01</div>
-
-<div class="admission-icon">
-<i class="fa-solid fa-file-pen"></i>
-</div>
-
-<h3>Fill Application</h3>
-
-<p>
-Complete the online admission form with the student's basic details.
-</p>
-
-</div>
-<div class="admission-card">
-
-<div class="step-number">02</div>
-
-<div class="admission-icon">
-<i class="fa-solid fa-folder-open"></i>
-</div>
-
-<h3>Submit Documents</h3>
-
-<p>
-Upload or submit the required documents for verification.
-</p>
-
-</div>
-
-<div class="admission-card">
-
-<div class="step-number">03</div>
-
-<div class="admission-icon">
-<i class="fa-solid fa-users"></i>
-</div>
-
-<h3>Interaction</h3>
-
-<p>
-Student and parents attend a friendly interaction with our faculty.
-</p>
-
-</div>
-
-<div class="admission-card">
-
-<div class="step-number">04</div>
-
-<div class="admission-icon">
-<i class="fa-solid fa-graduation-cap"></i>
-</div>
-
-<h3>Admission Confirmed</h3>
-
-<p>
-Welcome to our school family and begin an exciting learning journey.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-    
-<!-- =========================
-TESTIMONIAL SECTION
-========================== -->
-
-<section class="testimonial" id="testimonial">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span>TESTIMONIALS</span>
-
-            <h2>What Parents Say</h2>
-
-            <p>
-                Hear from parents who trust Green Valley International School
-                for their children's education and future.
-            </p>
-
-        </div>
-
-        <div class="testimonial-grid">
-
-            <div class="testimonial-card">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    "The teachers are highly supportive and the learning
-                    environment is excellent. My child enjoys coming to school every day."
-                </p>
-
-                <div class="parent">
-
-                    <img src="images/parent1.jpg" alt="Parent">
-
-                    <div>
-                        <h4>Rahul Sharma</h4>
-                        <span>Parent</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="testimonial-card">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    "Amazing campus, smart classrooms and outstanding academic
-                    results. Highly recommended for quality education."
-                </p>
-
-                <div class="parent">
-
-                    <img src="images/parent2.jfif" alt="Parent">
-
-                    <div>
-                        <h4>Priya Verma</h4>
-                        <span>Parent</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="testimonial-card">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-                    "The focus on sports, technology and personality development
-                    makes this school truly exceptional."
-                </p>
-
-                <div class="parent">
-
-                    <img src="images/parent3.jpg" alt="Parent">
-
-                    <div>
-                        <h4>Amit Singh</h4>
-                        <span>Parent</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="side-card">
+      <div class="info-ico"><i class="fa-solid fa-chalkboard-user"></i></div>
+      <h3>Staff login</h3>
+      <p>School email and ERP password. Reset only from your official ID. Do not share with students.</p>
     </div>
-
-</section>
-
-<!-- =========================
-CONTACT SECTION
-========================== -->
-
-<section class="contact" id="contact">
-
-    <div class="container contact-grid">
-
-        <div class="contact-info">
-
-            <span class="section-title">
-                CONTACT US
-            </span>
-
-            <h2>Let's Talk About Your Child's Future</h2>
-
-            <p>
-                We'd love to hear from you. Visit our campus or
-                contact us for admissions and enquiries.
-            </p>
-
-            <div class="contact-box">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <div>
-                    <h4>Address</h4>
-                    <p>Green Valley International School,<br>New Delhi, India</p>
-                </div>
-
-            </div>
-
-            <div class="contact-box">
-
-                <i class="fa-solid fa-phone"></i>
-
-                <div>
-                    <h4>Phone</h4>
-                    <p>+91 98765 43210</p>
-                </div>
-
-            </div>
-
-            <div class="contact-box">
-
-                <i class="fa-solid fa-envelope"></i>
-
-                <div>
-                    <h4>Email</h4>
-                    <p>info@greenvalley.edu.in</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="contact-form">
-
-            <form id="contactForm" method="post" action="#contact">
-
-                <input type="text" name="name" placeholder="Your Name" required>
-
-                <input type="email" name="email" placeholder="Email Address" required>
-
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-
-                <textarea rows="6" name="message" placeholder="Your Message" required></textarea>
-
-                <button type="submit" class="send-btn">Send Message</button>
-
-            </form>
-
-        </div>
-
+    <div class="side-card">
+      <div class="info-ico"><i class="fa-solid fa-key"></i></div>
+      <h3>Need a reset?</h3>
+      <p>SMS <strong>RESET</strong> from your registered mobile, or visit the desk with parent ID. We never ask the password on a call.</p>
     </div>
-
+  </div>
 </section>
-
-<!-- =========================
-FOOTER
-========================== -->
 
 <footer class="footer">
-
+    <div class="footer-top-line"></div>
     <div class="container">
-
         <div class="footer-container">
             <div class="footer-logo">
-                <h2>Green Valley <span>International School</span></h2>
-                <p>
-                    Building Future Leaders Through Innovation. A modern,
-                    inspiring learning environment for every child.
-                </p>
-              <!-- Replace # below with your real social media page URLs -->
-            <div class="footer-social">
-  <a href="#" class="social-fb"><i class="fab fa-facebook-f"></i></a>
-  <a href="#" class="social-ig"><i class="fab fa-instagram"></i></a>
-  <a href="#" class="social-yt"><i class="fab fa-youtube"></i></a>
-  <a href="#" class="social-li"><i class="fab fa-linkedin-in"></i></a>
-</div>
+                <a href="index.html" class="footer-brand">
+                    <span class="logo-icon"><i class="fa-solid fa-school"></i></span>
+                    <span>
+                        <h2>Green Valley <span>International School</span></h2>
+                    </span>
+                </a>
+                <p>A CBSE-affiliated day school in New Delhi. We combine strong academics with sports, arts and a safe campus for every child.</p>
+                <p class="footer-affil">Affiliation: CBSE, New Delhi &nbsp;·&nbsp; Session 2026–27</p>
+                <div class="footer-social">
+                    <a href="#" class="social-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#academics">Academics</a></li>
-                    <li><a href="#campus">Campus</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About the School</a></li>
+                    <li><a href="index.html#campus">Campus</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#news">Notices</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
                 </ul>
             </div>
-
             <div class="footer-links">
-                <h3>Academics</h3>
+                <h3>For Parents</h3>
                 <ul>
-                    <li><a href="#academics">Primary School</a></li>
-                    <li><a href="#academics">Middle School</a></li>
-                    <li><a href="#academics">Senior School</a></li>
-                    <li><a href="#contact">Admissions</a></li>
+                    <li><a href="apply.html">Admissions 2026–27</a></li>
+                    <li><a href="login.html">Parent / Student Login</a></li>
+                    <li><a href="news-ptm.html">PTM</a></li>
+                    <li><a href="timetable.html">Class Timetable</a></li>
+                    <li><a href="news-midterm.html">Exam Timetable</a></li>
+                    <li><a href="news-admissions.html">Admission Circular</a></li>
+                    <li><a href="index.html#academics">Academics</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h3>Contact</h3>
-                <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
+                <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3851565e57785f4a5d5d564e5954545d41165d5c4d165156">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <p>© 2026 Green Valley International School. All Rights Reserved.</p>
+            <p class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <span>·</span>
+                <a href="index.html#contact">Disclaimer</a>
+                <span>·</span>
+                <a href="login.html">Portal</a>
+            </p>
         </div>
     </div>
-
 </footer>
-
-<!-- Back to top -->
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="timetable-data.js"></script>
 <script src="main.js"></script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d2b3d158bca6db',t:'MTc4NzA3NDgxMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
