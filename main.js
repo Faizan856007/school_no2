@@ -343,3 +343,204 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 });
+
+/* sachin */
+(function () {
+  const header = document.querySelector(".header");
+  const menuBtn = document.querySelector(".menu-btn");
+  const nav = document.querySelector("header nav");
+  const overlay = document.querySelector(".nav-overlay");
+  const headerBtns = document.querySelector(".header-btns");
+  const backToTop = document.getElementById("backToTop");
+  const form = document.getElementById("contactForm");
+
+  function closeMenu() {
+    nav && nav.classList.remove("mobile-open");
+    headerBtns && headerBtns.classList.remove("mobile-open");
+    overlay && overlay.classList.remove("show");
+    document.querySelectorAll(".has-dropdown.open").forEach(function (el) {
+      el.classList.remove("open");
+    });
+    if (menuBtn) {
+      const icon = menuBtn.querySelector("i");
+      if (icon) icon.className = "fa-solid fa-bars";
+    }
+  }
+
+  function openMenu() {
+    nav && nav.classList.add("mobile-open");
+    headerBtns && headerBtns.classList.add("mobile-open");
+    overlay && overlay.classList.add("show");
+    if (menuBtn) {
+      const icon = menuBtn.querySelector("i");
+      if (icon) icon.className = "fa-solid fa-xmark";
+    }
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function () {
+      if (nav && nav.classList.contains("mobile-open")) closeMenu();
+      else openMenu();
+    });
+  }
+  if (overlay) overlay.addEventListener("click", closeMenu);
+
+  document.querySelectorAll(".has-dropdown > a").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      if (window.innerWidth > 960) return;
+      e.preventDefault();
+      link.parentElement.classList.toggle("open");
+    });
+  });
+
+  document.querySelectorAll("nav a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (window.innerWidth <= 960 && !link.closest(".has-dropdown > a")) {
+        closeMenu();
+      }
+    });
+  });
+
+  window.addEventListener("scroll", function () {
+    if (header) header.classList.toggle("scrolled", window.scrollY > 12);
+    if (backToTop) backToTop.classList.toggle("show", window.scrollY > 500);
+  });
+
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const btn = form.querySelector(".send-btn");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Message sent";
+      }
+      form.reset();
+      setTimeout(function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Send Message";
+        }
+      }, 2400);
+    });
+  }
+
+
+
+  document.querySelectorAll(".faq-q").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const item = btn.parentElement;
+      const open = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function (el) { el.classList.remove("open"); });
+      if (!open) item.classList.add("open");
+    });
+  });
+
+  document.querySelectorAll(".ne-filters button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".ne-filters button").forEach(function (b) { b.classList.remove("on"); });
+      btn.classList.add("on");
+      const f = btn.getAttribute("data-filter");
+      document.querySelectorAll(".ne-card").forEach(function (card) {
+        const show = f === "all" || card.getAttribute("data-tag") === f;
+        card.style.display = show ? "" : "none";
+      });
+    });
+  });
+
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    const roleInput = document.getElementById("loginRole");
+    const idLabel = document.getElementById("idLabel");
+    const submit = document.getElementById("loginSubmit");
+    const msg = document.getElementById("loginMsg");
+    const copy = {
+      parent: ["Registered mobile / email", "10-digit mobile or email", "Sign in as parent"],
+      student: ["Admission number", "e.g. GVIS/2024/0842", "Sign in as student"],
+      staff: ["School email", "name@greenvalley.edu.in", "Sign in as staff"]
+    };
+    document.querySelectorAll(".login-tabs button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        document.querySelectorAll(".login-tabs button").forEach(function (b) { b.classList.remove("on"); });
+        btn.classList.add("on");
+        const tab = btn.getAttribute("data-tab");
+        roleInput.value = tab;
+        const c = copy[tab];
+        const input = loginForm.userid;
+        if (idLabel) idLabel.textContent = c[0];
+        input.placeholder = c[1];
+        submit.textContent = c[2];
+        if (msg) msg.className = "form-msg";
+      });
+    });
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var role = roleInput ? roleInput.value : "parent";
+      if (role === "staff" && window.GVIS_TT) {
+        var staff = window.GVIS_TT.checkStaffLogin(loginForm.userid.value, loginForm.password.value);
+        if (staff) {
+          window.GVIS_TT.setStaff(staff);
+          window.location.href = "timetable-edit.html";
+          return;
+        }
+        if (msg) {
+          msg.className = "form-msg show err";
+          msg.textContent = "Staff demo: staff@greenvalley.edu.in and password GVIS@2026";
+        }
+        return;
+      }
+      if (msg) {
+        msg.className = "form-msg show err";
+        msg.textContent = "This is a demo portal page. Live ERP login will open here once the school server is connected.";
+      }
+    });
+    const forgot = document.getElementById("forgotBtn");
+    if (forgot) {
+      forgot.addEventListener("click", function () {
+        if (msg) {
+          msg.className = "form-msg show ok";
+          msg.textContent = "SMS RESET from your registered mobile, or visit the front desk with parent ID. We never ask for your password on a call.";
+        }
+      });
+    }
+  }
+
+  const applyForm = document.getElementById("applyForm");
+  if (applyForm) {
+    applyForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const phone = (applyForm.phone.value || "").replace(/\D/g, "");
+      const msg = document.getElementById("applyMsg");
+      if (phone.length !== 10) {
+        if (msg) {
+          msg.className = "form-msg show";
+          msg.style.background = "rgba(192,57,43,0.1)";
+          msg.style.color = "#c0392b";
+          msg.textContent = "Please enter a valid 10-digit mobile number.";
+        }
+        return;
+      }
+      const btn = applyForm.querySelector(".send-btn");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Application submitted";
+      }
+      if (msg) {
+        msg.className = "form-msg show success";
+        msg.textContent = "Thank you. The Admissions Desk will call you within 2 working days.";
+      }
+      applyForm.reset();
+      setTimeout(function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Submit application";
+        }
+      }, 3200);
+    });
+  }
+})();
