@@ -1,195 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Apply Now | Green Valley International School</title>
-
-    <!-- Google Fonts -->
+    <title>Apply for Admission 2026–27 | Green Valley International School</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Main CSS (same file used by index.html) -->
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* ================= Scoped additions for the advanced Apply page =================
-           Everything below reuses the same design tokens defined in style.css
-           (--forest-*, --gold-*, --cream, --ink, --radius-*, --shadow-*, --ease*) */
-
-        .apply-hero { padding: 70px 0 30px; text-align: center; }
-        .apply-hero .section-title { display: inline-block; }
-        .apply-hero h1 { font-size: clamp(30px, 4vw, 46px); margin: 10px 0 14px; }
-        .apply-hero p { color: var(--ink-soft); max-width: 560px; margin: 0 auto; }
-
-        .apply-hero .trust-row {
-            display: flex; justify-content: center; gap: 34px; flex-wrap: wrap;
-            margin-top: 34px;
-        }
-        .apply-hero .trust-item { text-align: center; }
-        .apply-hero .trust-item strong {
-            display: block; font-family: var(--font-display); font-weight: 800;
-            font-size: 26px; color: var(--forest-800);
-        }
-        .apply-hero .trust-item span { font-size: 12.5px; color: var(--ink-soft); }
-
-        .apply-wrap { max-width: 900px; margin: 0 auto; padding: 10px 24px 100px; }
-
-        /* ---------- Stepper ---------- */
-        .stepper {
-            display: flex; align-items: flex-start; justify-content: space-between;
-            margin-bottom: 40px; position: relative;
-        }
-        .stepper::before {
-            content: "";
-            position: absolute; top: 20px; left: 8%; right: 8%;
-            height: 3px; background: rgba(27,67,50,0.12); z-index: 0;
-            border-radius: 3px;
-        }
-        .stepper .progress-line {
-            position: absolute; top: 20px; left: 8%; height: 3px;
-            background: linear-gradient(90deg, var(--gold-500), var(--gold-600));
-            z-index: 1; border-radius: 3px; width: 0%;
-            transition: width 0.5s var(--ease);
-        }
-        .step { position: relative; z-index: 2; flex: 1; text-align: center; }
-        .step-circle {
-            width: 40px; height: 40px; margin: 0 auto 10px;
-            border-radius: 50%; display: grid; place-items: center;
-            background: var(--white); border: 2.5px solid rgba(27,67,50,0.16);
-            color: var(--ink-soft); font-weight: 800; font-size: 14px;
-            transition: all 0.35s var(--ease);
-        }
-        .step.active .step-circle {
-            border-color: var(--gold-500); background: var(--gold-500); color: var(--forest-900);
-            box-shadow: var(--shadow-gold-sm);
-        }
-        .step.completed .step-circle {
-            border-color: var(--forest-800); background: var(--forest-800); color: var(--white);
-        }
-        .step-label { font-size: 12px; font-weight: 600; color: var(--ink-soft); }
-        .step.active .step-label { color: var(--forest-800); }
-        @media (max-width: 640px) { .step-label { display: none; } }
-
-        /* ---------- Form card ---------- */
-        .apply-form {
-            background: var(--white);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-        .form-step { display: none; }
-        .form-step.active { display: block; animation: fadeStep 0.4s var(--ease); }
-        @keyframes fadeStep { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        .form-step h3 {
-            font-size: 19px; margin-bottom: 4px; color: var(--forest-800);
-            display: flex; align-items: center; gap: 10px;
-        }
-        .form-step h3 i { color: var(--gold-600); font-size: 17px; }
-        .form-step > p.step-desc { color: var(--ink-soft); font-size: 13.5px; margin-bottom: 24px; }
-
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .apply-form input, .apply-form select, .apply-form textarea {
-            width: 100%; padding: 14px 18px; border-radius: var(--radius-sm);
-            border: 1.5px solid rgba(27,67,50,0.14); font-family: inherit; font-size: 14.5px;
-            background: var(--cream); transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 16px;
-        }
-        .apply-form input:focus, .apply-form select:focus, .apply-form textarea:focus {
-            outline: none; border-color: var(--gold-500); box-shadow: 0 0 0 4px rgba(212,165,60,0.16);
-        }
-        .apply-form input.field-error, .apply-form select.field-error {
-            border-color: #c0392b; box-shadow: 0 0 0 4px rgba(192,57,43,0.1);
-        }
-        .apply-form textarea { resize: vertical; min-height: 100px; }
-        .apply-form label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
-        .field-hint { font-size: 11.5px; color: #c0392b; margin: -12px 0 14px; display: none; }
-        .field-hint.show { display: block; }
-
-        /* ---------- File upload ---------- */
-        .upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 8px; }
-        .upload-box {
-            position: relative; border: 2px dashed rgba(27,67,50,0.22);
-            border-radius: var(--radius-md); padding: 22px 16px; text-align: center;
-            background: var(--cream); cursor: pointer; transition: border-color 0.3s ease, background 0.3s ease;
-        }
-        .upload-box:hover { border-color: var(--gold-500); background: var(--cream-2); }
-        .upload-box.has-file { border-color: var(--forest-600); border-style: solid; }
-        .upload-box input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
-        .upload-box i { font-size: 22px; color: var(--gold-600); margin-bottom: 8px; display: block; }
-        .upload-box .upload-label { font-size: 13px; font-weight: 600; color: var(--forest-800); }
-        .upload-box .upload-sub { font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; }
-        .upload-box .file-name { font-size: 12px; color: var(--forest-700); font-weight: 600; margin-top: 6px; word-break: break-all; }
-
-        /* ---------- Review step ---------- */
-        .review-group { margin-bottom: 22px; }
-        .review-group h4 {
-            font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
-            color: var(--gold-600); margin-bottom: 12px; font-weight: 700;
-        }
-        .review-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
-        .review-list div { font-size: 13.5px; }
-        .review-list dt { color: var(--ink-soft); font-size: 12px; margin-bottom: 2px; }
-        .review-list dd { font-weight: 600; color: var(--ink); }
-
-        .consent-row { display: flex; align-items: flex-start; gap: 10px; margin: 22px 0 4px; }
-        .consent-row input { width: auto; margin: 3px 0 0; }
-        .consent-row label { font-size: 12.5px; color: var(--ink-soft); font-weight: 500; margin: 0; }
-
-        /* ---------- Nav buttons ---------- */
-        .step-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; gap: 14px; }
-        .btn-back {
-            font-weight: 700; font-size: 14.5px; color: var(--forest-800);
-            padding: 14px 22px; border-radius: 999px; transition: background 0.25s ease;
-        }
-        .btn-back:hover { background: rgba(27,67,50,0.08); }
-        .btn-back:disabled { opacity: 0; pointer-events: none; }
-        .btn-next {
-            position: relative; overflow: hidden;
-            padding: 15px 34px; border-radius: 999px; background: var(--forest-800); color: var(--white);
-            font-weight: 700; font-size: 15px; box-shadow: 0 10px 26px rgba(27,67,50,0.24);
-            transition: transform 0.3s var(--ease), background 0.3s ease;
-        }
-        .btn-next:hover { transform: translateY(-3px); background: var(--forest-700); }
-
-        /* ---------- Success state ---------- */
-        .success-card { text-align: center; padding: 20px 10px 8px; display: none; }
-        .success-card.show { display: block; animation: fadeStep 0.5s var(--ease); }
-        .success-icon {
-            width: 74px; height: 74px; margin: 0 auto 20px; border-radius: 50%;
-            background: rgba(45,106,79,0.12); color: var(--forest-700);
-            display: grid; place-items: center; font-size: 30px;
-        }
-        .success-card h3 { font-size: 22px; margin-bottom: 10px; }
-        .success-card p { color: var(--ink-soft); max-width: 420px; margin: 0 auto 6px; }
-        .ref-id {
-            display: inline-block; margin-top: 14px; padding: 10px 20px;
-            background: var(--cream-2); border-radius: var(--radius-sm);
-            font-family: var(--font-display); font-weight: 800; color: var(--forest-800);
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 640px) {
-            .form-row, .upload-grid, .review-list { grid-template-columns: 1fr; }
-            .apply-form { padding: 26px; }
-        }
-    </style>
 </head>
-
 <body>
-
-<div class="bg"></div>
 
 <header class="header">
 <div class="container">
-
 <a href="index.html" class="logo">
 <div class="logo-icon"><i class="fa-solid fa-school"></i></div>
 <div>
@@ -197,436 +21,326 @@
 <p>International School</p>
 </div>
 </a>
-
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="index.html#about">About</a></li>
-<li><a href="index.html#academics">Academics</a></li>
+<li class="has-dropdown">
+  <a href="index.html#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="academics.html">Academic Programs</a></li>
+    <li><a href="faculty.html">Our Faculty</a></li>
+    <li><a href="academic-calendar.html">Academic Calendar</a></li>
+    <li><a href="timetable.html">Timetable</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+  </ul>
+</li>
 <li><a href="index.html#campus">Campus</a></li>
 <li><a href="index.html#gallery">Gallery</a></li>
+<li class="has-dropdown">
+  <a href="index.html#contact">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+  </ul>
+</li>
 <li><a href="index.html#contact">Contact</a></li>
 </ul>
 </nav>
-
 <div class="header-btns">
-<a href="index.html#contact" class="login-btn">Login</a>
+<a href="login.html" class="login-btn">Login</a>
 <a href="apply.html" class="apply-btn">Apply Now</a>
 </div>
-
 <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
-
 </div>
 </header>
+<div class="nav-overlay"></div>
 
-<section class="apply-hero">
-    <div class="container">
-        <span class="section-title">ADMISSIONS 2026&ndash;27</span>
-        <h1>Apply to Green Valley International School</h1>
-        <p>A simple, four-step application. Save time by keeping your child's documents ready before you begin.</p>
-
-        <div class="trust-row">
-            <div class="trust-item"><strong>25+</strong><span>Years of Excellence</span></div>
-            <div class="trust-item"><strong>5000+</strong><span>Students</span></div>
-            <div class="trust-item"><strong>100%</strong><span>Board Results</span></div>
-            <div class="trust-item"><strong>1&ndash;2 Days</strong><span>Response Time</span></div>
-        </div>
-    </div>
+<section class="notice-top">
+  <div class="container">
+    <span class="news-tag">Admission</span>
+    <h1>Online Application — Session 2026–27</h1>
+    <p class="notice-meta">Admissions Office &nbsp;|&nbsp; Last date to register: 30 September 2026 &nbsp;|&nbsp; Desk: Mon–Sat, 9:00 AM – 2:00 PM</p>
+  </div>
 </section>
 
-<section>
-    <div class="apply-wrap">
+<div class="notice-photo"><div class="container"><img src="images/apply-hero.jpg" alt="School admissions lobby"></div></div>
 
-        <!-- Stepper -->
-        <div class="stepper" id="stepper">
-            <div class="progress-line" id="progressLine"></div>
-            <div class="step active" data-step="1">
-                <div class="step-circle">1</div>
-                <div class="step-label">Student</div>
-            </div>
-            <div class="step" data-step="2">
-                <div class="step-circle">2</div>
-                <div class="step-label">Parent</div>
-            </div>
-            <div class="step" data-step="3">
-                <div class="step-circle">3</div>
-                <div class="step-label">School &amp; Docs</div>
-            </div>
-            <div class="step" data-step="4">
-                <div class="step-circle">4</div>
-                <div class="step-label">Review</div>
-            </div>
+<section class="story apply-page">
+  <div class="container">
+    <ol class="apply-steps">
+      <li class="on"><span>1</span><b>Fill form</b><em>Online, 5 minutes</em></li>
+      <li><span>2</span><b>Interaction</b><em>We call in 2 days</em></li>
+      <li><span>3</span><b>Documents</b><em>Bring originals</em></li>
+      <li><span>4</span><b>Offer letter</b><em>Seat in 7 days</em></li>
+    </ol>
+  </div>
+
+  <div class="container story-grid">
+    <div class="story-main">
+      <p class="lead">This is a registration form, not a confirmed seat. The Admissions Desk will call within 2 working days to fix a 20-minute interaction.</p>
+
+      <form id="applyForm" class="apply-form" novalidate>
+        <h3>1. Student details</h3>
+        <div class="form-row">
+          <label>Full name of the child
+            <input type="text" name="student" required placeholder="As on the birth certificate">
+          </label>
+          <label>Date of birth
+            <input type="date" name="dob" required>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Gender
+            <select name="gender" required>
+              <option value="">Select</option>
+              <option>Girl</option>
+              <option>Boy</option>
+              <option>Prefer not to say</option>
+            </select>
+          </label>
+          <label>Nationality
+            <input type="text" name="nation" value="Indian">
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Class applying for
+            <select name="klass" required>
+              <option value="">Select class</option>
+              <option>Nursery</option>
+              <option>KG</option>
+              <option>Class I</option>
+              <option>Class II</option>
+              <option>Class III</option>
+              <option>Class IV</option>
+              <option>Class V</option>
+              <option>Class VI</option>
+              <option>Class VII</option>
+              <option>Class VIII</option>
+              <option>Class IX</option>
+              <option>Class X</option>
+              <option>Class XI — Science</option>
+              <option>Class XI — Commerce</option>
+              <option>Class XI — Humanities</option>
+              <option>Class XII</option>
+            </select>
+          </label>
+          <label>Academic session
+            <input type="text" name="session" value="2026–27" readonly>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Previous school (if any)
+            <input type="text" name="prev" placeholder="Name of last school">
+          </label>
+          <label>Last class attended
+            <input type="text" name="lastclass" placeholder="e.g. Class IV">
+          </label>
         </div>
 
-        <div class="apply-form">
-
-            <!--
-                IMPORTANT: This form runs entirely in the browser. On GitHub Pages there is no
-                server to receive it, so right now "Submit" only validates the data, shows a
-                confirmation screen, and does NOT email anyone.
-                To actually receive applications, sign up at https://formspree.io (free), get your
-                form endpoint, and:
-                  1) change the <form> tag below to: action="https://formspree.io/f/YOUR_ID" method="POST"
-                  2) remove/replace the preventDefault() logic in the JS submit handler at the bottom
-                Until then, treat this as a working front-end demo.
-            -->
-            <form id="applyForm" novalidate>
-
-                <!-- STEP 1: Student Details -->
-                <div class="form-step active" data-step="1">
-                    <h3><i class="fa-solid fa-child-reaching"></i> Student Details</h3>
-                    <p class="step-desc">Tell us about the child applying for admission.</p>
-
-                    <div class="form-row">
-                        <div>
-                            <label for="studentName">Student's Full Name</label>
-                            <input type="text" id="studentName" name="studentName" placeholder="Enter student's full name">
-                            <div class="field-hint">Please enter the student's full name.</div>
-                        </div>
-                        <div>
-                            <label for="dob">Date of Birth</label>
-                            <input type="date" id="dob" name="dob">
-                            <div class="field-hint">Please select a date of birth.</div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div>
-                            <label for="classApplying">Class Applying For</label>
-                            <select id="classApplying" name="classApplying">
-                                <option value="" disabled selected>Select class</option>
-                                <option>Nursery</option><option>LKG</option><option>UKG</option>
-                                <option>Class I</option><option>Class II</option><option>Class III</option>
-                                <option>Class IV</option><option>Class V</option><option>Class VI</option>
-                                <option>Class VII</option><option>Class VIII</option><option>Class IX</option>
-                                <option>Class X</option><option>Class XI</option><option>Class XII</option>
-                            </select>
-                            <div class="field-hint">Please select the class.</div>
-                        </div>
-                        <div>
-                            <label for="gender">Gender</label>
-                            <select id="gender" name="gender">
-                                <option value="" disabled selected>Select gender</option>
-                                <option>Male</option><option>Female</option><option>Other</option>
-                            </select>
-                            <div class="field-hint">Please select a gender.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 2: Parent Details -->
-                <div class="form-step" data-step="2">
-                    <h3><i class="fa-solid fa-people-roof"></i> Parent / Guardian Details</h3>
-                    <p class="step-desc">We'll use these details to get in touch about the application.</p>
-
-                    <div class="form-row">
-                        <div>
-                            <label for="parentName">Parent/Guardian Name</label>
-                            <input type="text" id="parentName" name="parentName" placeholder="Enter your full name">
-                            <div class="field-hint">Please enter your name.</div>
-                        </div>
-                        <div>
-                            <label for="relation">Relationship to Student</label>
-                            <input type="text" id="relation" name="relation" placeholder="e.g. Father, Mother, Guardian">
-                            <div class="field-hint">Please enter the relationship.</div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div>
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com">
-                            <div class="field-hint">Please enter a valid email address.</div>
-                        </div>
-                        <div>
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
-                            <div class="field-hint">Please enter a valid phone number.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 3: Previous School + Documents -->
-                <div class="form-step" data-step="3">
-                    <h3><i class="fa-solid fa-folder-open"></i> Previous School &amp; Documents</h3>
-                    <p class="step-desc">Optional, but sharing these speeds up verification.</p>
-
-                    <div class="form-row">
-                        <div>
-                            <label for="prevSchool">Previous School Name</label>
-                            <input type="text" id="prevSchool" name="prevSchool" placeholder="School name">
-                        </div>
-                        <div>
-                            <label for="prevClass">Last Class Attended</label>
-                            <input type="text" id="prevClass" name="prevClass" placeholder="e.g. Class IV">
-                        </div>
-                    </div>
-
-                    <label style="margin-bottom:10px;">Upload Documents</label>
-                    <div class="upload-grid">
-                        <div class="upload-box" id="uploadBox1">
-                            <i class="fa-solid fa-file-arrow-up"></i>
-                            <div class="upload-label">Birth Certificate</div>
-                            <div class="upload-sub">PDF or image, up to 5MB</div>
-                            <div class="file-name" id="fileName1"></div>
-                            <input type="file" id="docBirth" name="docBirth" accept=".pdf,.jpg,.jpeg,.png">
-                        </div>
-                        <div class="upload-box" id="uploadBox2">
-                            <i class="fa-solid fa-image"></i>
-                            <div class="upload-label">Student Photograph</div>
-                            <div class="upload-sub">JPG or PNG, up to 5MB</div>
-                            <div class="file-name" id="fileName2"></div>
-                            <input type="file" id="docPhoto" name="docPhoto" accept=".jpg,.jpeg,.png">
-                        </div>
-                    </div>
-
-                    <label for="message" style="margin-top:20px;">Additional Message</label>
-                    <textarea id="message" name="message" placeholder="Questions, special requirements, preferred admission date, etc."></textarea>
-                </div>
-
-                <!-- STEP 4: Review -->
-                <div class="form-step" data-step="4">
-                    <h3><i class="fa-solid fa-clipboard-check"></i> Review &amp; Submit</h3>
-                    <p class="step-desc">Please check your details before submitting.</p>
-
-                    <div class="review-group">
-                        <h4>Student</h4>
-                        <dl class="review-list" id="reviewStudent"></dl>
-                    </div>
-                    <div class="review-group">
-                        <h4>Parent / Guardian</h4>
-                        <dl class="review-list" id="reviewParent"></dl>
-                    </div>
-                    <div class="review-group">
-                        <h4>Previous School &amp; Documents</h4>
-                        <dl class="review-list" id="reviewSchool"></dl>
-                    </div>
-
-                    <div class="consent-row">
-                        <input type="checkbox" id="consent" name="consent">
-                        <label for="consent">I confirm the information above is accurate and I agree to be contacted by the admissions team regarding this application.</label>
-                    </div>
-                    <div class="field-hint" id="consentHint">Please confirm the details before submitting.</div>
-                </div>
-
-                <div class="step-nav">
-                    <button type="button" class="btn-back" id="btnBack" disabled>&larr; Back</button>
-                    <button type="button" class="btn-next" id="btnNext">Next Step &rarr;</button>
-                    <button type="submit" class="btn-next" id="btnSubmit" style="display:none;">Submit Application</button>
-                </div>
-            </form>
-
-            <!-- Success state (shown in place of the form after submit) -->
-            <div class="success-card" id="successCard">
-                <div class="success-icon"><i class="fa-solid fa-check"></i></div>
-                <h3>Application Received!</h3>
-                <p>Thank you for applying to Green Valley International School. Our admissions team will contact you within 1&ndash;2 working days.</p>
-                <div class="ref-id" id="refId"></div>
-            </div>
-
+        <h3>2. Parent / guardian</h3>
+        <div class="form-row">
+          <label>Parent / guardian name
+            <input type="text" name="parent" required placeholder="Name of the person we should call">
+          </label>
+          <label>Relation
+            <select name="relation" required>
+              <option value="">Select</option>
+              <option>Mother</option>
+              <option>Father</option>
+              <option>Guardian</option>
+            </select>
+          </label>
         </div>
+        <div class="form-row">
+          <label>Occupation
+            <input type="text" name="job" placeholder="Optional">
+          </label>
+          <label>Second parent name
+            <input type="text" name="parent2" placeholder="Optional">
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Mobile number
+            <input type="tel" name="phone" required placeholder="10-digit mobile">
+          </label>
+          <label>Alternate mobile
+            <input type="tel" name="phone2" placeholder="Optional">
+          </label>
+        </div>
+        <label>Email (offer letter will be sent here)
+          <input type="email" name="email" required placeholder="name@email.com">
+        </label>
+        <label>Residential address
+          <textarea name="address" rows="3" required placeholder="House no., street, area"></textarea>
+        </label>
+        <div class="form-row">
+          <label>City
+            <input type="text" name="city" required placeholder="New Delhi">
+          </label>
+          <label>PIN code
+            <input type="text" name="pin" required placeholder="6 digits" maxlength="6">
+          </label>
+        </div>
+
+        <h3>3. Other information</h3>
+        <div class="form-row">
+          <label>School transport required?
+            <select name="transport">
+              <option>No</option>
+              <option>Yes — please inform the route</option>
+            </select>
+          </label>
+          <label>Sibling already in this school?
+            <select name="sibling">
+              <option>No</option>
+              <option>Yes — mention name &amp; class below</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>Category (if claiming concession)
+            <select name="category">
+              <option>General</option>
+              <option>Sibling</option>
+              <option>Defence / Paramilitary</option>
+              <option>Alumni</option>
+            </select>
+          </label>
+          <label>How did you hear about us?
+            <select name="source">
+              <option>School website</option>
+              <option>Parent / friend</option>
+              <option>Social media</option>
+              <option>Hoarding / newspaper</option>
+              <option>Campus visit</option>
+            </select>
+          </label>
+        </div>
+        <label>Note for the Admissions Desk
+          <textarea name="note" rows="3" placeholder="Sibling name &amp; class, transport area, medical note, preferred interaction date…"></textarea>
+        </label>
+
+        <label class="check-line">
+          <input type="checkbox" name="agree" required>
+          <span>I confirm the details are true. I understand this is only a registration, that a seat is offered in writing, and that the school does not collect any donation or capitation fee.</span>
+        </label>
+
+        <p class="form-msg" id="applyMsg"></p>
+        <button type="submit" class="send-btn">Submit application</button>
+        <p class="form-fine">You will receive an SMS / email acknowledgement. Keep Circular GVIS/ADM/2026-27/08 for reference.</p>
+      </form>
     </div>
+
+    <aside class="story-side">
+      <div class="side-card">
+        <h3>Age as on 31 March 2027</h3>
+        <table class="info-table tight">
+          <tr><th>Class</th><th>Minimum age</th></tr>
+          <tr><td>Nursery</td><td>3 years</td></tr>
+          <tr><td>KG</td><td>4 years</td></tr>
+          <tr><td>Class I</td><td>5 years</td></tr>
+          <tr><td>II and above</td><td>As per last TC</td></tr>
+        </table>
+      </div>
+      <div class="side-card">
+        <h3>What happens next</h3>
+        <div class="fact"><span>Today</span><strong>Form reaches the desk</strong></div>
+        <div class="fact"><span>2 working days</span><strong>We call for interaction</strong></div>
+        <div class="fact"><span>After interaction</span><strong>Written offer, if selected</strong></div>
+        <div class="fact"><span>7 days</span><strong>Pay registration to hold seat</strong></div>
+      </div>
+      <div class="side-card">
+        <h3>Carry to the desk</h3>
+        <ul class="check">
+          <li>Birth certificate</li>
+          <li>Aadhaar (child + parent)</li>
+          <li>2 photographs</li>
+          <li>Last report card</li>
+          <li>TC (Class II and above)</li>
+          <li>Residence proof if using the bus</li>
+        </ul>
+      </div>
+      <div class="side-card side-contact">
+        <h3>Admissions office</h3>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb8a8f8682989882848598ab8c998e8e859d8a87878e92c58e8f9ec58285">[email&#160;protected]</a></p>
+        <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM</p>
+        <p><i class="fa-solid fa-location-dot"></i> Gate 2, New Delhi campus</p>
+        <p>Closed on 2nd Saturday and gazetted holidays.</p>
+        <a class="text-link" href="news-admissions.html">Read the full circular →</a>
+      </div>
+    </aside>
+  </div>
 </section>
 
 <footer class="footer">
+    <div class="footer-top-line"></div>
     <div class="container">
         <div class="footer-container">
             <div class="footer-logo">
-                <h2>Green Valley <span>International School</span></h2>
-                <p>Building Future Leaders Through Innovation. A modern, inspiring learning environment for every child.</p>
-                <!-- Replace # below with your real social media page URLs -->
+                <a href="index.html" class="footer-brand">
+                    <span class="logo-icon"><i class="fa-solid fa-school"></i></span>
+                    <span>
+                        <h2>Green Valley <span>International School</span></h2>
+                    </span>
+                </a>
+                <p>A CBSE-affiliated day school in New Delhi. We combine strong academics with sports, arts and a safe campus for every child.</p>
+                <p class="footer-affil">Affiliation: CBSE, New Delhi &nbsp;·&nbsp; Session 2026–27</p>
                 <div class="footer-social">
-                    <a href="#" class="social-fb"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-ig"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-yt"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-li"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#academics">Academics</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About the School</a></li>
                     <li><a href="index.html#campus">Campus</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#news">Notices</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
                 </ul>
             </div>
-
             <div class="footer-links">
-                <h3>Academics</h3>
+                <h3>For Parents</h3>
                 <ul>
-                    <li><a href="index.html#academics">Primary School</a></li>
-                    <li><a href="index.html#academics">Middle School</a></li>
-                    <li><a href="index.html#academics">Senior School</a></li>
-                    <li><a href="index.html#contact">Admissions</a></li>
+                    <li><a href="apply.html">Admissions 2026–27</a></li>
+                    <li><a href="login.html">Parent / Student Login</a></li>
+                    <li><a href="news-ptm.html">PTM</a></li>
+                    <li><a href="timetable.html">Class Timetable</a></li>
+                    <li><a href="news-midterm.html">Exam Timetable</a></li>
+                    <li><a href="news-admissions.html">Admission Circular</a></li>
+                    <li><a href="index.html#academics">Academics</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h3>Contact</h3>
-                <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
+                <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9a0a7afa689aebbacaca7bfa8a5a5acb0e7acadbce7a0a7">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>© 2026 Green Valley International School. All Rights Reserved.</p>
+            <p class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <span>·</span>
+                <a href="index.html#contact">Disclaimer</a>
+                <span>·</span>
+                <a href="login.html">Portal</a>
+            </p>
         </div>
     </div>
 </footer>
-
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-<script src="main.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const totalSteps = 4;
-    let currentStep = 1;
-
-    const steps = document.querySelectorAll('.form-step');
-    const stepperItems = document.querySelectorAll('.stepper .step');
-    const progressLine = document.getElementById('progressLine');
-    const btnBack = document.getElementById('btnBack');
-    const btnNext = document.getElementById('btnNext');
-    const btnSubmit = document.getElementById('btnSubmit');
-    const form = document.getElementById('applyForm');
-
-    const validators = {
-        studentName: v => v.trim().length >= 2,
-        dob: v => v.trim().length > 0,
-        classApplying: v => v.trim().length > 0,
-        gender: v => v.trim().length > 0,
-        parentName: v => v.trim().length >= 2,
-        relation: v => v.trim().length >= 2,
-        email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
-        phone: v => /^[0-9+\-\s()]{7,15}$/.test(v.trim())
-    };
-
-    function fieldsInStep(stepNum) {
-        return Array.from(document.querySelector(`.form-step[data-step="${stepNum}"]`).querySelectorAll('input, select'))
-            .filter(el => validators[el.name]);
-    }
-
-    function validateStep(stepNum) {
-        let valid = true;
-        fieldsInStep(stepNum).forEach(field => {
-            const ok = validators[field.name](field.value || '');
-            const hint = field.parentElement.querySelector('.field-hint');
-            field.classList.toggle('field-error', !ok);
-            if (hint) hint.classList.toggle('show', !ok);
-            if (!ok) valid = false;
-        });
-        return valid;
-    }
-
-    function updateStepper() {
-        stepperItems.forEach(item => {
-            const n = parseInt(item.getAttribute('data-step'), 10);
-            item.classList.toggle('active', n === currentStep);
-            item.classList.toggle('completed', n < currentStep);
-        });
-        progressLine.style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
-    }
-
-    function goToStep(n) {
-        steps.forEach(s => s.classList.toggle('active', parseInt(s.getAttribute('data-step'), 10) === n));
-        currentStep = n;
-        updateStepper();
-        btnBack.disabled = currentStep === 1;
-        btnNext.style.display = currentStep === totalSteps ? 'none' : 'inline-block';
-        btnSubmit.style.display = currentStep === totalSteps ? 'inline-block' : 'none';
-        if (currentStep === totalSteps) buildReview();
-        window.scrollTo({ top: document.querySelector('.apply-form').offsetTop - 100, behavior: 'smooth' });
-    }
-
-    btnNext.addEventListener('click', () => {
-        if (!validateStep(currentStep)) return;
-        if (currentStep < totalSteps) goToStep(currentStep + 1);
-    });
-
-    btnBack.addEventListener('click', () => {
-        if (currentStep > 1) goToStep(currentStep - 1);
-    });
-
-    function fileLabel(inputId) {
-        const input = document.getElementById(inputId);
-        return input && input.files.length ? input.files[0].name : '&mdash; Not attached &mdash;';
-    }
-
-    function val(id) {
-        const el = document.getElementById(id);
-        return el && el.value.trim() ? el.value.trim() : '&mdash;';
-    }
-
-    function reviewRow(label, value) {
-        return `<div><dt>${label}</dt><dd>${value}</dd></div>`;
-    }
-
-    function buildReview() {
-        document.getElementById('reviewStudent').innerHTML =
-            reviewRow('Full Name', val('studentName')) +
-            reviewRow('Date of Birth', val('dob')) +
-            reviewRow('Class Applying For', val('classApplying')) +
-            reviewRow('Gender', val('gender'));
-
-        document.getElementById('reviewParent').innerHTML =
-            reviewRow('Name', val('parentName')) +
-            reviewRow('Relationship', val('relation')) +
-            reviewRow('Email', val('email')) +
-            reviewRow('Phone', val('phone'));
-
-        document.getElementById('reviewSchool').innerHTML =
-            reviewRow('Previous School', val('prevSchool')) +
-            reviewRow('Last Class Attended', val('prevClass')) +
-            reviewRow('Birth Certificate', fileLabel('docBirth')) +
-            reviewRow('Photograph', fileLabel('docPhoto'));
-    }
-
-    // File upload UI feedback
-    [['docBirth', 'uploadBox1', 'fileName1'], ['docPhoto', 'uploadBox2', 'fileName2']].forEach(([inputId, boxId, nameId]) => {
-        const input = document.getElementById(inputId);
-        const box = document.getElementById(boxId);
-        const nameEl = document.getElementById(nameId);
-        input.addEventListener('change', () => {
-            if (input.files.length) {
-                box.classList.add('has-file');
-                nameEl.textContent = input.files[0].name;
-            } else {
-                box.classList.remove('has-file');
-                nameEl.textContent = '';
-            }
-        });
-    });
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const consent = document.getElementById('consent');
-        const consentHint = document.getElementById('consentHint');
-        if (!consent.checked) {
-            consentHint.classList.add('show');
-            return;
-        }
-        consentHint.classList.remove('show');
-
-        btnSubmit.disabled = true;
-        btnSubmit.textContent = 'Submitting...';
-
-        // Simulated submission (no backend on GitHub Pages yet — see comment near the <form> tag)
-        setTimeout(() => {
-            const ref = 'GV' + Math.floor(100000 + Math.random() * 900000);
-            document.getElementById('refId').textContent = 'Reference ID: ' + ref;
-            form.style.display = 'none';
-            document.getElementById('stepper').style.display = 'none';
-            document.getElementById('successCard').classList.add('show');
-        }, 1000);
-    });
-
-    updateStepper();
-});
-</script>
-</body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d2b6c028caa810',t:'MTc4NzA3NDkzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
