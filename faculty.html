@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 :root{
   --cream:#efeae0;
@@ -20,6 +21,15 @@
   --sans:"Inter",system-ui,sans-serif;
   --tight:"Inter Tight",Inter,system-ui,sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
+  --forest-950:#0e2018;
+  --forest-900:#14291f;
+  --forest-800:#1b4332;
+  --gold-600:#b9852f;
+  --gold-500:#d4a53c;
+  --gold-400:#e6c26a;
+  --gold-300:#f0d994;
+  --white:#ffffff;
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
@@ -244,6 +254,35 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   padding: 22px 0;
   text-align: center;
   font-size: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 16px;
+}
+.footer .container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 64px 24px 0;
+}
+.footer ul { list-style: none; }
+.footer .logo-icon {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #235b3f, #0e2018);
+  color: var(--gold-400);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.footer-legal { display: flex; flex-wrap: wrap; gap: 6px 8px; justify-content: center; }
+.footer-legal a:hover { color: var(--gold-400); }
+@media (max-width: 800px) {
+  .footer-container { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .footer-container { grid-template-columns: 1fr; }
 }
 
 
@@ -508,7 +547,7 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
                 <h3>Contact</h3>
                 <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7beb9b1b897b0a5b2b2b9a1b6bbbbb2aef9b2b3a2f9beb9">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
                 <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
@@ -523,7 +562,6 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
             </p>
         </div>
     </div>
-</footer>
 </footer>
 
 <div class="scrim" id="scrim"></div>
