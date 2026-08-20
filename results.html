@@ -1,295 +1,1151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBSE Results 2024–25 | Green Valley International School</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Green Valley International School | Home</title>
+
+    <!-- Google Fonts -->
+   <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- Font Awesome (was missing — icons wouldn't render without this) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="header">
+
 <div class="container">
+
 <a href="index.html" class="logo">
-<div class="logo-icon"><i class="fa-solid fa-school"></i></div>
+
+<div class="logo-icon">
+<i class="fa-solid fa-school"></i>
+</div>
 <div>
 <h2>Green Valley</h2>
 <p>International School</p>
+
 </div>
+
 </a>
+
 <nav>
+
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">About</a></li>
+
+<li><a class="active" href="#home">Home</a></li>
+
 <li class="has-dropdown">
-  <a href="index.html#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="about.html">About <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="about.html">About the School</a></li>
+    <li><a href="principal.html">Principal’s Message</a></li>
+    <li><a href="infrastructure.html">Infrastructure</a></li>
+    <li><a href="disclosure.html">Mandatory Disclosure</a></li>
+    <li><a href="committees.html">Committees</a></li>
+    <li><a href="rules.html">School Rules</a></li>
+  </ul>
+</li>
+
+<li class="has-dropdown">
+  <a href="#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
     <li><a href="academics.html">Academic Programs</a></li>
     <li><a href="faculty.html">Our Faculty</a></li>
     <li><a href="academic-calendar.html">Academic Calendar</a></li>
     <li><a href="timetable.html">Timetable</a></li>
     <li><a href="results.html">Results</a></li>
+        <li><a href="holidays.html">Holiday List</a></li>
+    <li><a href="awards.html">Awards &amp; Achievements</a></li>
+    <li><a href="sports.html">Sports &amp; Clubs</a></li>
     <li><a href="downloads.html">Downloads</a></li>
   </ul>
 </li>
-<li><a href="index.html#campus">Campus</a></li>
-<li><a href="index.html#gallery">Gallery</a></li>
+
+<li><a href="#campus">Campus</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
 <li class="has-dropdown">
-  <a href="index.html#contact">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="news-events.html">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
     <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
     <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="transport.html">Transport</a></li>
+    <li><a href="uniform.html">Uniform &amp; Books</a></li>
+    <li><a href="tc.html">TC Request</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="alumni.html">Alumni</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms &amp; Withdrawal</a></li>
   </ul>
 </li>
-<li><a href="index.html#contact">Contact</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
 </ul>
+
 </nav>
+
 <div class="header-btns">
-<a href="login.html" class="login-btn">Login</a>
-<a href="apply.html" class="apply-btn">Apply Now</a>
+
+<!-- No student/parent portal yet — pointing to Contact for now. Replace with a real login page URL when ready. -->
+<a href="login.html" class="login-btn">
+
+Login
+
+</a>
+
+<a href="apply.html" class="apply-btn">
+
+Apply Now
+
+</a>
+
 </div>
-<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+
+<button class="menu-btn">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+
 </div>
+
 </header>
+
 <div class="nav-overlay"></div>
 
-<section class="inner-banner">
-  <div class="container">
-    <span>Academics</span>
-    <h1>Board &amp; School Results</h1>
-    <p>Class X and XII · CBSE · Last declared session 2024–25</p>
-  </div>
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div class="hero-left">
+
+<div class="badge">
+
+⭐ Admissions Open 2026-27
+
+</div>
+
+<h1>Building Future Leaders Through Innovation</h1>
+
+<p>
+
+Experience world-class education with smart classrooms,
+experienced teachers, innovation labs,
+sports excellence and a vibrant learning environment.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#campus" class="primary">
+
+Explore Campus
+
+</a>
+
+<a href="#campus" class="secondary">
+
+<i class="fa-solid fa-circle-play"></i>
+
+Watch Video
+
+</a>
+
+</div>
+
+<div class="stats">
+
+<div>
+
+<h2>25+</h2>
+
+<span>Years</span>
+
+</div>
+
+<div>
+
+<h2>5000+</h2>
+
+<span>Students</span>
+
+</div>
+
+<div>
+
+<h2>100%</h2>
+
+<span>Results</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="blob blob-lime"></div>
+<div class="blob blob-pink"></div>
+<img src="images/hero.jpg" alt="Student">
+
+<div class="card card1">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<div>
+
+<h3>25+</h3>
+
+<p>Years Excellence</p>
+
+</div>
+
+</div>
+
+<div class="card card2">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<div>
+
+<h3>5000+</h3>
+
+<p>Students</p>
+
+</div>
+
+</div>
+
+<div class="card card3">
+
+<i class="fa-solid fa-award"></i>
+
+<div>
+
+<h3>100%</h3>
+
+<p>Results</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+     ABOUT SECTION
+========================== -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image">
+
+            <img src="images/campus.jpg" alt="Campus">
+
+            <div class="experience-box">
+
+                <h2>25+</h2>
+
+                <span>Years of Excellence</span>
+
+            </div>
+
+        </div>
+
+        <div class="about-content">
+
+            <span class="section-title">
+                ABOUT OUR SCHOOL
+            </span>
+
+            <h2>Shaping Bright Minds For A Better Tomorrow</h2>
+
+            <p>
+
+                Green Valley International School provides a modern,
+                innovative and inspiring learning environment where
+                students grow academically, socially and personally.
+
+            </p>
+
+            <div class="about-features">
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Smart Digital Classrooms
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Experienced Faculty
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Sports & Activities
+
+                </div>
+
+                <div class="feature-item">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Robotics & Innovation Lab
+
+                </div>
+
+            </div>
+
+            <a href="#academics" class="primary-btn">
+
+                Discover More
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+ACADEMICS
+========================== -->
+
+<section class="academics" id="academics">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>ACADEMICS</span>
+
+            <h2>World Class Learning Programs</h2>
+
+            <p>
+                Our curriculum blends academics, technology, sports and creativity
+                to prepare students for the future.
+            </p>
+
+        </div>
+
+        <div class="academic-grid">
+
+            <div class="academic-card">
+
+                <div class="academic-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <h3>Primary School</h3>
+
+                <p>
+                    Strong foundation with activity-based learning and modern teaching.
+                </p>
+
+                <a href="academics-primary.html">Read More →</a>
+
+            </div>
+
+            <div class="academic-card">
+
+                <div class="academic-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+
+                <h3>Middle School</h3>
+
+                <p>
+                    STEM education, coding, robotics and project-based learning.
+                </p>
+
+                <a href="academics-middle.html">Read More →</a>
+
+            </div>
+
+            <div class="academic-card">
+
+                <div class="academic-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h3>Senior School</h3>
+
+                <p>
+                    Career-focused education with excellent board examination results.
+                </p>
+
+                <a href="academics-senior.html">Read More →</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+CAMPUS EXPERIENCE
+========================== -->
+
+<section class="campus" id="campus">
+
+    <div class="container campus-grid">
+
+        <!-- Left Content -->
+        <div class="campus-content">
+
+            <span class="section-title">CAMPUS EXPERIENCE</span>
+
+            <h2>Explore Our Modern Campus</h2>
+
+            <p>
+                Our campus is designed to inspire learning with smart classrooms,
+                advanced science labs, robotics, digital libraries, sports arenas,
+                art studios and innovation spaces.
+            </p>
+
+            <div class="campus-list">
+                <div><i class="fa-solid fa-check"></i> Smart Digital Classrooms</div>
+                <div><i class="fa-solid fa-check"></i> Robotics & AI Lab</div>
+                <div><i class="fa-solid fa-check"></i> Olympic Sports Facilities</div>
+                <div><i class="fa-solid fa-check"></i> Library & Innovation Hub</div>
+            </div>
+
+            <a href="#gallery" class="primary-btn">
+                Virtual Campus Tour
+            </a>
+
+        </div>
+
+        <!-- Right Video -->
+
+        <div class="campus-video">
+
+            <iframe
+                src="https://www.youtube.com/embed/K25Q2yDl-9Y?autoplay=1&mute=1&loop=1&playlist=K25Q2yDl-9Y&controls=1&rel=0"
+                title="Campus Tour Video"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+GALLERY SECTION
+========================== -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>OUR GALLERY</span>
+
+            <h2>School Life Moments</h2>
+
+            <p>
+                Explore memorable moments from our campus, classrooms,
+                sports events and cultural activities.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="images/gallery.webp" alt="Smart Classroom">
+                <div class="gallery-caption">
+                   <h3>Gallery of Excellence</h3>
+<p>Celebrating creativity, innovation, and outstanding student achievements through inspiring artwork and academic excellence.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Art.jpg" alt="Sports Day">
+                <div class="gallery-caption">
+                   <h3>Student Art Exhibition</h3>
+<p>A vibrant display of student creativity featuring paintings, sketches, and handmade artwork that reflect imagination and talent.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Healthy.jpg" alt="Science Lab">
+                <div class="gallery-caption">
+                    <h3>Healthy School Cafeteria</h3>
+<p>Providing fresh, nutritious, and hygienic meals every day to support students' health and overall well-being.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Smart Classrooms.jpg" alt="Annual Function">
+                <div class="gallery-caption">
+                   <h3>Interactive Smart Classrooms</h3>
+<p>Modern classrooms designed to encourage active learning, creativity, and collaboration through digital teaching methods.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/download (8).jpg" alt="Library">
+                <div class="gallery-caption">
+                   <h3>Sports & Athletics</h3>
+<p>Building confidence, teamwork, and leadership through athletics, outdoor games, and professional sports facilities.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/green.jpg" alt="Campus Grounds">
+                <div class="gallery-caption">
+                    <h3>Green Campus Initiative</h3>
+<p>Encouraging environmental responsibility through tree plantation, gardening activities, and sustainable learning practices.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="acad-page res-page">
-  <div class="container">
+    <!--=========================================
+LATEST NEWS SECTION
+==========================================-->
 
-    <div class="res-stats">
-      <div><b>100%</b><span>Class X pass</span></div>
-      <div><b>100%</b><span>Class XII pass</span></div>
-      <div><b>41</b><span>Above 90%</span></div>
-      <div><b>97.8%</b><span>XII topper</span></div>
-    </div>
+<section class="news" id="news">
 
-    <p class="res-note">CBSE does not publish a national toppers list. The names below are this school’s high performers, shown with parent consent. Official marks are only those on the CBSE marksheet / DigiLocker.</p>
+<div class="container">
 
-    <div class="res-tabs" role="tablist">
-      <button type="button" class="on" data-res="xii">Class XII</button>
-      <button type="button" data-res="x">Class X</button>
-      <button type="button" data-res="pride">Little wins</button>
-      <button type="button" data-res="guide">Check &amp; collect</button>
-    </div>
+<div class="section-header">
 
-    <div class="res-panel on" data-panel="xii">
-      <h3>Class XII stream toppers</h3>
-      <div class="port-grid">
-        <article class="port-card">
-          <div class="port-pic"><img src="images/topper-aarav.jpg" alt="Aarav Malhotra"></div>
-          <div>
-            <em>Science</em>
-            <h4>Aarav Malhotra</h4>
-            <b>97.8%</b>
-            <p>Physics · Chemistry · Mathematics</p>
-          </div>
-        </article>
-        <article class="port-card">
-          <div class="port-pic"><img src="images/topper-diya.jpg" alt="Diya Banerjee"></div>
-          <div>
-            <em>Commerce</em>
-            <h4>Diya Banerjee</h4>
-            <b>96.4%</b>
-            <p>Accountancy · B.St. · Economics</p>
-          </div>
-        </article>
-        <article class="port-card">
-          <div class="port-pic"><img src="images/topper-ishaan.jfif" alt="Ishaan Qureshi"></div>
-          <div>
-            <em>Humanities</em>
-            <h4>Ishaan Qureshi</h4>
-            <b>95.2%</b>
-            <p>History · Pol. Sci. · English</p>
-          </div>
-        </article>
-      </div>
+<span>LATEST UPDATES</span>
 
-      <h3>Class XII · stream analysis</h3>
-      <div class="table-scroll">
-      <table class="info-table">
-        <tr><th>Stream</th><th>Appeared</th><th>Passed</th><th>90% +</th><th>School highest</th></tr>
-        <tr><td>Science (PCM / PCB)</td><td>42</td><td>42</td><td>18</td><td>97.8% · Aarav Malhotra</td></tr>
-        <tr><td>Commerce</td><td>31</td><td>31</td><td>12</td><td>96.4% · Diya Banerjee</td></tr>
-        <tr><td>Humanities</td><td>23</td><td>23</td><td>6</td><td>95.2% · Ishaan Qureshi</td></tr>
-      </table>
-      </div>
-      <p>Best-of-five subjects, as printed on the CBSE marksheet. A first division (60% and above) was earned by 89 of 96 students.</p>
-    </div>
+<h2>Latest News &amp; Announcements</h2>
 
-    <div class="res-panel" data-panel="x">
-      <h3>Class X</h3>
-      <div class="port-grid two">
-        <article class="port-card">
-          <div class="port-pic"><img src="images/topper-ananya.jpg" alt="Ananya Iyer"></div>
-          <div>
-            <em>Class X · First</em>
-            <h4>Ananya Iyer</h4>
-            <b>97.2%</b>
-            <p>Science 99 · English 96</p>
-          </div>
-        </article>
-        <article class="port-card">
-          <div class="port-pic"><img src="images/topper-kabir.jpg" alt="Kabir Singh"></div>
-          <div>
-            <em>Class X · Second</em>
-            <h4>Kabir Singh</h4>
-            <b>96.0%</b>
-            <p>Social Science 98 · Mathematics 95</p>
-          </div>
-        </article>
-      </div>
-      <h3>Class X · at a glance</h3>
-      <div class="table-scroll">
-      <table class="info-table">
-        <tr><th>Particulars</th><th>Number</th></tr>
-        <tr><td>Registered / appeared</td><td>118 / 118</td></tr>
-        <tr><td>Passed</td><td>118 (100%)</td></tr>
-        <tr><td>90% and above</td><td>29</td></tr>
-        <tr><td>75% – 89.9%</td><td>54</td></tr>
-        <tr><td>60% – 74.9%</td><td>28</td></tr>
-        <tr><td>School average (best five)</td><td>82.6%</td></tr>
-        <tr><td>Highest</td><td>97.2% · Ananya Iyer</td></tr>
-      </table>
-      </div>
-    </div>
+<p>
+Stay updated with our latest school activities, admissions, achievements and upcoming events.
+</p>
 
-    <div class="res-panel" data-panel="pride">
-      <div class="pride-head">
-        <h3>Little wins wall</h3>
-        <p>Not every prize is a board percentage. Special children and CWSN students are named here with the same pride as the school topper.</p>
-      </div>
-      <div class="port-grid five">
-        <article class="port-card sm">
-          <div class="port-pic"><img src="images/win-art.jpg" alt="Myra Sen"></div>
-          <div>
-            <em>Art · IV-B</em>
-            <h4>Myra Sen</h4>
-            <p>Zonal drawing — first prize</p>
-          </div>
-        </article>
-        <article class="port-card sm">
-          <div class="port-pic"><img src="images/win-sports.jpg" alt="Reyansh Gupta"></div>
-          <div>
-            <em>Athletics · V-A</em>
-            <h4>Reyansh Gupta</h4>
-            <p>First medal · 100 m bronze</p>
-          </div>
-        </article>
-        <article class="port-card sm">
-          <div class="port-pic"><img src="images/win-quiz.jpg" alt="Zoya Khan"></div>
-          <div>
-            <em>Quiz · VII-A</em>
-            <h4>Zoya Khan</h4>
-            <p>Junior GK · Green House</p>
-          </div>
-        </article>
-        <article class="port-card sm">
-          <div class="port-pic"><img src="images/win-kind.jpg" alt="Ayaan Ali"></div>
-          <div>
-            <em>Kindness · II-B</em>
-            <h4>Ayaan Ali</h4>
-            <p>Helped a new child all week</p>
-          </div>
-        </article>
-        <article class="port-card sm">
-          <div class="port-pic"><img src="images/win-music.jpg" alt="Kiara D’Souza"></div>
-          <div>
-            <em>Music · III-A</em>
-            <h4>Kiara D’Souza</h4>
-            <p>First assembly solo · CWSN</p>
-          </div>
-        </article>
-      </div>
-    </div>
+</div>
 
-    <div class="res-panel" data-panel="guide">
-      <h3>How to check the CBSE result</h3>
-      <ol class="steps">
-        <li>Open <strong>cbseresults.nic.in</strong> or <strong>cbse.gov.in</strong>.</li>
-        <li>Choose Class X (Secondary) or Class XII (Senior School).</li>
-        <li>Enter roll number, school number, admit-card ID and date of birth as on the admit card.</li>
-        <li>Save a screenshot. The digital marksheet on <strong>DigiLocker</strong> / <strong>UMANG</strong> is the valid copy until the original arrives.</li>
-      </ol>
-      <p>DigiLocker: sign in with the mobile linked to Aadhaar, then Education → CBSE. UMANG: search “CBSE” and use the same credentials. Helpline: 1800-11-8002 (CBSE).</p>
 
-      <h3>Collect papers from school</h3>
-      <ul class="check">
-        <li>Original CBSE marksheet and passing certificate — Academic Office, Gate 2, when CBSE delivers the lot (usually 4–6 weeks after declaration).</li>
-        <li>Migration certificate (Class XII) and character certificate — same desk, parent ID required.</li>
-        <li>School does not courier originals. Duplicate copies: written application + 7 working days.</li>
-        <li>Compartment / improvement forms are issued only after the student meets the Exam Cell with the marksheet.</li>
-      </ul>
+<div class="news-grid">
 
-      <h3>If a paper is marked ABS / N.E. / Fail</h3>
-      <p>Meet the class teacher within 3 working days. Compartment dates follow the CBSE circular, not this page. We do not discuss another child’s marks on the phone.</p>
-    </div>
 
-    <div class="acad-split res-lower">
-      <div>
-        <h3>Subject distinctions · 2024–25</h3>
-        <div class="table-scroll">
-        <table class="info-table">
-          <tr><th>Class</th><th>Subject</th><th>Highest</th><th>Student</th></tr>
-          <tr><td>XII</td><td>Mathematics</td><td>99</td><td>Aarav Malhotra</td></tr>
-          <tr><td>XII</td><td>Accountancy</td><td>98</td><td>Diya Banerjee</td></tr>
-          <tr><td>XII</td><td>English</td><td>97</td><td>Ishaan Qureshi</td></tr>
-          <tr><td>X</td><td>Science</td><td>99</td><td>Ananya Iyer</td></tr>
-          <tr><td>X</td><td>Social Science</td><td>98</td><td>Kabir Singh</td></tr>
-          <tr><td>X</td><td>Hindi</td><td>97</td><td>Meher Kapoor</td></tr>
-        </table>
-        </div>
-        <h3>Five-year snapshot</h3>
-        <div class="table-scroll">
-        <table class="info-table">
-          <tr><th>Session</th><th>X pass</th><th>XII pass</th><th>90% +</th><th>School topper</th></tr>
-          <tr><td>2024–25</td><td>100%</td><td>100%</td><td>41</td><td>97.8%</td></tr>
-          <tr><td>2023–24</td><td>100%</td><td>100%</td><td>36</td><td>97.2%</td></tr>
-          <tr><td>2022–23</td><td>100%</td><td>99.2%</td><td>31</td><td>96.6%</td></tr>
-          <tr><td>2021–22</td><td>100%</td><td>100%</td><td>28</td><td>96.0%</td></tr>
-          <tr><td>2020–21</td><td>100%</td><td>100%</td><td>24</td><td>95.4%</td></tr>
-        </table>
-        </div>
-        <h3>From the Principal</h3>
-        <p>Congratulations to every child who sat the board. A percentage is one line on a long report. Collect your marksheet with a parent, thank your teachers, and come back in July ready for the next class — or the next campus.</p>
-        <p class="signoff">Sd/–<br><strong>Office of the Principal</strong><br>Green Valley International School, New Delhi</p>
-      </div>
-      <aside class="story-side">
-        <div class="side-card">
-          <h3>Result desk</h3>
-          <div class="fact"><span>Circular</span><strong>GVIS/EXAM/2025/11</strong></div>
-          <div class="fact"><span>Declared</span><strong>13 May 2025</strong></div>
-          <div class="fact"><span>Collect</span><strong>Gate 2 · Mon–Sat, 9–1</strong></div>
-          <div class="fact"><span>Bring</span><strong>Parent ID + admit card</strong></div>
-          <div class="fact"><span>Email</span><strong>exam@greenvalley.edu.in</strong></div>
-        </div>
-        <div class="side-card">
-          <h3>Official links</h3>
-          <p><a class="text-link" href="https://cbseresults.nic.in" target="_blank" rel="noopener">cbseresults.nic.in</a></p>
-          <p><a class="text-link" href="https://www.digilocker.gov.in" target="_blank" rel="noopener">DigiLocker marksheet</a></p>
-          <p><a class="text-link" href="news-midterm.html">Current exam notice →</a></p>
-        </div>
-        <div class="side-card">
-          <h3>Merit certificates</h3>
-          <p>CBSE issues merit certificates to the top 0.1% in a subject. Those PDFs appear in DigiLocker. The school does not print a substitute.</p>
-        </div>
-      </aside>
-    </div>
-  </div>
+<!-- CARD 1 -->
+
+<div class="news-card">
+
+<div class="news-date">
+
+<span>12</span>
+
+<p>AUG</p>
+
+</div>
+
+<div class="news-content">
+
+<span class="news-tag">
+Admission
+</span>
+
+<h3>
+Admissions Open for Academic Session 2026–27
+</h3>
+
+<p>
+Online registration has started. Limited seats are available for Nursery to Class XII.
+</p>
+
+<a href="news-admissions.html">
+Read More
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 2 -->
+
+<div class="news-card">
+
+<div class="news-date">
+
+<span>15</span>
+
+<p>AUG</p>
+
+</div>
+
+<div class="news-content">
+
+<span class="news-tag event">
+Event
+</span>
+
+<h3>
+Independence Day Celebration
+</h3>
+
+<p>
+Join us for flag hoisting, cultural performances and patriotic activities at the school campus.
+</p>
+
+<a href="news-independence-day.html">
+Read More
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 3 -->
+
+<div class="news-card">
+
+<div class="news-date">
+
+<span>25</span>
+
+<p>AUG</p>
+
+</div>
+
+<div class="news-content">
+
+<span class="news-tag achievement">
+Achievement
+</span>
+
+<h3>
+Students Won State Level Science Competition
+</h3>
+
+<p>
+Congratulations to our talented students for securing first position in the state science fair.
+</p>
+
+<a href="news-science-fair.html">
+Read More
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 4 -->
+
+<div class="news-card">
+
+<div class="news-date">
+
+<span>05</span>
+
+<p>SEP</p>
+
+</div>
+
+<div class="news-content">
+
+<span class="news-tag event">
+Event
+</span>
+
+<h3>
+Teachers' Day Celebration
+</h3>
+
+<p>
+Students honour our faculty with cultural performances and thank-you notes across the campus.
+</p>
+
+<a href="news-teachers-day.html">
+Read More
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 5 -->
+
+<div class="news-card">
+
+<div class="news-date">
+
+<span>12</span>
+
+<p>SEP</p>
+
+</div>
+
+<div class="news-content">
+
+<span class="news-tag academic">
+Academic
+</span>
+
+<h3>
+Parent-Teacher Meeting
+</h3>
+
+<p>
+PTM for Nursery to Class XII. Time slots will be shared on the parent app and class groups.
+</p>
+
+<a href="news-ptm.html">
+Read More
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 6 -->
+
+<div class="news-card">
+
+<div class="news-date">
+
+<span>21</span>
+
+<p>SEP</p>
+
+</div>
+
+<div class="news-content">
+
+<span class="news-tag academic">
+Academic
+</span>
+
+<h3>
+Mid-Term Examination Timetable
+</h3>
+
+<p>
+Mid-term exams begin 21 September. The class-wise timetable is available in Downloads.
+</p>
+
+<a href="news-midterm.html">
+Read More
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+<!--=========================================
+WHY CHOOSE US
+=========================================-->
+
+<section class="why-choose">
+
+<div class="container">
+
+<div class="section-header">
+
+<span>WHY CHOOSE US</span>
+
+<h2>Why Parents Trust Our School</h2>
+
+<p>
+Providing world-class education with modern facilities, experienced teachers and a safe learning environment.
+</p>
+
+</div>
+
+
+<div class="choose-grid">
+
+
+<div class="choose-card">
+
+<div class="choose-icon">
+<i class="fa-solid fa-user-graduate"></i>
+</div>
+
+<h3>Expert Teachers</h3>
+
+<p>
+Highly qualified and experienced faculty dedicated to every student's success.
+</p>
+
+</div>
+
+
+
+<div class="choose-card">
+
+<div class="choose-icon">
+<i class="fa-solid fa-laptop-code"></i>
+</div>
+
+<h3>Smart Classrooms</h3>
+
+<p>
+Interactive digital classrooms with modern teaching technology.
+</p>
+
+</div>
+
+
+
+<div class="choose-card">
+
+<div class="choose-icon">
+<i class="fa-solid fa-flask"></i>
+</div>
+
+<h3>Science Labs</h3>
+
+<p>
+Fully equipped laboratories for practical and innovative learning.
+</p>
+
+</div>
+
+
+
+<div class="choose-card">
+
+<div class="choose-icon">
+<i class="fa-solid fa-book-open"></i>
+</div>
+
+<h3>Modern Library</h3>
+
+<p>
+Thousands of books, journals and digital resources for students.
+</p>
+
+</div>
+
+
+
+<div class="choose-card">
+
+<div class="choose-icon">
+<i class="fa-solid fa-bus"></i>
+</div>
+
+<h3>Safe Transport</h3>
+
+<p>
+GPS-enabled buses with trained drivers for safe daily travel.
+</p>
+
+</div>
+
+
+
+<div class="choose-card">
+
+<div class="choose-icon">
+<i class="fa-solid fa-trophy"></i>
+</div>
+
+<h3>Sports Excellence</h3>
+
+<p>
+Professional coaching and excellent sports facilities for all students.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+   
+    <!--=========================================
+ADMISSION PROCESS
+==========================================-->
+
+<section class="admission">
+
+<div class="container">
+
+<div class="section-header">
+
+<span>ADMISSION PROCESS</span>
+
+<h2>Simple Admission Process</h2>
+
+<p>
+Start your child's educational journey with our simple and transparent admission process.
+</p>
+
+</div>
+<div class="admission-grid">
+
+<div class="admission-card">
+
+<div class="step-number">01</div>
+
+<div class="admission-icon">
+<i class="fa-solid fa-file-pen"></i>
+</div>
+
+<h3>Fill Application</h3>
+
+<p>
+Complete the online admission form with the student's basic details.
+</p>
+
+</div>
+<div class="admission-card">
+
+<div class="step-number">02</div>
+
+<div class="admission-icon">
+<i class="fa-solid fa-folder-open"></i>
+</div>
+
+<h3>Submit Documents</h3>
+
+<p>
+Upload or submit the required documents for verification.
+</p>
+
+</div>
+
+<div class="admission-card">
+
+<div class="step-number">03</div>
+
+<div class="admission-icon">
+<i class="fa-solid fa-users"></i>
+</div>
+
+<h3>Interaction</h3>
+
+<p>
+Student and parents attend a friendly interaction with our faculty.
+</p>
+
+</div>
+
+<div class="admission-card">
+
+<div class="step-number">04</div>
+
+<div class="admission-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+
+<h3>Admission Confirmed</h3>
+
+<p>
+Welcome to our school family and begin an exciting learning journey.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+    
+<!-- =========================
+TESTIMONIAL SECTION
+========================== -->
+
+<section class="testimonial" id="testimonial">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>TESTIMONIALS</span>
+
+            <h2>What Parents Say</h2>
+
+            <p>
+                Hear from parents who trust Green Valley International School
+                for their children's education and future.
+            </p>
+
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The teachers are highly supportive and the learning environment is excellent. My child enjoys coming to school every day."</p>
+                <div class="parent">
+                    <img src="images/parent1.jpg" alt="Rahul Sharma">
+                    <div>
+                        <h4>Rahul Sharma</h4>
+                        <span>Parent</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Amazing campus, smart classrooms and outstanding academic results. Highly recommended for quality education."</p>
+                <div class="parent">
+                    <img src="images/parent2.jfif" alt="Priya Verma">
+                    <div>
+                        <h4>Priya Verma</h4>
+                        <span>Parent</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The focus on sports, technology and personality development makes this school truly exceptional."</p>
+                <div class="parent">
+                    <img src="images/parent3.jpg" alt="Amit Singh">
+                    <div>
+                        <h4>Amit Singh</h4>
+                        <span>Parent</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+CONTACT SECTION
+========================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-info">
+
+            <span class="section-title">
+                CONTACT US
+            </span>
+
+            <h2>Let's Talk About Your Child's Future</h2>
+
+            <p>
+                We'd love to hear from you. Visit our campus or
+                contact us for admissions and enquiries.
+            </p>
+
+            <div class="contact-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+                    <h4>Address</h4>
+                    <p>Green Valley International School,<br>New Delhi, India</p>
+                </div>
+
+            </div>
+
+            <div class="contact-box">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+                    <h4>Phone</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+
+            </div>
+
+            <div class="contact-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+                    <h4>Email</h4>
+                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9df4f3fbf2ddfaeff8f8f3ebfcf1f1f8e4b3f8f9e8b3f4f3">[email&#160;protected]</a></p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="contact-form">
+
+            <form id="contactForm" method="post" action="#contact">
+
+                <input type="text" name="name" placeholder="Your Name" required>
+
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+
+                <textarea rows="6" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit" class="send-btn">Send Message</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================== -->
 
 <footer class="footer">
     <div class="footer-top-line"></div>
@@ -315,17 +1171,17 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About the School</a></li>
+                    <li><a href="about.html">About the School</a></li>
                     <li><a href="index.html#campus">Campus</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#news">Notices</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>For Parents</h3>
                 <ul>
-                    <li><a href="apply.html">Admissions 2026–27</a></li>
+                    <li><a href="admissions.html">Admissions 2026–27</a></li>
                     <li><a href="login.html">Parent / Student Login</a></li>
                     <li><a href="news-ptm.html">PTM</a></li>
                     <li><a href="timetable.html">Class Timetable</a></li>
@@ -338,7 +1194,7 @@
                 <h3>Contact</h3>
                 <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="751c1b131a35120710101b03141919100c5b1011005b1c1b">[email&#160;protected]</a></p>
                 <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
@@ -347,14 +1203,17 @@
             <p class="footer-legal">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <span>·</span>
-                <a href="index.html#contact">Disclaimer</a>
+                <a href="terms.html">Terms</a>
                 <span>·</span>
                 <a href="login.html">Portal</a>
             </p>
         </div>
     </div>
 </footer>
+
+<!-- Back to top -->
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-<script src="main.js"></script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
 </body>
 </html>
