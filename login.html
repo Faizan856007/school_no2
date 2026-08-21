@@ -24,7 +24,15 @@
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">About</a></li>
+<li class="has-dropdown">
+  <a href="about.html">About <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="about.html">About the School</a></li>
+    <li><a href="infrastructure.html">Infrastructure</a></li>
+    <li><a href="disclosure.html">Mandatory Disclosure</a></li>
+    <li><a href="rules.html">School Rules</a></li>
+  </ul>
+</li>
 <li class="has-dropdown">
   <a href="index.html#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
@@ -33,25 +41,34 @@
     <li><a href="academic-calendar.html">Academic Calendar</a></li>
     <li><a href="timetable.html">Timetable</a></li>
     <li><a href="results.html">Results</a></li>
+        <li><a href="holidays.html">Holiday List</a></li>
+    <li><a href="awards.html">Awards &amp; Achievements</a></li>
+    <li><a href="sports.html">Sports &amp; Clubs</a></li>
     <li><a href="downloads.html">Downloads</a></li>
   </ul>
 </li>
 <li><a href="index.html#campus">Campus</a></li>
 <li><a href="index.html#gallery">Gallery</a></li>
 <li class="has-dropdown">
-  <a href="index.html#contact">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="news-events.html">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
     <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
     <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="transport.html">Transport</a></li>
+    <li><a href="uniform.html">Uniform &amp; Books</a></li>
+    <li><a href="tc.html">TC Request</a></li>
+    <li><a href="careers.html">Careers</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms &amp; Withdrawal</a></li>
   </ul>
 </li>
-<li><a href="index.html#contact">Contact</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 <div class="header-btns">
-<a href="login.html" class="login-btn">Login</a>
+<a href="login.html" class="login-btn is-current">Login</a>
 <a href="apply.html" class="apply-btn">Apply Now</a>
 </div>
 <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
@@ -60,32 +77,19 @@
 <div class="nav-overlay"></div>
 
 <section class="login-page">
-  <div class="container login-shell">
-
-    <div class="login-brand">
-      <div class="login-orb"></div>
-      <div class="login-orb two"></div>
-      <p class="login-kicker">Secure school portal</p>
-      <h1>One login for home, class and office</h1>
-      <p>Homework, attendance, fee receipts, report cards and circulars — in the same place your family already uses.</p>
-      <ul class="login-points">
-        <li><i class="fa-solid fa-clipboard-user"></i> Daily attendance &amp; timetable</li>
-        <li><i class="fa-solid fa-book-open"></i> Homework and worksheets</li>
-        <li><i class="fa-solid fa-receipt"></i> Fee receipt &amp; pending dues</li>
-        <li><i class="fa-solid fa-file-lines"></i> Report cards and PTM slots</li>
-        <li><i class="fa-solid fa-bullhorn"></i> Circulars and holiday list</li>
-      </ul>
-      <div class="login-stat">
-        <div><b>25+</b><span>Years</span></div>
-        <div><b>5000+</b><span>Students</span></div>
-        <div><b>100%</b><span>Results</span></div>
+  <div class="login-glow one"></div>
+  <div class="login-glow two"></div>
+  <div class="container">
+    <div class="login-card">
+      <div class="login-card-edge"></div>
+      <div class="login-crest-wrap">
+        <div class="login-mark"><i class="fa-solid fa-school"></i></div>
       </div>
-    </div>
-
-    <div class="login-panel">
+      <p class="login-panel-kicker">Green Valley International School</p>
       <h2>Sign in</h2>
-      <p class="login-sub">Choose who you are, then enter the ID given by the school.</p>
-      <div class="login-tabs" role="tablist">
+      <p class="login-session">CBSE, New Delhi · Session 2026–27</p>
+      <p class="login-sub" id="loginHint">Parents use the mobile given at admission. See all wards, pay fees and download receipts.</p>
+      <div class="login-tabs" role="tablist" id="loginTabs">
         <button type="button" class="on" data-tab="parent"><i class="fa-solid fa-user-group"></i> Parent</button>
         <button type="button" data-tab="student"><i class="fa-solid fa-user-graduate"></i> Student</button>
         <button type="button" data-tab="staff"><i class="fa-solid fa-chalkboard-user"></i> Staff</button>
@@ -114,37 +118,17 @@
           <button type="button" class="text-link" id="forgotBtn">Forgot password?</button>
         </div>
         <p class="form-msg" id="loginMsg"></p>
-        <button type="submit" class="send-btn" id="loginSubmit">Sign in as parent</button>
+        <button type="submit" class="send-btn" id="loginSubmit"><i class="fa-solid fa-arrow-right-to-bracket"></i> Sign in as parent</button>
+        <div class="login-alt">
+          <button type="button" class="text-link" id="otpBtn">Send OTP instead</button>
+        </div>
       </form>
 
       <p class="login-new">New to Green Valley? <a href="apply.html">Apply for admission</a></p>
-      <div class="login-foot">
-        <p><i class="fa-solid fa-headset"></i> Helpdesk +91 98765 43210 · Mon–Sat, 9 AM – 2 PM</p>
-        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b1b04191f0a072b0c190e0e051d0a07070e12450e0f1e450205">[email&#160;protected]</a></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container login-info">
-    <div class="side-card">
-      <div class="info-ico"><i class="fa-solid fa-user-group"></i></div>
-      <h3>Parent login</h3>
-      <p>Use the mobile given at admission. See all wards, pay fees, book PTM and download receipts.</p>
-    </div>
-    <div class="side-card">
-      <div class="info-ico"><i class="fa-solid fa-user-graduate"></i></div>
-      <h3>Student login</h3>
-      <p>Admission number. First password is date of birth (DDMMYYYY). Change it after first sign-in.</p>
-    </div>
-    <div class="side-card">
-      <div class="info-ico"><i class="fa-solid fa-chalkboard-user"></i></div>
-      <h3>Staff login</h3>
-      <p>School email and ERP password. Reset only from your official ID. Do not share with students.</p>
-    </div>
-    <div class="side-card">
-      <div class="info-ico"><i class="fa-solid fa-key"></i></div>
-      <h3>Need a reset?</h3>
-      <p>SMS <strong>RESET</strong> from your registered mobile, or visit the desk with parent ID. We never ask the password on a call.</p>
+      <p class="login-help-line">
+        <span><i class="fa-solid fa-headset"></i>+91 98765 43210</span>
+        <span><i class="fa-regular fa-envelope"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7a7b8a5a3b6bb97b0a5b2b2b9a1b6bbbbb2aef9b2b3a2f9beb9">[email&#160;protected]</a></span>
+      </p>
     </div>
   </div>
 </section>
@@ -173,17 +157,17 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About the School</a></li>
+                    <li><a href="about.html">About the School</a></li>
                     <li><a href="index.html#campus">Campus</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#news">Notices</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>For Parents</h3>
                 <ul>
-                    <li><a href="apply.html">Admissions 2026–27</a></li>
+                    <li><a href="admissions.html">Admissions 2026–27</a></li>
                     <li><a href="login.html">Parent / Student Login</a></li>
                     <li><a href="news-ptm.html">PTM</a></li>
                     <li><a href="timetable.html">Class Timetable</a></li>
@@ -196,7 +180,7 @@
                 <h3>Contact</h3>
                 <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3851565e57785f4a5d5d564e5954545d41165d5c4d165156">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8a1a6aea788afbaadada6bea9a4a4adb1e6adacbde6a1a6">[email&#160;protected]</a></p>
                 <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
@@ -205,7 +189,7 @@
             <p class="footer-legal">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <span>·</span>
-                <a href="index.html#contact">Disclaimer</a>
+                <a href="terms.html">Terms</a>
                 <span>·</span>
                 <a href="login.html">Portal</a>
             </p>
@@ -215,5 +199,5 @@
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="timetable-data.js"></script>
 <script src="main.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d2b3d158bca6db',t:'MTc4NzA3NDgxMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2eb415d7e7ef92f',t:'MTc4NzMzMjI2OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
