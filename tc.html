@@ -27,10 +27,8 @@
   <a href="about.html">About <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
     <li><a href="about.html">About the School</a></li>
-    <li><a href="principal.html">Principal’s Message</a></li>
     <li><a href="infrastructure.html">Infrastructure</a></li>
     <li><a href="disclosure.html">Mandatory Disclosure</a></li>
-    <li><a href="committees.html">Committees</a></li>
     <li><a href="rules.html">School Rules</a></li>
   </ul>
 </li>
@@ -60,7 +58,6 @@
     <li><a href="uniform.html">Uniform &amp; Books</a></li>
     <li><a href="tc.html">TC Request</a></li>
     <li><a href="careers.html">Careers</a></li>
-    <li><a href="alumni.html">Alumni</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
     <li><a href="terms.html">Terms &amp; Withdrawal</a></li>
@@ -80,41 +77,68 @@
 
 <section class="more-hero">
   <div class="container">
-    <p class="more-kicker">Parents</p>
+    <p class="more-kicker">Parents · Academic Office</p>
     <h1>Transfer certificate</h1>
-    <p>Apply in writing. A WhatsApp message is not an application.</p>
+    <p>Apply in writing. WhatsApp or a phone call is not an application. We do not back-date a TC.</p>
   </div>
 </section>
 <section class="more-page">
   <div class="container">
-
-    <p class="more-lead">Tuition is charged till the end of the month in which this form is accepted. Character certificate is issued with the TC if conduct is clear.</p>
-    <div class="apply-form" style="max-width:640px">
-      <form id="tcForm">
-        <div class="form-row">
-          <label>Student name <input type="text" name="name" required></label>
-          <label>Admission no. <input type="text" name="adm" required placeholder="GVIS/2024/0842"></label>
+    <div class="page-stick"><nav>
+      <a href="#need">What you get</a><a href="#dues">No-dues</a><a href="#form">Form</a>
+    </nav></div>
+    <div class="two-col">
+      <div>
+        <div class="callout"><i class="fa-solid fa-file-circle-exclamation"></i><p>Tuition is due till the end of the month in which this form is accepted. Class X / XII after 31 August: CBSE LOC rules still apply; a written reason is required.</p></div>
+        <div class="panel" id="need">
+          <h3>What we issue</h3>
+          <table class="info-table">
+            <tr><th>Paper</th><th>Time</th></tr>
+            <tr><td>TC (CBSE format)</td><td>7 working days after no-dues</td></tr>
+            <tr><td>Character certificate</td><td>Same day as TC, if ticked here</td></tr>
+            <tr><td>Report-card duplicate</td><td>₹ 100 · 3 working days</td></tr>
+            <tr><td>Caution money</td><td>NEFT within 45 days to the parent account on file</td></tr>
+          </table>
         </div>
-        <div class="form-row">
-          <label>Class &amp; section <input type="text" name="cls" required placeholder="VII-B"></label>
-          <label>Last working day <input type="date" name="last" required></label>
+        <div class="panel" id="dues">
+          <h3>No-dues desks</h3>
+          <table class="info-table">
+            <tr><th>Desk</th><th>Checks</th></tr>
+            <tr><td>Library</td><td>Books, overdue</td></tr>
+            <tr><td>Labs</td><td>Breakage (XI–XII Science)</td></tr>
+            <tr><td>Sports / clubs</td><td>School kit if issued</td></tr>
+            <tr><td>Accounts</td><td>Fee till that month; transport till the term</td></tr>
+          </table>
+          <p class="fee-note">Collect at Gate 2 with parent ID. Registration and admission fee are never refunded. Full money rules: <a href="terms.html">Terms</a>.</p>
         </div>
-        <label>Reason for leaving
-          <select name="reason" required>
-            <option value="">Select</option>
-            <option>Transfer of parent</option>
-            <option>Relocation</option>
-            <option>Change of board / city</option>
-            <option>Other</option>
-          </select>
-        </label>
-        <label>Parent mobile <input type="tel" name="phone" required maxlength="10" placeholder="10 digits"></label>
-        <p class="form-msg" id="tcMsg"></p>
-        <button type="submit" class="send-btn" data-label="Submit TC request">Submit TC request</button>
-        <p class="form-fine">Processing: 7 working days after no-dues. Collect from Academic Office, Gate 2.</p>
-      </form>
+      </div>
+      <div class="apply-form" id="form">
+        <h3>TC request</h3>
+        <form id="tcForm">
+          <div class="form-row">
+            <label>Student name <input type="text" name="name" required></label>
+            <label>Admission no. <input type="text" name="adm" required placeholder="GVIS/2024/0842"></label>
+          </div>
+          <div class="form-row">
+            <label>Class &amp; section <input type="text" name="cls" required placeholder="VII-B"></label>
+            <label>Last working day <input type="date" name="last" required></label>
+          </div>
+          <label>Reason
+            <select name="reason" required>
+              <option value="">Select</option>
+              <option>Transfer of parent</option>
+              <option>Relocation</option>
+              <option>Change of board / city</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Parent mobile <input type="tel" name="phone" required maxlength="10" placeholder="10 digits"></label>
+          <p class="form-msg" id="tcMsg"></p>
+          <button type="submit" class="send-btn" data-label="Submit TC request">Submit TC request</button>
+          <p class="form-fine">Demo form until the live office mail is connected. Keep a photocopy of the signed TC.</p>
+        </form>
+      </div>
     </div>
-
   </div>
 </section>
 
@@ -142,10 +166,8 @@
                 <h3>The School</h3>
                 <ul>
                     <li><a href="about.html">About the School</a></li>
-                    <li><a href="principal.html">Principal’s Message</a></li>
                     <li><a href="infrastructure.html">Infrastructure</a></li>
                     <li><a href="disclosure.html">Mandatory Disclosure</a></li>
-                    <li><a href="committees.html">Committees</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -165,7 +187,7 @@
                 <h3>Contact</h3>
                 <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b72757d745b7c697e7e756d7a77777e62357e7f6e357275">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3851565e57785f4a5d5d564e5954545d41165d5c4d165156">[email&#160;protected]</a></p>
                 <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
@@ -185,6 +207,5 @@
 </footer>
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f"}' crossorigin="anonymous"></script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2eb46d12cca16ed',t:'MTc4NzMzMjQ5Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
