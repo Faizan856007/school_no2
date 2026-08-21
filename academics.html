@@ -24,7 +24,15 @@
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">About</a></li>
+<li class="has-dropdown">
+  <a href="about.html">About <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="about.html">About the School</a></li>
+    <li><a href="infrastructure.html">Infrastructure</a></li>
+    <li><a href="disclosure.html">Mandatory Disclosure</a></li>
+    <li><a href="rules.html">School Rules</a></li>
+  </ul>
+</li>
 <li class="has-dropdown">
   <a href="index.html#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
@@ -33,21 +41,30 @@
     <li><a href="academic-calendar.html">Academic Calendar</a></li>
     <li><a href="timetable.html">Timetable</a></li>
     <li><a href="results.html">Results</a></li>
+        <li><a href="holidays.html">Holiday List</a></li>
+    <li><a href="awards.html">Awards &amp; Achievements</a></li>
+    <li><a href="sports.html">Sports &amp; Clubs</a></li>
     <li><a href="downloads.html">Downloads</a></li>
   </ul>
 </li>
 <li><a href="index.html#campus">Campus</a></li>
 <li><a href="index.html#gallery">Gallery</a></li>
 <li class="has-dropdown">
-  <a href="index.html#contact">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="news-events.html">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
     <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
     <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="transport.html">Transport</a></li>
+    <li><a href="uniform.html">Uniform &amp; Books</a></li>
+    <li><a href="tc.html">TC Request</a></li>
+    <li><a href="careers.html">Careers</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms &amp; Withdrawal</a></li>
   </ul>
 </li>
-<li><a href="index.html#contact">Contact</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 <div class="header-btns">
@@ -63,16 +80,22 @@
 
 
 
-<section class="inner-banner">
-  <div class="container">
-    <span>Academics</span>
-    <h1>World Class Learning Programs</h1>
-    <p>CBSE curriculum · Nursery to Class XII · Session 2026–27</p>
+<section class="page-hero">
+  <img src="images/primary-class.jpg" alt="Classroom">
+  <div class="page-hero-shade"></div>
+  <div class="container page-hero-copy">
+    <p class="more-kicker">Academics · CBSE · 2026–27</p>
+    <h1>Academic programs</h1>
+    <p>Nursery to Class XII on one campus. English medium. Hindi from Nursery. Third language from Class VI.</p>
   </div>
 </section>
 <section class="acad-page">
   <div class="container">
-    <div class="section-header">
+    <div class="page-stick"><nav>
+      <a href="#approach">Approach</a><a href="#wings">Wings</a><a href="#subjects">Subjects</a><a href="#exam">Assessment</a>
+    </nav></div>
+    <div class="callout"><i class="fa-solid fa-landmark"></i><p>We follow CBSE. NEP-aligned competency work is inside the existing periods — we do not add a fourth “NEP period” that steals science. Academic Office: academics@greenvalley.edu.in</p></div>
+    <div class="section-header" id="approach">
       <span>OUR APPROACH</span>
       <h2>How we teach</h2>
       <p>Clear lessons, enough time to practise, and an adult who knows the child by name.</p>
@@ -95,7 +118,7 @@
       </div>
     </div>
 
-    <div class="section-header">
+    <div class="section-header" id="wings">
       <span>OUR PROGRAMS</span>
       <h2>Three stages, one campus</h2>
     </div>
@@ -137,7 +160,30 @@
         <p>Share any diagnosis at admission. We offer extra time in internal exams where the board allows, and a quiet room for assessments.</p>
       </div>
     </div>
-    <p class="acad-note">Academic Office: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2b3b1b3b6b7bfbbb1a192b5a0b7b7bca4b3bebeb7abfcb7b6a7fcbbbc">[email&#160;protected]</a> · +91 98765 43210 · Mon–Sat, 9 AM – 2 PM</p>
+    <h3>Subjects at a glance</h3>
+    <table class="info-table">
+      <tr><th>Stage</th><th>Core</th><th>Also</th></tr>
+      <tr><td>Nursery – II</td><td>English, Hindi, Number, EVS (oral)</td><td>Art, music, play, no formal exam</td></tr>
+      <tr><td>III – V</td><td>English, Hindi, Maths, EVS</td><td>Computer, art, PE; two reviews a year</td></tr>
+      <tr><td>VI – VIII</td><td>English, Hindi, Maths, Science, Social Science</td><td>Third language, computer, clubs; unit tests + mid-term + annual</td></tr>
+      <tr><td>IX – X</td><td>As per CBSE (5 + additional as offered)</td><td>Skill subject on request; school exams + CBSE</td></tr>
+      <tr><td>XI – XII Science</td><td>English, Physics, Chemistry</td><td>Maths or Biology; Computer / PE / Painting as elective</td></tr>
+      <tr><td>XI – XII Commerce</td><td>English, Accountancy, Business Studies, Economics</td><td>Maths or Informatics / PE</td></tr>
+      <tr><td>XI – XII Humanities</td><td>English, History, Political Science</td><td>Economics / Psychology / Geography / PE / Painting</td></tr>
+    </table>
+    <div class="panel" id="exam">
+      <h3>Assessment (internal)</h3>
+      <table class="info-table">
+        <tr><th>Class</th><th>What we record</th><th>Weight (school)</th></tr>
+        <tr><td>Nursery–II</td><td>Observation notes, no rank list</td><td>—</td></tr>
+        <tr><td>III–V</td><td>Two reviews a year + notebook</td><td>No board</td></tr>
+        <tr><td>VI–VIII</td><td>Unit tests, mid-term, annual</td><td>UT 20 · Mid 30 · Annual 50</td></tr>
+        <tr><td>IX–X</td><td>As CBSE + school internals</td><td>Board pattern</td></tr>
+        <tr><td>XI–XII</td><td>Unit, half-yearly, two pre-boards</td><td>Board is the result</td></tr>
+      </table>
+      <p class="fee-note">Promotion I–VIII: no child is held for a single weak paper; a support plan is written in March. IX–XII follow CBSE. Extra time and a quiet room where a diagnosis is on file at admission — not the week of the paper. Optional olympiad is after school, paid separately, never during a unit test.</p>
+    </div>
+    <p class="acad-note">Academic Office: academics@greenvalley.edu.in · +91 98765 43210 · Mon–Sat, 9 AM – 2 PM · <a href="timetable.html">Timetable</a> · <a href="holidays.html">Holiday list</a> · <a href="results.html">Results</a></p>
   </div>
 </section>
 <footer class="footer">
@@ -164,17 +210,17 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About the School</a></li>
+                    <li><a href="about.html">About the School</a></li>
                     <li><a href="index.html#campus">Campus</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#news">Notices</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>For Parents</h3>
                 <ul>
-                    <li><a href="apply.html">Admissions 2026–27</a></li>
+                    <li><a href="admissions.html">Admissions 2026–27</a></li>
                     <li><a href="login.html">Parent / Student Login</a></li>
                     <li><a href="news-ptm.html">PTM</a></li>
                     <li><a href="timetable.html">Class Timetable</a></li>
@@ -187,7 +233,7 @@
                 <h3>Contact</h3>
                 <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f79e999198b7908592929981969b9b928ed9929382d99e99">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
                 <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
@@ -196,7 +242,7 @@
             <p class="footer-legal">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <span>·</span>
-                <a href="index.html#contact">Disclaimer</a>
+                <a href="terms.html">Terms</a>
                 <span>·</span>
                 <a href="login.html">Portal</a>
             </p>
@@ -204,7 +250,6 @@
     </div>
 </footer>
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f"}' crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </body>
 </html>
