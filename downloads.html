@@ -24,7 +24,15 @@
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">About</a></li>
+<li class="has-dropdown">
+  <a href="about.html">About <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="about.html">About the School</a></li>
+    <li><a href="infrastructure.html">Infrastructure</a></li>
+    <li><a href="disclosure.html">Mandatory Disclosure</a></li>
+    <li><a href="rules.html">School Rules</a></li>
+  </ul>
+</li>
 <li class="has-dropdown">
   <a href="index.html#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
@@ -33,21 +41,30 @@
     <li><a href="academic-calendar.html">Academic Calendar</a></li>
     <li><a href="timetable.html">Timetable</a></li>
     <li><a href="results.html">Results</a></li>
+        <li><a href="holidays.html">Holiday List</a></li>
+    <li><a href="awards.html">Awards &amp; Achievements</a></li>
+    <li><a href="sports.html">Sports &amp; Clubs</a></li>
     <li><a href="downloads.html">Downloads</a></li>
   </ul>
 </li>
 <li><a href="index.html#campus">Campus</a></li>
 <li><a href="index.html#gallery">Gallery</a></li>
 <li class="has-dropdown">
-  <a href="index.html#contact">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="news-events.html">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
     <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
     <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="transport.html">Transport</a></li>
+    <li><a href="uniform.html">Uniform &amp; Books</a></li>
+    <li><a href="tc.html">TC Request</a></li>
+    <li><a href="careers.html">Careers</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms &amp; Withdrawal</a></li>
   </ul>
 </li>
-<li><a href="index.html#contact">Contact</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 <div class="header-btns">
@@ -63,17 +80,75 @@
 
 
 
-<section class="inner-banner">
+<section class="more-hero">
   <div class="container">
-    <span>Academics</span>
+    <p class="more-kicker">Academic Office · Session 2026–27</p>
     <h1>Downloads</h1>
-    <p>Prospectus, calendar, syllabus and forms. Printed copies at the front desk.</p>
+    <p>Prospectus, lists, circulars and forms. These files are free. Printed copies at Gate 2, 9 AM – 1 PM. A WhatsApp PDF is not official unless it matches this page.</p>
   </div>
 </section>
-<section class="acad-page">
+<section class="acad-page more-page">
   <div class="container">
-    <p class="lead-wide">If a file does not open, write to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5637353732333b3f352516312433333820373a3a332f78333223783f38">[email&#160;protected]</a> with the document name. We do not charge for these files.</p>
-    <div class="dl-grid"><a class="dl-card" href="news-admissions.html"><i class="fa-solid fa-file-pdf"></i><div><b>Prospectus 2026–27</b><span>PDF · 2.4 MB</span></div><em>Open</em></a><a class="dl-card" href="apply.html"><i class="fa-solid fa-file-lines"></i><div><b>Admission / registration form</b><span>Online form</span></div><em>Open</em></a><a class="dl-card" href="academic-calendar.html"><i class="fa-solid fa-calendar"></i><div><b>Academic calendar 2026–27</b><span>PDF</span></div><em>Open</em></a><a class="dl-card" href="news-midterm.html"><i class="fa-solid fa-clipboard"></i><div><b>Mid-term timetable</b><span>Circular</span></div><em>Open</em></a><a class="dl-card" href="academics-primary.html"><i class="fa-solid fa-book"></i><div><b>Syllabus — Primary</b><span>Overview</span></div><em>Open</em></a><a class="dl-card" href="academics-middle.html"><i class="fa-solid fa-book"></i><div><b>Syllabus — Middle</b><span>Overview</span></div><em>Open</em></a><a class="dl-card" href="academics-senior.html"><i class="fa-solid fa-book"></i><div><b>Syllabus — Senior</b><span>Overview</span></div><em>Open</em></a><a class="dl-card" href="index.html#contact"><i class="fa-solid fa-bus"></i><div><b>Transport note</b><span>With admissions</span></div><em>Open</em></a><a class="dl-card" href="index.html#contact"><i class="fa-solid fa-id-card"></i><div><b>Transfer certificate process</b><span>Office</span></div><em>Open</em></a><a class="dl-card" href="privacy-policy.html"><i class="fa-solid fa-shield-halved"></i><div><b>Privacy policy</b><span>Policy</span></div><em>Open</em></a></div>
+    <div class="callout"><i class="fa-solid fa-file-circle-exclamation"></i><p>If a link does not open, write to <strong>academics@greenvalley.edu.in</strong> with the document name. Live ERP PDFs will replace these pages once the school server is connected. We never ask you to pay a “download fee”.</p></div>
+    <div class="faq-cats" id="dlCats">
+      <button type="button" class="on" data-dl="all">All</button>
+      <button type="button" data-dl="adm">Admissions</button>
+      <button type="button" data-dl="acad">Academics</button>
+      <button type="button" data-dl="parent">Parents</button>
+      <button type="button" data-dl="stat">Statutory</button>
+    </div>
+
+    <div data-dl-sec="adm">
+      <div class="dl-head"><h3>Admissions 2026–27</h3><span>Updated April 2026</span></div>
+      <div class="dl-grid">
+        <a class="dl-card" href="admissions.html"><i class="fa-solid fa-file-pdf"></i><div><span class="tag">Prospectus</span><b>Prospectus 2026–27</b><span>Age, seats, documents · HTML</span></div><em>Open</em></a>
+        <a class="dl-card" href="apply.html"><i class="fa-solid fa-file-lines"></i><div><span class="tag">Form</span><b>Registration / admission form</b><span>Online · photo + certificates</span></div><em>Open</em></a>
+        <a class="dl-card" href="news-admissions.html"><i class="fa-solid fa-bullhorn"></i><div><span class="tag">Circular</span><b>Admission circular</b><span>Dates and process</span></div><em>Open</em></a>
+        <a class="dl-card" href="fee-structure.html"><i class="fa-solid fa-indian-rupee-sign"></i><div><span class="tag">Fee</span><b>Fee structure 2026–27</b><span>Tuition, transport, one-time</span></div><em>Open</em></a>
+      </div>
+    </div>
+
+    <div data-dl-sec="acad">
+      <div class="dl-head"><h3>Academics</h3><span>Session 2026–27</span></div>
+      <div class="dl-grid">
+        <a class="dl-card" href="academic-calendar.html"><i class="fa-solid fa-calendar-days"></i><div><span class="tag">Calendar</span><b>Academic calendar</b><span>Exams, PTM, events</span></div><em>Open</em></a>
+        <a class="dl-card" href="holidays.html"><i class="fa-solid fa-umbrella-beach"></i><div><span class="tag">List</span><b>Holiday list 2026</b><span>Full calendar year</span></div><em>Open</em></a>
+        <a class="dl-card" href="timetable.html"><i class="fa-solid fa-table"></i><div><span class="tag">I–XII</span><b>Class timetable</b><span>Select class on the page</span></div><em>Open</em></a>
+        <a class="dl-card" href="news-midterm.html"><i class="fa-solid fa-clipboard-list"></i><div><span class="tag">Exam</span><b>Mid-term / exam circular</b><span>Date sheet</span></div><em>Open</em></a>
+        <a class="dl-card" href="academics-primary.html"><i class="fa-solid fa-book-open"></i><div><span class="tag">Syllabus</span><b>Primary (Nur–V)</b><span>Overview</span></div><em>Open</em></a>
+        <a class="dl-card" href="academics-middle.html"><i class="fa-solid fa-book-open"></i><div><span class="tag">Syllabus</span><b>Middle (VI–VIII)</b><span>Overview</span></div><em>Open</em></a>
+        <a class="dl-card" href="academics-senior.html"><i class="fa-solid fa-book-open"></i><div><span class="tag">Syllabus</span><b>Senior (IX–XII)</b><span>Streams</span></div><em>Open</em></a>
+        <a class="dl-card" href="results.html"><i class="fa-solid fa-chart-column"></i><div><span class="tag">Boards</span><b>Results 2024–25</b><span>X / XII · DigiLocker note</span></div><em>Open</em></a>
+      </div>
+    </div>
+
+    <div data-dl-sec="parent">
+      <div class="dl-head"><h3>For parents</h3><span>Desk copies at Gate 2</span></div>
+      <div class="dl-grid">
+        <a class="dl-card" href="uniform.html"><i class="fa-solid fa-shirt"></i><div><span class="tag">List</span><b>Uniform &amp; book list</b><span>Summer / winter · NCERT</span></div><em>Open</em></a>
+        <a class="dl-card" href="transport.html"><i class="fa-solid fa-bus"></i><div><span class="tag">Bus</span><b>Transport routes &amp; rules</b><span>GPS · indemnity on joining</span></div><em>Open</em></a>
+        <a class="dl-card" href="tc.html"><i class="fa-solid fa-file-export"></i><div><span class="tag">Form</span><b>TC / no-dues request</b><span>7 working days after clearance</span></div><em>Open</em></a>
+        <a class="dl-card" href="news-ptm.html"><i class="fa-solid fa-user-group"></i><div><span class="tag">Circular</span><b>PTM notice</b><span>Book slot on the app</span></div><em>Open</em></a>
+        <a class="dl-card" href="login.html"><i class="fa-solid fa-mobile-screen"></i><div><span class="tag">Portal</span><b>Parent / student login</b><span>RESET by SMS from registered mobile</span></div><em>Open</em></a>
+        <a class="dl-card" href="sports.html"><i class="fa-solid fa-futbol"></i><div><span class="tag">Games</span><b>Sports, clubs, inclusion</b><span>Medical form for zonal</span></div><em>Open</em></a>
+      </div>
+    </div>
+
+    <div data-dl-sec="stat">
+      <div class="dl-head"><h3>Statutory &amp; policy</h3><span>CBSE / office</span></div>
+      <div class="dl-grid">
+        <a class="dl-card" href="disclosure.html"><i class="fa-solid fa-certificate"></i><div><span class="tag">CBSE</span><b>Mandatory public disclosure</b><span>Appendix IX</span></div><em>Open</em></a>
+        <a class="dl-card" href="rules.html"><i class="fa-solid fa-book"></i><div><span class="tag">Diary</span><b>Code of conduct</b><span>Attendance, phones, discipline</span></div><em>Open</em></a>
+        <a class="dl-card" href="privacy-policy.html"><i class="fa-solid fa-shield-halved"></i><div><span class="tag">Policy</span><b>Privacy policy</b><span>Photos, CCTV, DPDP</span></div><em>Open</em></a>
+        <a class="dl-card" href="terms.html"><i class="fa-solid fa-scale-balanced"></i><div><span class="tag">Legal</span><b>Fee, withdrawal &amp; terms</b><span>Refund table</span></div><em>Open</em></a>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:22px">
+      <h3>Printed copies and leave / medical</h3>
+      <p class="fee-note">Leave application, medical fitness (zonal), bus indemnity and duplicate ID (₹ 150) are issued only at Gate 2 — not as a public PDF. Bring the parent ID. Diary pages are the leave form till the ERP is live.</p>
+      <p class="fee-note">Academic Office: academics@greenvalley.edu.in · +91 98765 43210 · Mon–Sat 9 AM – 2 PM (closed 2nd Saturday).</p>
+    </div>
   </div>
 </section>
 <footer class="footer">
@@ -100,17 +175,17 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About the School</a></li>
+                    <li><a href="about.html">About the School</a></li>
                     <li><a href="index.html#campus">Campus</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#news">Notices</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>For Parents</h3>
                 <ul>
-                    <li><a href="apply.html">Admissions 2026–27</a></li>
+                    <li><a href="admissions.html">Admissions 2026–27</a></li>
                     <li><a href="login.html">Parent / Student Login</a></li>
                     <li><a href="news-ptm.html">PTM</a></li>
                     <li><a href="timetable.html">Class Timetable</a></li>
@@ -123,7 +198,7 @@
                 <h3>Contact</h3>
                 <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb82858d84ab8c998e8e859d8a87878e92c58e8f9ec58285">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
                 <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
@@ -132,7 +207,7 @@
             <p class="footer-legal">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <span>·</span>
-                <a href="index.html#contact">Disclaimer</a>
+                <a href="terms.html">Terms</a>
                 <span>·</span>
                 <a href="login.html">Portal</a>
             </p>
@@ -140,6 +215,6 @@
     </div>
 </footer>
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
