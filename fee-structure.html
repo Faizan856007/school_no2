@@ -24,7 +24,15 @@
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
-<li><a href="index.html#about">About</a></li>
+<li class="has-dropdown">
+  <a href="about.html">About <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="about.html">About the School</a></li>
+    <li><a href="infrastructure.html">Infrastructure</a></li>
+    <li><a href="disclosure.html">Mandatory Disclosure</a></li>
+    <li><a href="rules.html">School Rules</a></li>
+  </ul>
+</li>
 <li class="has-dropdown">
   <a href="index.html#academics">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
@@ -33,21 +41,30 @@
     <li><a href="academic-calendar.html">Academic Calendar</a></li>
     <li><a href="timetable.html">Timetable</a></li>
     <li><a href="results.html">Results</a></li>
+        <li><a href="holidays.html">Holiday List</a></li>
+    <li><a href="awards.html">Awards &amp; Achievements</a></li>
+    <li><a href="sports.html">Sports &amp; Clubs</a></li>
     <li><a href="downloads.html">Downloads</a></li>
   </ul>
 </li>
 <li><a href="index.html#campus">Campus</a></li>
 <li><a href="index.html#gallery">Gallery</a></li>
 <li class="has-dropdown">
-  <a href="index.html#contact">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <a href="news-events.html">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
   <ul class="dropdown">
-    <li><a href="news-admissions.html">News &amp; Events</a></li>
+    <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
     <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="transport.html">Transport</a></li>
+    <li><a href="uniform.html">Uniform &amp; Books</a></li>
+    <li><a href="tc.html">TC Request</a></li>
+    <li><a href="careers.html">Careers</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms &amp; Withdrawal</a></li>
   </ul>
 </li>
-<li><a href="index.html#contact">Contact</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 <div class="header-btns">
@@ -65,51 +82,119 @@
 
 <section class="more-hero">
   <div class="container">
-    <p class="more-kicker">More</p>
-    <h1>Fee Structure 2026–27</h1>
-    <p>Indicative annual fee. The offer letter carries the amount that applies to your child. The school does not collect any donation.</p>
+    <p class="more-kicker">Accounts · Session 2026–27</p>
+    <h1>Fee structure</h1>
+    <p>Indicative annual fee. The offer letter is the amount that applies to your child. The school does not collect any donation or capitation.</p>
   </div>
 </section>
 <section class="more-page">
-  <div class="container fee-wrap">
+  <div class="container">
+    <div class="page-stick"><nav>
+      <a href="#annual">Annual</a>
+      <a href="#pay">Instalments</a>
+      <a href="#once">New admission</a>
+      <a href="#bus">Transport</a>
+      <a href="#help">Pay &amp; concessions</a>
+    </nav></div>
+    <div class="callout"><i class="fa-solid fa-ban"></i><p><strong>No donation.</strong> Report any such demand in writing to the Principal. Offer letter wins if a figure here is shorter. Full withdrawal rules: <a href="terms.html">Terms</a>.</p></div>
+
     <div class="fee-pills">
       <div><b>No donation</b><span>Written policy</span></div>
       <div><b>4 instalments</b><span>Apr · Jul · Oct · Jan</span></div>
       <div><b>Online + desk</b><span>Receipt on the app</span></div>
+      <div><b>Quote ADM no.</b><span>On every NEFT</span></div>
     </div>
-    <table class="info-table fee-table">
-      <tr><th>Class</th><th>Tuition / year</th><th>Development</th><th>Total*</th></tr>
-      <tr><td>Nursery – KG</td><td>₹ 78,000</td><td>₹ 12,000</td><td>₹ 90,000</td></tr>
-      <tr><td>I – V</td><td>₹ 86,000</td><td>₹ 14,000</td><td>₹ 1,00,000</td></tr>
-      <tr><td>VI – VIII</td><td>₹ 94,000</td><td>₹ 16,000</td><td>₹ 1,10,000</td></tr>
-      <tr><td>IX – X</td><td>₹ 1,02,000</td><td>₹ 18,000</td><td>₹ 1,20,000</td></tr>
-      <tr><td>XI – XII</td><td>₹ 1,14,000</td><td>₹ 21,000</td><td>₹ 1,35,000</td></tr>
-    </table>
-    <p class="fee-note">*Does not include transport, uniform, books or CBSE exam fee. Science stream has a lab fee of ₹ 8,000 / year.</p>
-    <div class="fee-grid">
-      <div class="side-card">
-        <h3>Transport (optional)</h3>
-        <p>GPS buses, 0–5 km ₹ 22,000 · 5–10 km ₹ 28,000 · 10–15 km ₹ 34,000 per year. Routes are confirmed in March.</p>
+
+    <h3 id="annual">Annual school fee</h3>
+    <div class="fee-class-grid">
+      <article class="fee-class">
+        <em>Nursery – KG</em>
+        <strong>₹ 90,000</strong>
+        <span>Tuition 78,000 · Dev. 12,000</span>
+      </article>
+      <article class="fee-class">
+        <em>Classes I – V</em>
+        <strong>₹ 1,00,000</strong>
+        <span>Tuition 86,000 · Dev. 14,000</span>
+      </article>
+      <article class="fee-class">
+        <em>Classes VI – VIII</em>
+        <strong>₹ 1,10,000</strong>
+        <span>Tuition 94,000 · Dev. 16,000</span>
+      </article>
+      <article class="fee-class">
+        <em>Classes IX – X</em>
+        <strong>₹ 1,20,000</strong>
+        <span>Tuition 1,02,000 · Dev. 18,000</span>
+      </article>
+      <article class="fee-class gold">
+        <em>Classes XI – XII</em>
+        <strong>₹ 1,35,000</strong>
+        <span>Tuition 1,14,000 · Dev. 21,000</span>
+      </article>
+    </div>
+    <p class="fee-note">*Does not include transport, uniform, books or CBSE exam fee. Science stream: lab fee ₹ 8,000 / year, billed with the July instalment.</p>
+
+    <div class="panel" id="pay">
+      <h3>Four instalments</h3>
+      <div class="pay-row">
+        <article><em>1</em><b>April</b><span>On joining / 10 Apr<br>Late after 15 Apr</span></article>
+        <article><em>2</em><b>10 July</b><span>Term 1 rest + lab<br>Late after 15 Jul</span></article>
+        <article><em>3</em><b>10 October</b><span>Term 2 start<br>Late after 15 Oct</span></article>
+        <article><em>4</em><b>10 January</b><span>Final instalment<br>Late after 15 Jan</span></article>
       </div>
+      <p class="fee-note">Split is equal fourths of the annual total unless the offer letter says otherwise. Late fee after the 15th of that month.</p>
+    </div>
+
+    <div class="panel" id="once">
+      <h3>One-time (new admission only)</h3>
+      <div class="fee-class-grid" style="grid-template-columns:repeat(3,1fr)">
+        <article class="fee-class">
+          <em>Registration</em>
+          <strong>₹ 2,500</strong>
+          <span>With the form · not refunded</span>
+        </article>
+        <article class="fee-class gold">
+          <em>Admission fee</em>
+          <strong>₹ 25,000</strong>
+          <span>Once, at confirmation · not refunded</span>
+        </article>
+        <article class="fee-class">
+          <em>Caution money</em>
+          <strong>₹ 10,000</strong>
+          <span>Back in 45 days after TC, less dues</span>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel" id="bus">
+      <h3>Transport (optional)</h3>
+      <div class="fee-class-grid" style="grid-template-columns:repeat(3,1fr)">
+        <article class="fee-class"><em>0–5 km</em><strong>₹ 22,000</strong><span>Per year · GPS bus</span></article>
+        <article class="fee-class"><em>5–10 km</em><strong>₹ 28,000</strong><span>Per year · attendant till Class V</span></article>
+        <article class="fee-class"><em>10–15 km</em><strong>₹ 34,000</strong><span>Per year · no route beyond 15 km</span></article>
+      </div>
+      <p class="fee-note">April + October with tuition. No refund for a day at home. Routes lock in March. Details: <a href="transport.html">Transport</a>.</p>
+    </div>
+
+    <div class="fee-grid" id="help">
       <div class="side-card">
+        <div class="info-ico"><i class="fa-solid fa-building-columns"></i></div>
         <h3>How to pay</h3>
-        <p>Parent app, NEFT, or the accounts desk (Mon–Sat, 9 AM – 1 PM). Cash above ₹ 5,000 is not accepted. Late fee after the 15th of the instalment month.</p>
+        <p>Parent app, NEFT, or Accounts desk (Gate 2, Mon–Sat 9 AM – 1 PM). Cash above ₹ 5,000 is not taken. Quote the admission number on every transfer.</p>
       </div>
       <div class="side-card">
+        <div class="info-ico"><i class="fa-solid fa-percent"></i></div>
         <h3>Concessions</h3>
-        <p>Sibling (second child) 10% on tuition. Defence / paramilitary with valid ID — apply on the admission form. No cash discount is offered at the gate.</p>
+        <p>Sibling (second child) 10% on tuition only. Defence / paramilitary — tick the admission form with ID. No cash discount at the gate.</p>
+      </div>
+      <div class="side-card">
+        <div class="info-ico"><i class="fa-solid fa-file-export"></i></div>
+        <h3>Withdrawal</h3>
+        <p>Tuition till the end of the TC month. Registration and admission fee stay with the school. <a href="tc.html">TC request</a> · <a href="terms.html">Terms</a>.</p>
       </div>
     </div>
-    <h3>One-time charges (new admission)</h3>
-    <table class="info-table">
-      <tr><th>Head</th><th>Amount</th><th>Note</th></tr>
-      <tr><td>Registration</td><td>₹ 2,500</td><td>Non-refundable, with the form</td></tr>
-      <tr><td>Admission fee</td><td>₹ 25,000</td><td>Once, at confirmation</td></tr>
-      <tr><td>Caution money</td><td>₹ 10,000</td><td>Refundable when the TC is issued, less dues</td></tr>
-    </table>
-    <h3>Instalment dates</h3>
-    <p class="fee-note">April (on joining) · 10 July · 10 October · 10 January. Late fee after the 15th of that month. Transfer mid-session: tuition is charged till the end of the month in which the TC is applied for. Caution money is returned within 45 days of the last working day.</p>
-    <p class="fee-note">Accounts: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="36575555594358424576514453535840575a5a534f18535243185f58">[email&#160;protected]</a> · Desk at Gate 2, 9 AM – 1 PM. Quote the admission number on every transfer.</p>
+    <p class="fee-note">Accounts: accounts@greenvalley.edu.in · +91 98765 43210 (ask for accounts).</p>
     <a class="primary-btn" href="apply.html">Apply for 2026–27</a>
   </div>
 </section>
@@ -137,17 +222,17 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About the School</a></li>
+                    <li><a href="about.html">About the School</a></li>
                     <li><a href="index.html#campus">Campus</a></li>
                     <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#news">Notices</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>For Parents</h3>
                 <ul>
-                    <li><a href="apply.html">Admissions 2026–27</a></li>
+                    <li><a href="admissions.html">Admissions 2026–27</a></li>
                     <li><a href="login.html">Parent / Student Login</a></li>
                     <li><a href="news-ptm.html">PTM</a></li>
                     <li><a href="timetable.html">Class Timetable</a></li>
@@ -160,7 +245,7 @@
                 <h3>Contact</h3>
                 <p><i class="fa-solid fa-location-dot"></i> Green Valley International School,<br>&nbsp;&nbsp;&nbsp;&nbsp;New Delhi, India</p>
                 <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8a1a6aea788afbaadada6bea9a4a4adb1e6adacbde6a1a6">[email&#160;protected]</a></p>
+                <p><i class="fa-solid fa-envelope"></i> info@greenvalley.edu.in</p>
                 <p><i class="fa-solid fa-clock"></i> Mon–Sat, 9:00 AM – 2:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;Closed 2nd Saturday</p>
             </div>
         </div>
@@ -169,7 +254,7 @@
             <p class="footer-legal">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <span>·</span>
-                <a href="index.html#contact">Disclaimer</a>
+                <a href="terms.html">Terms</a>
                 <span>·</span>
                 <a href="login.html">Portal</a>
             </p>
@@ -177,6 +262,6 @@
     </div>
 </footer>
 <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d2ba203a5da778',t:'MTc4NzA3NTA3Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script src="main.js"></script>
+</body>
 </html>
