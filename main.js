@@ -85,6 +85,17 @@
 
 
 
+  document.querySelectorAll("#dlCats button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("#dlCats button").forEach(function (b) { b.classList.remove("on"); });
+      btn.classList.add("on");
+      var f = btn.getAttribute("data-dl");
+      document.querySelectorAll("[data-dl-sec]").forEach(function (sec) {
+        sec.style.display = (f === "all" || sec.getAttribute("data-dl-sec") === f) ? "" : "none";
+      });
+    });
+  });
+
   document.querySelectorAll("#faqCats button").forEach(function (btn) {
     btn.addEventListener("click", function () {
       document.querySelectorAll("#faqCats button").forEach(function (b) { b.classList.remove("on"); });
