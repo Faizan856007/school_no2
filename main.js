@@ -298,6 +298,7 @@
         }
         return;
       }
+      
       var fileErr = "";
       var okType = /\.(pdf|jpe?g|png)$/i;
       applyForm.querySelectorAll("input[type='file']").forEach(function (inp) {
