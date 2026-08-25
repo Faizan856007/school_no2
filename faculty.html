@@ -6,8 +6,9 @@
 <title>Faculty | Green Valley International School</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 <style>
 :root{
   --cream:#efeae0;
@@ -337,38 +338,84 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   .duo{width:72px!important}
   .acts .btn-ghost{display:none}
 }
+
+/* Keep this page’s cream look, but the site header matches index */
+body{
+  font-family:var(--sans);
+  background:var(--cream);
+  color:var(--ink);
+}
+.header,.header a,.header button{font-family:'Poppins',sans-serif}
+.header h2{font-family:'Plus Jakarta Sans',sans-serif !important;font-weight:800 !important;color:#14291f}
+.header p{font-family:'Poppins',sans-serif;font-weight:400}
+.header{position:sticky;top:0}
 </style>
 </head>
 <body>
 
-<div class="top">
-  <header class="nav">
-    <a class="brand" href="index.html">Green Valley<i>®</i></a>
-    <nav class="links">
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a class="on" href="faculty.html">Faculty</a>
-      <a href="index.html#campus">Campus</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-    <div class="acts">
-      <a class="btn btn-ghost" href="login.html">Log in</a>
-      <a class="btn btn-dark" href="apply.html">Apply</a>
-      <button class="ham" id="ham" aria-label="Menu">☰</button>
-    </div>
-  </header>
+<header class="header">
+<div class="container">
+<a href="index.html" class="logo">
+<div class="logo-icon"><i class="fa-solid fa-school"></i></div>
+<div>
+<h2>Green Valley</h2>
+<p>International School</p>
 </div>
-
-<div class="draw" id="draw">
-  <div style="display:flex;justify-content:space-between;margin-bottom:16px"><b>Green Valley®</b><button id="close">✕</button></div>
-  <a href="index.html">Home</a>
-  <a href="index.html#about">About</a>
-  <a href="faculty.html">Faculty</a>
-  <a href="index.html#campus">Campus</a>
-  <a href="index.html#contact">Contact</a>
-  <a href="login.html">Log in</a>
-  <a href="apply.html">Apply</a>
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li class="has-dropdown">
+  <a href="about.html">About <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="about.html">About the School</a></li>
+    <li><a href="infrastructure.html">Infrastructure</a></li>
+    <li><a href="disclosure.html">Mandatory Disclosure</a></li>
+    <li><a href="rules.html">School Rules</a></li>
+  </ul>
+</li>
+<li class="has-dropdown">
+  <a href="academics.html">Academics <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="academics.html">Academic Programs</a></li>
+    <li><a href="faculty.html">Our Faculty</a></li>
+    <li><a href="academic-calendar.html">Academic Calendar</a></li>
+    <li><a href="holidays.html">Holiday List</a></li>
+    <li><a href="timetable.html">Timetable</a></li>
+    <li><a href="results.html">Results</a></li>
+    <li><a href="awards.html">Awards &amp; Achievements</a></li>
+    <li><a href="sports.html">Sports &amp; Clubs</a></li>
+    <li><a href="downloads.html">Downloads</a></li>
+  </ul>
+</li>
+<li><a href="infrastructure.html">Campus</a></li>
+<li><a href="index.html#gallery">Gallery</a></li>
+<li class="has-dropdown">
+  <a href="news-events.html">More <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+  <ul class="dropdown">
+    <li><a href="news-events.html">News &amp; Events</a></li>
+    <li><a href="admissions.html">Admissions</a></li>
+    <li><a href="fee-structure.html">Fee Structure</a></li>
+    <li><a href="transport.html">Transport</a></li>
+    <li><a href="uniform.html">Uniform &amp; Books</a></li>
+    <li><a href="tc.html">TC Request</a></li>
+    <li><a href="careers.html">Careers</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms &amp; Withdrawal</a></li>
+  </ul>
+</li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<div class="header-btns">
+<a href="login.html" class="login-btn">Login</a>
+<a href="apply.html" class="apply-btn">Apply Now</a>
 </div>
+<button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+</div>
+</header>
+<div class="nav-overlay"></div>
 
 <section class="hero">
   <div class="dots"></div>
@@ -576,7 +623,7 @@ button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const P = {
   anjali:{n:"Anjali Mehrotra",r:"Principal",b:"Ph.D. Education. Twenty-five years of making rooms that believe in children.",m:"anjali.mehrotra@greenvalley.edu.in",img:"images/principal.jpg"},
   rajeev:{n:"Rajeev Kaul",r:"Vice Principal",b:"Senior school and boards. Calm rooms, sharp minds.",m:"rajeev.kaul@greenvalley.edu.in",img:"images/vp.jpg"},
@@ -610,10 +657,7 @@ function closeP(){ mo.classList.remove("open"); scrim.classList.remove("open"); 
 document.getElementById("grid").onclick=e=>{const p=e.target.closest(".person"); if(p) openP(p.dataset.id);};
 document.getElementById("x").onclick=closeP; scrim.onclick=closeP;
 addEventListener("keydown",e=>{if(e.key==="Escape")closeP();});
-const draw=document.getElementById("draw");
-document.getElementById("ham").onclick=()=>{draw.classList.add("open");document.body.style.overflow="hidden"};
-document.getElementById("close").onclick=()=>{draw.classList.remove("open");document.body.style.overflow=""};
-draw.querySelectorAll("a").forEach(a=>a.onclick=()=>{draw.classList.remove("open");document.body.style.overflow=""});
 </script>
+<script src="main.js"></script>
 </body>
 </html>
