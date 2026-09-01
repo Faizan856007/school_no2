@@ -54,9 +54,21 @@
     });
   });
 
+  if (header && !header.querySelector(".scroll-progress")) {
+    const bar = document.createElement("div");
+    bar.className = "scroll-progress";
+    header.appendChild(bar);
+  }
+  const progress = header && header.querySelector(".scroll-progress");
+
   window.addEventListener("scroll", function () {
     if (header) header.classList.toggle("scrolled", window.scrollY > 12);
     if (backToTop) backToTop.classList.toggle("show", window.scrollY > 500);
+    if (progress) {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progress.style.width = pct + "%";
+    }
   });
 
   if (backToTop) {
@@ -65,21 +77,30 @@
     });
   }
 
+  function postForm(url, formEl, done) {
+    fetch(url, { method: "POST", body: new FormData(formEl) })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (out) { done(out.data, out.ok); })
+      .catch(function () { done({ ok: false, error: "Server not reachable. Start Apache + MySQL and check config.php." }, false); });
+  }
+
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       const btn = form.querySelector(".send-btn");
-      if (btn) {
-        btn.disabled = true;
-        btn.textContent = "Message sent";
-      }
-      form.reset();
-      setTimeout(function () {
-        if (btn) {
-          btn.disabled = false;
-          btn.textContent = "Send Message";
+      const old = btn ? btn.textContent : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      postForm("contact.php", form, function (data, ok) {
+        if (ok && data.ok) {
+          if (btn) btn.textContent = "Message sent";
+          form.reset();
+        } else if (btn) {
+          btn.textContent = (data && data.error) ? data.error : "Try again";
         }
-      }, 2400);
+        setTimeout(function () {
+          if (btn) { btn.disabled = false; btn.textContent = old || "Send Message"; }
+        }, 2400);
+      });
     });
   }
 
@@ -238,7 +259,7 @@
     });
   });
 
-  function wireSimpleForm(id, msgId, okText) {
+  function wireSimpleForm(id, msgId, url) {
     const form = document.getElementById(id);
     if (!form) return;
     form.addEventListener("submit", function (e) {
@@ -255,27 +276,24 @@
         return;
       }
       const btn = form.querySelector(".send-btn");
-      if (btn) {
-        btn.disabled = true;
-        btn.textContent = "Submitted";
-      }
-      if (msg) {
-        msg.className = "form-msg show success";
-        msg.style.background = "";
-        msg.style.color = "";
-        msg.textContent = okText;
-      }
-      form.reset();
-      setTimeout(function () {
+      if (btn) btn.disabled = true;
+      postForm(url, form, function (data, ok) {
+        if (msg) {
+          msg.className = "form-msg show " + (ok && data.ok ? "success" : "");
+          msg.style.background = ok && data.ok ? "" : "rgba(192,57,43,0.1)";
+          msg.style.color = ok && data.ok ? "" : "#c0392b";
+          msg.textContent = (ok && data.ok) ? (data.message || "Saved.") : ((data && data.error) || "Could not save. Start Apache + MySQL.");
+        }
+        if (ok && data.ok) form.reset();
         if (btn) {
           btn.disabled = false;
           btn.textContent = btn.getAttribute("data-label") || "Submit";
         }
-      }, 2800);
+      });
     });
   }
-  wireSimpleForm("tcForm", "tcMsg", "Request noted. The Academic Office will call within 2 working days. Live TC is issued only after no-dues.");
-  wireSimpleForm("careerForm", "careerMsg", "Thank you. Please also email your CV to careers@greenvalley.edu.in. The desk replies if a post is open.");
+  wireSimpleForm("tcForm", "tcMsg", "tc-save.php");
+  wireSimpleForm("careerForm", "careerMsg", "career-save.php");
 
   const applyForm = document.getElementById("applyForm");
   if (applyForm) {
@@ -298,7 +316,6 @@
         }
         return;
       }
-      
       var fileErr = "";
       var okType = /\.(pdf|jpe?g|png)$/i;
       applyForm.querySelectorAll("input[type='file']").forEach(function (inp) {
@@ -319,19 +336,29 @@
       const btn = applyForm.querySelector(".send-btn");
       if (btn) {
         btn.disabled = true;
-        btn.textContent = "Application submitted";
+        btn.textContent = "Sending…";
       }
-      if (msg) {
-        msg.className = "form-msg show success";
-        msg.textContent = "Thank you. The Admissions Desk will call you within 2 working days.";
-      }
-      applyForm.reset();
-      setTimeout(function () {
+      postForm("apply.php", applyForm, function (data, ok) {
+        if (ok && data.ok) {
+          if (msg) {
+            msg.className = "form-msg show success";
+            msg.style.background = "";
+            msg.style.color = "";
+            msg.textContent = data.message || "Thank you. The Admissions Desk will call you within 2 working days.";
+          }
+          applyForm.reset();
+          applyForm.querySelectorAll(".file-name").forEach(function (el) { el.textContent = ""; });
+        } else if (msg) {
+          msg.className = "form-msg show";
+          msg.style.background = "rgba(192,57,43,0.1)";
+          msg.style.color = "#c0392b";
+          msg.textContent = (data && data.error) ? data.error : "Could not save. Start Apache + MySQL.";
+        }
         if (btn) {
           btn.disabled = false;
           btn.textContent = "Submit application";
         }
-      }, 3200);
+      });
     });
   }
 })();
